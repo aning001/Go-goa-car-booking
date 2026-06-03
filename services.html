@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Services Included — Go Goa Car Booking</title>
+  
+  <meta name="description" content="Discover premium rental services in Goa. Complimentary airport deliveries, 24/7 roadside mechanical assistance, sterilized cabins, and zero hidden deposits.">
+  
+  <!-- Elegant Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;850;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            orange: {
+              50: '#fff5f5',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171', // light sporty red
+              450: '#ef4444', // vibrant brand red
+              500: '#dc2626', // elegant rich red
+              600: '#b91c1c', // deep luxurious red
+              700: '#991b1b', // dark crimson red
+              800: '#7f1d1d', // dark maroon
+              900: '#5c1010', // deep mahogany root red
+            },
+            amber: {
+              400: '#ef4444', // red-500
+              500: '#dc2626', // red-600
+              600: '#b91c1c', // red-700
+            },
+            slate: {
+              900: '#0a0a0e',
+              900: '#0a0a0e',
+              950: '#030305',
+            },
+            indigo: {
+              950: '#07070a'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/css">
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .btn-bounce:active {
+      transform: scale(0.97);
+    }
+
+    /* Floating button bounce animations (Call bounces faster, WhatsApp bounces slower/less intense) */
+    @keyframes bounceCall {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes bounceWhatsapp {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .animate-bounce-call {
+      animation: bounceCall 1.2s infinite ease-in-out !important;
+    }
+
+    .animate-bounce-call:hover {
+      animation-play-state: paused !important;
+    }
+
+    .animate-bounce-whatsapp {
+      animation: bounceWhatsapp 2.0s infinite ease-in-out !important;
+    }
+
+    .animate-bounce-whatsapp:hover {
+      animation-play-state: paused !important;
+    }
+  </style>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen selection:bg-orange-500 selection:text-white overflow-x-hidden">
+
+  <!-- ================= HEADER SECTION ================= -->
+  <header class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="bg-gradient-to-tr from-orange-600 to-orange-400 p-2 rounded-xl shadow-lg shadow-orange-500/10">
+          <i data-lucide="car" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <span class="text-sm font-black tracking-tight text-white uppercase font-display block font-bold">Go Goa</span>
+          <span class="text-[9px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1">Car Rental</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-5 text-[11px] font-bold text-slate-300">
+        <a href="index.html" class="hover:text-orange-400 transition-colors">Home</a>
+        <a href="about.html" class="hover:text-orange-400 transition-colors">About Us</a>
+        <a href="fleet.html" class="hover:text-orange-400 transition-colors">Car Fleet</a>
+        <a href="thar-rental.html" class="hover:text-orange-400 transition-colors">🚙 Thar Rental</a>
+        <a href="luxury-rental.html" class="hover:text-orange-400 transition-colors">👑 Luxury Rental</a>
+        <a href="family-rental.html" class="hover:text-orange-400 transition-colors">👨‍👩‍👦 Family & SUV</a>
+        <a href="services.html" class="text-orange-400 font-extrabold transition-colors">Services</a>
+        <a href="blogs.html" class="hover:text-orange-400 transition-colors">Blogs</a>
+        <a href="contact.html" class="hover:text-orange-400 transition-colors">Contact Us</a>
+      </nav>
+
+      <!-- Desktop Header CTAs & Hamburger on Mobile -->
+      <div class="flex items-center gap-2">
+        <a href="tel:+916287168644" class="hidden sm:flex items-center gap-1.5 bg-slate-900 border border-slate-800 hover:bg-slate-850 px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-200 transition-all btn-bounce">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-orange-500"></i>
+          <span>Call Support</span>
+        </a>
+        <a href="index.html#booking-quote" class="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-md shadow-orange-500/15 btn-bounce">
+          Book Car
+        </a>
+        
+        <!-- Mobile Menu Hamburger Button Trigger -->
+        <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" id="menu-icon-hamburger" class="w-5 h-5 text-orange-500"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
+  <div id="mobile-nav-panel" class="hidden fixed inset-x-0 top-16 bg-slate-950/98 backdrop-blur-lg border-b border-slate-800 z-40 p-4 flex flex-col gap-2 font-semibold text-xs tracking-wider uppercase transition-all shadow-2xl">
+    <a href="index.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Home</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="about.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>About Us</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="fleet.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Car Fleet</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="thar-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>🚙 Thar Rental</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="luxury-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>👑 Luxury Rental</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="family-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>👨‍👩‍👦 Family & SUV</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="services.html" class="mobile-nav-item py-3 px-4 rounded-xl text-white bg-slate-900 border border-slate-800 flex items-center justify-between transition-all">
+      <span>Services</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="blogs.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Blogs</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="contact.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Contact Us</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+  </div>
+
+  <!-- ================= MAIN SITE WRAPPER ================= -->
+  <main class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-slate-300 text-left">
+      
+      <!-- Back to Home Button -->
+      <div class="mb-8 mt-2 text-left">
+        <a href="index.html" class="inline-flex items-center gap-2.5 px-4 py-2 bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-orange-500/40 text-slate-300 hover:text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-lg group">
+          <svg class="w-4 h-4 text-red-500 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Back to Home
+        </a>
+      </div>
+      
+      <!-- Services Intro Banner -->
+      <div class="relative rounded-3xl overflow-hidden mb-12 bg-gradient-to-r from-orange-600/10 via-slate-900 to-slate-950 border border-slate-850 p-8 md:p-12">
+        <span class="text-xs font-bold text-orange-400 uppercase tracking-widest block mb-2 font-mono">👑 Our Hospitality Standards</span>
+        <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight leading-none mb-4 font-display">
+          Premium Services Included Free In Every Rental
+        </h1>
+        <p class="text-xs sm:text-xs md:text-sm text-slate-400 font-medium leading-relaxed max-w-2xl font-sans">
+          Forget standard self-drive agencies that drop off dirty keys and demand surprise clean-up fees. At Go Goa, we elevate tourist car hires to luxury hotel standards with curated free benefits included inside every reservation.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        
+        <!-- Service 1: Mopa deliveries -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex gap-4 hover:border-slate-700 transition-colors">
+          <div class="bg-orange-500/15 w-12 h-12 rounded-2xl flex items-center justify-center border border-orange-500/20 shrink-0">
+            <i data-lucide="plane" class="w-6 h-6 text-orange-400"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white mb-2 font-display">Manohar International Mopa Airport Handover</h3>
+            <p class="text-xs text-slate-400 leading-relaxed font-sans">
+              Complimentary terminal met-and-greet delivery. No commercial booking queue delays. Our operator waits for you exactly adjacent to passenger flight gates, ensuring you drive away in under 5 minutes of landing!
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 2: Dabolim hub -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex gap-4 hover:border-slate-700 transition-colors">
+          <div class="bg-orange-500/15 w-12 h-12 rounded-2xl flex items-center justify-center border border-orange-500/20 shrink-0">
+            <i data-lucide="map-pin" class="w-6 h-6 text-orange-400"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white mb-2 font-display">Dabolim International Terminal Returns Desk</h3>
+            <p class="text-xs text-slate-400 leading-relaxed font-sans">
+              Dynamic 24/7 Arrivals handover. Accessible counter locations close to airport exit gates. Drop off your car directly inside airport parking lanes, coordinate with our operations desk, and walk directly to check-in.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3: Roadside Hilfe -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex gap-4 hover:border-slate-700 transition-colors">
+          <div class="bg-orange-500/15 w-12 h-12 rounded-2xl flex items-center justify-center border border-orange-500/20 shrink-0">
+            <i data-lucide="ambulance" class="w-6 h-6 text-orange-400"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white mb-2 font-display">24/7 Roadside Mechanical Breakdown Backup</h3>
+            <p class="text-xs text-slate-400 leading-relaxed font-sans">
+              Drive with piece of mind. Standard packages include 100% free active roadside repairs for tyre punctures, mechanical engine faults, fuel shortages, and accidental towing assistance across Goa borders.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 4: Washing -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex gap-4 hover:border-slate-700 transition-colors">
+          <div class="bg-orange-500/15 w-12 h-12 rounded-2xl flex items-center justify-center border border-orange-500/20 shrink-0">
+            <i data-lucide="sparkles" class="w-6 h-6 text-orange-400"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white mb-2 font-display">Vacuum Washing &amp; Sterilized Cabin Cleansing</h3>
+            <p class="text-xs text-slate-400 leading-relaxed font-sans">
+              Enjoy a cabin that smells fresh and looks spotless. Every vehicle details passes vacuum sanitation and deep wet-wiping processes directly before key handover. Clean steering and seats as standard.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER SECTION ================= -->
+  <footer class="bg-slate-950 border-t border-slate-850/80 text-slate-450 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 text-left">
+        <div>
+          <a href="index.html" class="flex items-center gap-2 mb-4">
+            <div class="bg-gradient-to-tr from-orange-600 to-orange-400 p-2 rounded-xl shadow-lg">
+              <i data-lucide="car" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <span class="text-sm font-black tracking-tight text-white uppercase font-display block font-bold">Go Goa</span>
+              <span class="text-[9px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1">Car Rental</span>
+            </div>
+          </a>
+          <p class="text-[11px] text-slate-405 text-slate-350 leading-relaxed">
+            Goa's premium independent car rental hub. Experience absolute transparency and roadside compliance on every kilometer of physical travel.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider font-display mb-4">Rental Fleets</h4>
+          <ul class="space-y-2 text-[11px] text-slate-400 font-semibold font-display">
+            <li><a href="thar-rental.html" class="hover:text-orange-400 transition-colors">Mahindra Thar 4x4</a></li>
+            <li><a href="luxury-rental.html" class="hover:text-orange-400 transition-colors">Luxury Class Trims</a></li>
+            <li><a href="family-rental.html" class="hover:text-orange-400 transition-colors">Family SUVs &amp; MPVs</a></li>
+            <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">All Budget Cars</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider font-display mb-4">Useful Links</h4>
+          <ul class="space-y-2 text-[11px] text-slate-400 font-semibold font-display">
+            <li><a href="about.html" class="hover:text-orange-400 transition-colors">About Goa Legacy</a></li>
+            <li><a href="services.html" class="hover:text-orange-400 transition-colors font-bold">VIP Services Included</a></li>
+            <li><a href="blogs.html" class="hover:text-orange-400 transition-colors">Travel Safety Guides</a></li>
+            <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Direct Support Helpline</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider font-display mb-4">Important Rules</h4>
+          <p class="text-[11px] text-slate-400 leading-relaxed">
+            Renters must carry an original laminated Driving License and Aadhaar Proof. Ensure to abide by local speed regulations (NH camera limits are mostly 70 km/hour). Keep original vehicle papers in dashboard during driving.
+          </p>
+        </div>
+      </div>
+      <div class="border-t border-slate-900 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+        <p>© 2026 Go Goa Car Booking. All self-driving rights reserved globally.</p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-slate-400">Terms of Rent</a>
+          <a href="#" class="hover:text-slate-400">Refunding Guarantee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= STICKY SIDEBAR FLOATING ACTIONS ================= -->
+  <div class="fixed left-4 bottom-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-40 flex flex-col gap-2.5">
+    <a href="tel:+916287168644" class="group flex items-center justify-center md:justify-start gap-2 bg-slate-950/90 border border-slate-800 hover:bg-slate-900 text-white p-3 md:p-3.5 rounded-full shadow-2xl transition-all animate-bounce-call" title="Call Direct Support">
+      <i data-lucide="phone" class="w-5 h-5 text-orange-400 shrink-0"></i>
+      <span class="hidden md:inline font-sans font-black text-[9px] tracking-widest uppercase text-slate-100 pr-1">Call Support</span>
+    </a>
+    <a href="https://wa.me/916287168644?text=Hi,%20I%20want%20to%20rent%20a%20self-drive%2520car%2520for%2520my%2520Goa%2520trip." target="_blank" rel="noreferrer" class="group flex items-center justify-center md:justify-start gap-2 bg-emerald-600/95 hover:bg-emerald-700 text-white p-3 md:p-3.5 rounded-full shadow-2xl transition-all border border-emerald-500/20 animate-bounce-whatsapp" title="Message WhatsApp Help">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current shrink-0 text-white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="hidden md:inline font-sans font-black text-[9px] tracking-widest uppercase text-slate-100 pr-1">WhatsApp Desk</span>
+    </a>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Setup mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNavPanel = document.getElementById('mobile-nav-panel');
+    const menuIconHamburger = document.getElementById('menu-icon-hamburger');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+    if (mobileMenuBtn && mobileNavPanel) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileNavPanel.classList.contains('hidden');
+        if (isHidden) {
+          mobileNavPanel.classList.remove('hidden');
+          mobileNavPanel.classList.add('flex');
+          if (menuIconHamburger) {
+            menuIconHamburger.setAttribute('data-lucide', 'x');
+            lucide.createIcons();
+          }
+        } else {
+          mobileNavPanel.classList.add('hidden');
+          mobileNavPanel.classList.remove('flex');
+          if (menuIconHamburger) {
+            menuIconHamburger.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+          }
+        }
+      });
+
+      mobileNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+          mobileNavPanel.classList.add('hidden');
+          mobileNavPanel.classList.remove('flex');
+          if (menuIconHamburger) {
+            menuIconHamburger.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

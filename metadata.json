@@ -1,0 +1,8 @@
+{
+  "name": "Go Goa Car Booking",
+  "description": "Self drive car rental and booking platform in Goa with seamless airport pickup and hotel delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
