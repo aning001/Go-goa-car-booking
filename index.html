@@ -69,6 +69,92 @@
       scrollbar-width: none;
     }
     
+    /* ================= COMPREHENSIVE PREMIUM BUTTON HOVER EFFECTS ================= */
+    /* Universal setup for transition smoothness */
+    button, 
+    a.btn-bounce,
+    a[href^="tel:"],
+    a[href^="https://wa.me/"],
+    a[href="#booking-quote"],
+    .mobile-nav-item,
+    button[onclick^="filterFleet"],
+    #ai-chat-form button {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* 1. Primary Action Orange Buttons - Intense Hover Glow and Scale Up */
+    button.bg-orange-500,
+    a.bg-orange-500,
+    button[onclick="openBookingModal()"],
+    #detail-modal-btn-book,
+    #ai-chat-form button {
+      position: relative;
+      overflow: hidden;
+    }
+    button.bg-orange-500:hover,
+    a.bg-orange-500:hover,
+    button[onclick="openBookingModal()"]:hover,
+    #detail-modal-btn-book:hover,
+    #ai-chat-form button:hover {
+      background-color: #ef4444 !important; /* brighter fiery orange/red */
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.5), 0 0 15px rgba(239, 68, 68, 0.3) !important;
+    }
+
+    /* 2. Secondary Dark / Outline Buttons - Zoom Out / Scale Down with Border Highlight & Shadow */
+    button.bg-slate-900,
+    a.bg-slate-900,
+    button.bg-slate-950,
+    a.bg-slate-950,
+    #mobile-menu-btn {
+      border-color: rgba(248, 113, 113, 0.2) !important;
+    }
+    button.bg-slate-900:hover,
+    a.bg-slate-900:hover,
+    button.bg-slate-950:hover,
+    a.bg-slate-950:hover,
+    #mobile-menu-btn:hover {
+      transform: scale(0.96) !important; /* Zoom out effect as requested */
+      border-color: #f87171 !important; /* light red border glows */
+      box-shadow: 0 0 12px rgba(248, 113, 113, 0.15) !important;
+      color: #ffffff !important;
+    }
+
+    /* 3. Success / WhatsApp Buttons - Pulse scale and Emerald Glow */
+    button.bg-emerald-600,
+    a.bg-emerald-600,
+    a.bg-emerald-500,
+    button.bg-emerald-500,
+    [onclick^="dispatchWhatsApp"] {
+      position: relative;
+    }
+    button.bg-emerald-600:hover,
+    a.bg-emerald-600:hover,
+    a.bg-emerald-500:hover,
+    button.bg-emerald-500:hover,
+    [onclick^="dispatchWhatsApp"]:hover {
+      background-color: #059669 !important; /* bright green */
+      transform: translateY(-1px) scale(1.04) !important;
+      box-shadow: 0 8px 20px -4px rgba(5, 150, 105, 0.4), 0 0 12px rgba(5, 150, 105, 0.2) !important;
+    }
+
+    /* 4. Tab Capsule Filters - Bounce & Active Tracking Shift */
+    button[onclick^="filterFleet"]:hover {
+      transform: translateY(-1.5px) scale(1.02) !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.05em;
+    }
+
+    /* 5. Close/Exit micro-interaction - Gentle Rotate on Hover */
+    button[onclick^="close"] {
+      transition: all 0.2s ease !important;
+    }
+    button[onclick^="close"]:hover {
+      transform: rotate(90deg) scale(1.1) !important;
+      color: #ef4444 !important;
+      background-color: rgba(239, 68, 68, 0.1) !important;
+    }
+
     /* Elegant button scale transitions */
     .btn-bounce:active {
       transform: scale(0.97);
@@ -355,6 +441,28 @@
                   <p class="text-[9px] text-slate-400">Breakdown & support desk</p>
                 </div>
               </div>
+            </div>
+
+            <!-- ================= QUICK HOP LINK SHORTCUTS ================= -->
+            <div class="pt-6 flex flex-wrap items-center gap-2 text-xs text-slate-300 justify-center lg:justify-start">
+              <span class="font-extrabold uppercase font-mono tracking-wider text-[10px] text-orange-400 mr-1 flex items-center gap-1 text-left">
+                <i data-lucide="zap" class="w-3.5 h-3.5 animate-pulse shrink-0"></i> Quick links:
+              </span>
+              <a href="thar-rental.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+                <span>🚙 Thar Offroad</span>
+              </a>
+              <a href="luxury-rental.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+                <span>👑 Luxury Fleet</span>
+              </a>
+              <a href="family-rental.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+                <span>👨‍👩‍👦 Family Cars</span>
+              </a>
+              <a href="fleet.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+                <span>🚘 All Budget Cars</span>
+              </a>
+              <a href="services.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+                <span>🛎️ VIP Services</span>
+              </a>
             </div>
 
           </div>
@@ -730,7 +838,7 @@
               <div class="z-10 text-left">
                 <h4 class="text-xs font-bold tracking-wider text-orange-400 uppercase font-mono">Geo Delivery Network</h4>
                 <h3 class="text-base font-bold text-white mt-1 font-display">24/7 Live Support Counter</h3>
-                <p class="text-xs text-slate-400 max-w-sm mt-1">Get instant assistance near Airport Arrivals Parking and central tourist spots around Calangute.</p>
+                <p class="text-xs text-slate-400 max-w-sm mt-1">Get instant assistance and premium car handovers directly at our main Mopa Airport office.</p>
               </div>
 
               <!-- Graphic visualization map overlay -->
@@ -739,29 +847,14 @@
               </div>
 
               <!-- Hotspot Addresses Grid -->
-              <div class="z-10 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 text-left">
-                <div class="p-3 bg-slate-950/80 rounded-2xl border border-slate-800">
-                  <div class="flex items-center gap-1.5 text-xs font-bold text-white uppercase tracking-wider font-display mb-1 text-orange-400">
-                    <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
-                    <span>Mopa Terminal</span>
+              <div class="z-10 max-w-md pt-8 text-left">
+                <div class="p-4 bg-slate-950/85 rounded-2xl border border-slate-800 shadow-xl">
+                  <div class="flex items-center gap-1.5 text-xs font-bold text-white uppercase tracking-wider font-display mb-1.5 text-orange-400">
+                    <i data-lucide="map-pin" class="w-4 h-4 shrink-0 text-orange-400"></i>
+                    <span>Mopa Airport Office (Main Counter)</span>
                   </div>
-                  <p class="text-[10px] text-slate-400 leading-relaxed">Counter 15, Manohar international airport, Mopa, Kasarvarne, Goa 403512.</p>
-                </div>
-                
-                <div class="p-3 bg-slate-950/80 rounded-2xl border border-slate-800">
-                  <div class="flex items-center gap-1.5 text-xs font-bold text-white uppercase tracking-wider font-display mb-1 text-orange-400">
-                    <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
-                    <span>Calangute Hub</span>
-                  </div>
-                  <p class="text-[10px] text-slate-400 leading-relaxed">Opposite Calangute Residency main parking deck gate, North Goa Calangute.</p>
-                </div>
-
-                <div class="p-3 bg-slate-950/80 rounded-2xl border border-slate-800">
-                  <div class="flex items-center gap-1.5 text-xs font-bold text-white uppercase tracking-wider font-display mb-1 text-orange-400">
-                    <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
-                    <span>Dabolim Hub</span>
-                  </div>
-                  <p class="text-[10px] text-slate-400 leading-relaxed">Airside arrival wing floor lobby desk, old Vasco terminal departures zone.</p>
+                  <p class="text-[11px] text-slate-300 leading-relaxed mb-1">Counter 15, Manohar International Airport, Mopa, Kasarvarne, Goa 403512.</p>
+                  <p class="text-[9.5px] text-amber-500 font-mono tracking-tight">⚡ Central Counter &amp; Direct Desk Delivery</p>
                 </div>
               </div>
 
@@ -1089,6 +1182,36 @@
       </div>
     </section>
 
+    <!-- ================= DETAILED LOCAL SEO AUTHORITY GUIDE (6 PARAGRAPHS) ================= -->
+    <section class="py-16 bg-slate-900/60 border-b border-slate-950">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-left space-y-6">
+          <span class="text-xs font-bold text-orange-400 uppercase tracking-widest block mb-1 font-mono">Local Authority Guide</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight font-display mb-6">
+            The Ultimate Guide to Touring Goa | Local Self-Drive Manual & Expert Insights
+          </h2>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Goa is a coastal paradise best discovered at your own relaxed pace, far away from the rigid timings of tourist buses or the notoriously expensive local app cabs. Opting for a premium <strong><a href="fleet.html" class="text-orange-400 font-bold hover:underline">self drive car rental Goa</a></strong> service frees you from commuter stress, allowing you to plot an unforgettable journey from the dense palm groves of Pernem to the steep, historically charged cliffs of Cabo de Rama. Whether you land at midday or in the quiet hours of midnight, having keys in hand means your coastal holiday starts the absolute second you step out of the pressurized cabin.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            For those flying into the state, securing a <strong><a href="services.html" class="text-orange-400 font-bold hover:underline">Mopa Airport car handover</a></strong> is the most frictionless way to dodge terminal exit queues and taxi counter negotiations. Our direct-handover service operates seamlessly at Manohar International Airport, putting a fully serviced hatchback, sedan, or rugged SUV at your disposal in minutes. Having immediate access to a highway-ready vehicle avoids airport exit delays, putting you directly onto the newly constructed national highway speeds towards your seaside villa.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            If your dream itinerary involves driving through sandy lanes and bustling beachside parking lots, an iconic <strong><a href="thar-rental.html" class="text-orange-400 font-bold hover:underline">Mahindra Thar rental Goa</a></strong> delivers the perfect blend of commanding street presence and off-the-beaten-path capability. From cruising around the legendary sun-kissed sands of Calangute, Baga, and Candolim to exploring the relatively quiet backwaters of Siolim, the open-air freedom of a Thar adds a touch of pure adventure. It is the gold standard for road-trippers wanting to make an unforgettable entrance along Goa's premier coastal belts.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            For travelers seeking an upscale, VIP treatment during their coastal retreat, choosing an exquisite <strong><a href="luxury-rental.html" class="text-orange-400 font-bold hover:underline">luxury car hire Goa</a></strong> service offers unprecedented refinement. Imagine driving along the scenic Mandovi riverfront in a plush, air-conditioned luxury sedan or a commanding premium SUV, arriving at high-end casinos, boutique standard resorts, and fine dining beach retreats in absolute style. It is a fantastic option for couples celebrating milestones, premium corporate events, or anyone who simply appreciates high-performance engineering and absolute cabin comfort.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Traveling with children, grandparents, or large friend circles requires generous cabin volume and safety features that only a trusted <strong><a href="family-rental.html" class="text-orange-400 font-bold hover:underline">Goa family car rental</a></strong> can comfortably supply. From 7-seater MPVs to spacious multi-row luxury cruisers, we keep families securely connected on their journey to legendary spots like the historic churches of Old Goa or the cascading waters of Dudhsagar. A spacious vehicle guarantees that luggage, beach gear, and extra gear are safely stowed away, keeping everyone cool and energized under the tropical sun.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Before you embark on your Goan expedition, make sure to read through our dedicated <strong><a href="blogs.html" class="text-orange-400 font-bold hover:underline">ground safety blogs</a></strong> and consult our <strong><a href="about.html" class="text-orange-400 font-bold hover:underline">agency profile</a></strong> to understand local speed limits and parking rules. Our dedicated team is always reachable via our responsive <strong><a href="contact.html" class="text-orange-400 font-bold hover:underline">helpline desk</a></strong> to assist you with live reservations, document verification, or custom delivery queries. Embark on your self-drive path today and unlock the true, unhurried essence of tropical Susegado.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= BRAND FOOTER CONTACT INFORMATION ================= -->
     <section id="contact" class="py-16 bg-slate-950 text-slate-350">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1148,6 +1271,53 @@
             </p>
           </div>
 
+        </div>
+
+        <!-- ================= SEO QUICKLINKS & BACKLINKS DIRECTORY ================= -->
+        <div class="border-t border-slate-900 pt-8 mt-12 text-left">
+          <h4 class="text-xs font-extrabold text-white uppercase tracking-widest font-mono mb-4 text-orange-500">Goa Self-Drive Quick Links &amp; Sitelinks</h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-[11px] text-slate-405 text-slate-400">
+            <div>
+              <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Mopa Airport (VXD)</span>
+              <ul class="space-y-1.5 font-medium">
+                <li><a href="index.html" class="hover:text-orange-400 transition-colors">Self Drive Car Goa</a></li>
+                <li><a href="services.html" class="hover:text-orange-400 transition-colors">Airport Car Handover Goa</a></li>
+                <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Mopa Airport Car Rentals</a></li>
+              </ul>
+            </div>
+            <div>
+              <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Premium SUV Rental</span>
+              <ul class="space-y-1.5 font-medium">
+                <li><a href="thar-rental.html" class="hover:text-orange-400 transition-colors">Mahindra Thar Rental Goa</a></li>
+                <li><a href="thar-rental.html#booking-quote" class="hover:text-orange-400 transition-colors">Book Automatic Thar Goa</a></li>
+                <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Offroad Scorpio-N Elite</a></li>
+              </ul>
+            </div>
+            <div>
+              <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Luxury Car Hire</span>
+              <ul class="space-y-1.5 font-medium">
+                <li><a href="luxury-rental.html" class="hover:text-orange-400 transition-colors">Luxury Car Hire Goa</a></li>
+                <li><a href="luxury-rental.html#innova-crysta" class="hover:text-orange-400 transition-colors">Innova Crysta Automatic</a></li>
+                <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Premium Wedding Cars</a></li>
+              </ul>
+            </div>
+            <div>
+              <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Family Trip MPVs</span>
+              <ul class="space-y-1.5 font-medium">
+                <li><a href="family-rental.html" class="hover:text-orange-400 transition-colors">Goa Family Car Rental</a></li>
+                <li><a href="family-rental.html#ertiga" class="hover:text-orange-400 transition-colors">Maruti Suzuki Ertiga 7-Seater</a></li>
+                <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Cheap 7 Seater Cars Goa</a></li>
+              </ul>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Company &amp; safety</span>
+              <ul class="space-y-1.5 font-medium">
+                <li><a href="about.html" class="hover:text-orange-400 transition-colors">Agency Office Profile</a></li>
+                <li><a href="blogs.html" class="hover:text-orange-400 transition-colors">Goa Travel Safety blog</a></li>
+                <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Support Helpline 24/7</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="border-t border-slate-900 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
@@ -1497,10 +1667,10 @@
       'Dabolim Airport (Goa International/Old Airport)',
       'Thivim Railway Station (North Goa)',
       'Madgaon Railway Station (South Goa)',
-      'Calangute Beach / Calangute Office Hub',
+      'Calangute Beach Area / Resort Delivery',
       'Baga Beach / Resort Hub Area',
       'Candolim Beach / Resort Delivery Area',
-      'Panaji (Panjim) Bus Stand / Office Desk',
+      'Panaji (Panjim) Bus Stand / Delivery Point',
       'Mapusa City Centre Stand Area',
       'Margao City Centre / Railway Hub Point'
     ];
@@ -2080,31 +2250,17 @@
       grid.innerHTML = '';
       filtered.forEach(car => {
         const card = document.createElement('div');
-        card.className = "flex flex-col bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left justify-between";
+        card.className = "group flex flex-col bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left justify-between";
         
-        // build features points
-        let featureLines = '';
-        car.features.slice(0, 3).forEach(f => {
-          featureLines += `
-            <li class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0"></span>
-              <span class="truncate">${f}</span>
-            </li>
-          `;
-        });
-
         card.innerHTML = `
           <!-- image frame -->
           <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('${car.id}')" title="Click to view full specifications">
             <img src="${car.imageUrl}" alt="${car.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
             
-            <span class="absolute top-3 left-3 bg-slate-950/90 text-orange-400 text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg border border-slate-800">
-              ${car.category}
-            </span>
-
-            <div class="absolute bottom-3 right-3 bg-slate-950/85 backdrop-blur-sm px-2.5 py-1 rounded text-[9px] font-mono font-bold text-slate-355 text-slate-300 border border-slate-800">
-              Refundable Dep: ₹${car.securityDeposit}
+            <!-- Highly Focused Sticker Price Badge -->
+            <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+              ₹${car.pricePerDay}/day
             </div>
           </div>
 
@@ -2117,39 +2273,11 @@
                   <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('${car.id}')">${car.name}</h3>
                   <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('${car.id}')">View Specs & Rules →</span>
                 </div>
-                <span class="text-[9px] font-mono font-bold text-slate-400 bg-slate-950 border border-slate-800 px-2 py-0.5 rounded leading-none uppercase shrink-0 mt-0.5">
-                  ${car.transmission}
-                </span>
               </div>
-
-              <!-- specification meta inline tags -->
-              <div class="flex gap-3 text-[10px] text-slate-400 font-medium pt-1">
-                <span class="flex items-center gap-1">👤 ${car.seats} Seats</span>
-                <span class="flex items-center gap-1">⛽ ${car.fuelType}</span>
-                <span class="flex items-center gap-1">💼 ${car.luggage} Bags</span>
-              </div>
-
-              <!-- Horizontal check specifications -->
-              <ul class="text-[10px] text-slate-400 space-y-1.5 pt-2 border-t border-slate-850">
-                ${featureLines}
-              </ul>
             </div>
 
-            <!-- Footer pricing block & actions -->
+            <!-- Footer actions -->
             <div class="border-t border-slate-800/80 pt-4 mt-auto">
-              <div class="flex justify-between items-center mb-3">
-                <div class="text-left">
-                  <div class="text-[8px] text-slate-550 text-slate-400 font-bold uppercase tracking-wider">Per Day Rent</div>
-                  <div class="text-base font-black text-white font-display">
-                    ₹${car.pricePerDay}<span class="text-[10px] text-slate-450 font-semibold lowercase">/day</span>
-                  </div>
-                </div>
-                
-                <div class="bg-emerald-500/10 text-[9px] uppercase font-bold text-emerald-400 px-2.5 py-1 rounded border border-emerald-500/10">
-                  Unlimited KMs
-                </div>
-              </div>
-
               <!-- Action button selectors -->
               <div class="grid grid-cols-2 gap-2">
                 <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
@@ -2180,16 +2308,36 @@
       const container = document.getElementById('hotspots-listing');
       if (!container) return;
 
+      const mapUrls = {
+        'Mopa Airport (New Goa International Airport)': 'https://www.google.com/maps/dir/?api=1&destination=Manohar+International+Airport+Mopa+Goa+403512',
+        'Dabolim Airport (Goa International/Old Airport)': 'https://www.google.com/maps/dir/?api=1&destination=Goa+International+Airport+Dabolim',
+        'Thivim Railway Station (North Goa)': 'https://www.google.com/maps/dir/?api=1&destination=Thivim+Railway+Station+Goa',
+        'Madgaon Railway Station (South Goa)': 'https://www.google.com/maps/dir/?api=1&destination=Madgaon+Junction+Railway+Station+Goa',
+        'Calangute Beach Area / Resort Delivery': 'https://www.google.com/maps/dir/?api=1&destination=Calangute+Beach+Goa',
+        'Baga Beach / Resort Hub Area': 'https://www.google.com/maps/dir/?api=1&destination=Baga+Beach+Goa',
+        'Candolim Beach / Resort Delivery Area': 'https://www.google.com/maps/dir/?api=1&destination=Candolim+Beach+Goa',
+        'Panaji (Panjim) Bus Stand / Delivery Point': 'https://www.google.com/maps/dir/?api=1&destination=Fontainhas+Latin+Quarter+Panaji+Goa',
+        'Mapusa City Centre Stand Area': 'https://www.google.com/maps/dir/?api=1&destination=Mapusa+Goa',
+        'Margao City Centre / Railway Hub Point': 'https://www.google.com/maps/dir/?api=1&destination=Colva+Beach+Margao+Goa'
+      };
+
       container.innerHTML = '';
       LOCATIONS.forEach(loc => {
-        const div = document.createElement('div');
-        div.className = "flex items-center gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-850/80";
-        div.innerHTML = `
-          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-orange-400 shrink-0"></i>
-          <span class="truncate block">${loc.replace(' (New Goa International Airport)', '').replace(' (Goa International/Old Airport)', '')}</span>
+        const item = document.createElement('a');
+        item.href = mapUrls[loc] || `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(loc + ', Goa')}`;
+        item.target = '_blank';
+        item.rel = 'noopener noreferrer';
+        item.className = "flex items-center gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-850/80 hover:bg-slate-900 hover:border-orange-500/50 hover:text-orange-400 hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 group cursor-pointer";
+        item.innerHTML = `
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-orange-400 shrink-0 group-hover:scale-110 transition-transform"></i>
+          <span class="truncate block group-hover:underline">${loc.replace(' (New Goa International Airport)', '').replace(' (Goa International/Old Airport)', '')}</span>
         `;
-        container.appendChild(div);
+        container.appendChild(item);
       });
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
     }
 
     // --- 5. INTERACTIVE LIVE QUOTE ESTIMATION ENGINE ---

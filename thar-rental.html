@@ -63,6 +63,93 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+    /* ================= COMPREHENSIVE PREMIUM BUTTON HOVER EFFECTS ================= */
+    /* Universal setup for transition smoothness */
+    button, 
+    a.btn-bounce,
+    a[href^="tel:"],
+    a[href^="https://wa.me/"],
+    a[href="#booking-quote"],
+    .mobile-nav-item,
+    button[onclick^="filterFleet"],
+    #ai-chat-form button {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* 1. Primary Action Orange Buttons - Intense Hover Glow and Scale Up */
+    button.bg-orange-500,
+    a.bg-orange-500,
+    button[onclick="openBookingModal()"],
+    #detail-modal-btn-book,
+    #ai-chat-form button {
+      position: relative;
+      overflow: hidden;
+    }
+    button.bg-orange-500:hover,
+    a.bg-orange-500:hover,
+    button[onclick="openBookingModal()"]:hover,
+    #detail-modal-btn-book:hover,
+    #ai-chat-form button:hover {
+      background-color: #ef4444 !important; /* brighter fiery orange/red */
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.5), 0 0 15px rgba(239, 68, 68, 0.3) !important;
+    }
+
+    /* 2. Secondary Dark / Outline Buttons - Zoom Out / Scale Down with Border Highlight & Shadow */
+    button.bg-slate-900,
+    a.bg-slate-900,
+    button.bg-slate-950,
+    a.bg-slate-950,
+    #mobile-menu-btn {
+      border-color: rgba(248, 113, 113, 0.2) !important;
+    }
+    button.bg-slate-900:hover,
+    a.bg-slate-900:hover,
+    button.bg-slate-950:hover,
+    a.bg-slate-950:hover,
+    #mobile-menu-btn:hover {
+      transform: scale(0.96) !important; /* Zoom out effect as requested */
+      border-color: #f87171 !important; /* light red border glows */
+      box-shadow: 0 0 12px rgba(248, 113, 113, 0.15) !important;
+      color: #ffffff !important;
+    }
+
+    /* 3. Success / WhatsApp Buttons - Pulse scale and Emerald Glow */
+    button.bg-emerald-600,
+    a.bg-emerald-600,
+    a.bg-emerald-500,
+    button.bg-emerald-500,
+    [onclick^="dispatchWhatsApp"] {
+      position: relative;
+    }
+    button.bg-emerald-600:hover,
+    a.bg-emerald-600:hover,
+    a.bg-emerald-500:hover,
+    button.bg-emerald-500:hover,
+    [onclick^="dispatchWhatsApp"]:hover {
+      background-color: #059669 !important; /* bright green */
+      transform: translateY(-1px) scale(1.04) !important;
+      box-shadow: 0 8px 20px -4px rgba(5, 150, 105, 0.4), 0 0 12px rgba(5, 150, 105, 0.2) !important;
+    }
+
+    /* 4. Tab Capsule Filters - Bounce & Active Tracking Shift */
+    button[onclick^="filterFleet"]:hover {
+      transform: translateY(-1.5px) scale(1.02) !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.05em;
+    }
+
+    /* 5. Close/Exit micro-interaction - Gentle Rotate on Hover */
+    button[onclick^="close"] {
+      transition: all 0.2s ease !important;
+    }
+    button[onclick^="close"]:hover {
+      transform: rotate(90deg) scale(1.1) !important;
+      color: #ef4444 !important;
+      background-color: rgba(239, 68, 68, 0.1) !important;
+    }
+
+    /* Elegant button scale transitions */
     .btn-bounce:active {
       transform: scale(0.97);
     }
@@ -207,6 +294,28 @@
           Back to Home
         </a>
       </div>
+
+      <!-- ================= QUICK HOP LINK SHORTCUTS ================= -->
+      <div class="mb-8 flex flex-wrap items-center gap-2 text-xs text-slate-300">
+        <span class="font-extrabold uppercase font-mono tracking-wider text-[10px] text-orange-400 mr-1 flex items-center gap-1">
+          <i data-lucide="zap" class="w-3.5 h-3.5 animate-pulse shrink-0"></i> Quick links:
+        </span>
+        <a href="thar-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>🚙 Thar Offroad</span>
+        </a>
+        <a href="luxury-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>👑 Luxury Fleet</span>
+        </a>
+        <a href="family-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>👨‍👩‍👦 Family Cars</span>
+        </a>
+        <a href="fleet.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>🚘 All Budget Cars</span>
+        </a>
+        <a href="services.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-450 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>🛎️ VIP Services</span>
+        </a>
+      </div>
       
       <!-- Dynamic Premium Adventure Hero -->
       <div class="relative rounded-3xl overflow-hidden mb-12 bg-gradient-to-r from-red-600/10 via-slate-900 to-slate-950 border border-slate-800 p-8 md:p-12">
@@ -232,24 +341,26 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         
         <!-- Thar 1: Manual -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-slate-750 transition-all shadow-lg">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-slate-750 transition-all shadow-lg group">
           <div>
-            <div class="h-56 relative overflow-hidden bg-slate-950">
+            <div class="h-56 relative overflow-hidden bg-slate-950 cursor-pointer" onclick="openCarDetailDialog('thar-4x4-manual')">
               <img 
                 src="https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=600" 
                 alt="Mahindra Thar 4x4 MT" 
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-505"
               />
-              <span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] uppercase tracking-wider px-3 py-1 rounded-full font-bold">
+              <span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] uppercase tracking-wider px-3 py-1 rounded-full font-extrabold shadow">
                 Manual Transmission
               </span>
-              <span class="absolute bottom-4 right-4 bg-slate-950/80 backdrop-blur-md text-orange-400 border border-slate-800 text-xs font-bold font-mono px-3 py-1.5 rounded-xl">
-                ₹2800/Day
-              </span>
+              <!-- Sticky Price tag sticker -->
+              <div class="absolute bottom-4 right-4 z-10 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹2800/day
+              </div>
             </div>
 
             <div class="p-6">
-              <h3 class="text-lg font-black text-white font-display mb-2">Mahindra Thar 4x4 MT</h3>
+              <h3 class="text-lg font-black text-white font-display mb-1 hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('thar-4x4-manual')">Mahindra Thar 4x4 MT</h3>
+              <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mb-3 font-mono" onclick="openCarDetailDialog('thar-4x4-manual')">View Specs & Rules →</span>
               <p class="text-xs text-slate-400 line-clamp-2 mb-4 font-sans">
                 The ultimate off-road icon. Built to dominate any terrain while ensuring absolute creature comfort on highway cruises. Runs on highly powerful Diesel fuel.
               </p>
@@ -301,12 +412,14 @@
           </div>
 
           <!-- CTAs -->
-          <div class="p-6 pt-0 border-t border-slate-950 flex gap-3 text-xs mt-4">
-            <a href="tel:+916287168644" class="flex-1 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-black py-3 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce flex items-center justify-center gap-2 shadow">
-              <i data-lucide="phone" class="w-4 h-4"></i>
-              <span>Call Us</span>
-            </a>
-            <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20renting%20the%20Mahindra%20Thar%204x4%20MT%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce flex items-center justify-center gap-2 shadow">
+          <div class="p-6 pt-0 border-t border-slate-950 flex flex-col sm:flex-row gap-2.5 text-xs mt-4">
+            <button onclick="openCarDetailDialog('thar-4x4-manual')" class="flex-1 bg-slate-950 hover:bg-slate-900 text-slate-200 border border-slate-800 hover:border-orange-500/30 font-bold py-2.5 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce">
+              Specs & Rules
+            </button>
+            <button onclick="triggerCarBooking('Mahindra Thar 4x4 MT', 2800, 4000, 'Manual', 'Diesel')" class="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-black py-2.5 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce">
+              Book Fast
+            </button>
+            <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20renting%20the%20Mahindra%20Thar%204x4%20MT%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-black py-2.5 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce flex items-center justify-center gap-1.5 shadow">
               <i data-lucide="message-square" class="w-4 h-4"></i>
               <span>WhatsApp</span>
             </a>
@@ -314,24 +427,26 @@
         </div>
 
         <!-- Thar 2: Automatic -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-slate-750 transition-all shadow-lg">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-slate-750 transition-all shadow-lg group">
           <div>
-            <div class="h-56 relative overflow-hidden bg-slate-950">
+            <div class="h-56 relative overflow-hidden bg-slate-950 cursor-pointer" onclick="openCarDetailDialog('thar-4x4-auto')">
               <img 
                 src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" 
                 alt="Mahindra Thar 4x4 Automatic" 
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-505"
               />
-              <span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] uppercase tracking-wider px-3 py-1 rounded-full font-bold">
+              <span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] uppercase tracking-wider px-3 py-1 rounded-full font-bold shadow">
                 Automatic Transmission
               </span>
-              <span class="absolute bottom-4 right-4 bg-slate-950/80 backdrop-blur-md text-orange-400 border border-slate-800 text-xs font-bold font-mono px-3 py-1.5 rounded-xl">
-                ₹3200/Day
-              </span>
+              <!-- Sticky Price tag sticker -->
+              <div class="absolute bottom-4 right-4 z-10 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹3200/day
+              </div>
             </div>
 
             <div class="p-6">
-              <h3 class="text-lg font-black text-white font-display mb-2">Mahindra Thar 4x4 Automatic</h3>
+              <h3 class="text-lg font-black text-white font-display mb-1 hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('thar-4x4-auto')">Mahindra Thar 4x4 Automatic</h3>
+              <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mb-3 font-mono" onclick="openCarDetailDialog('thar-4x4-auto')">View Specs & Rules →</span>
               <p class="text-xs text-slate-400 line-clamp-2 mb-4 font-sans">
                 The absolute choice for automatic cruisers. Feel the real wind in your hair with our open-air soft-top convertible configuration. Runs on Petrol fuel.
               </p>
@@ -367,14 +482,14 @@
                   <span>Convertible Soft-Top (Open Air)</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span class="bg-red-505/10 bg-red-500/10 p-0.5 rounded border border-red-500/15 shrink-0">
-                    <i data-lucide="check" class="w-3 text-red-400"></i>
+                  <span class="bg-red-500/10 p-0.5 rounded border border-red-500/15 shrink-0">
+                    <i data-lucide="check" class="w-3 text-red-200"></i>
                   </span>
                   <span>Cruising Power Grid</span>
                 </div>
                 <div class="flex items-center gap-2">
                   <span class="bg-red-500/10 p-0.5 rounded border border-red-500/15 shrink-0">
-                    <i data-lucide="check" class="w-3 text-red-400"></i>
+                    <i data-lucide="check" class="w-3 text-red-200"></i>
                   </span>
                   <span>Touch Infotainment System &amp; Speakers</span>
                 </div>
@@ -383,12 +498,14 @@
           </div>
 
           <!-- CTAs -->
-          <div class="p-6 pt-0 border-t border-slate-950 flex gap-3 text-xs mt-4">
-            <a href="tel:+916287168644" class="flex-1 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-black py-3 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce flex items-center justify-center gap-2 shadow">
-              <i data-lucide="phone" class="w-4 h-4"></i>
-              <span>Call Us</span>
-            </a>
-            <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20renting%20the%20Mahindra%20Thar%204x4%20Automatic%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce flex items-center justify-center gap-2 shadow">
+          <div class="p-6 pt-0 border-t border-slate-950 flex flex-col sm:flex-row gap-2.5 text-xs mt-4">
+            <button onclick="openCarDetailDialog('thar-4x4-auto')" class="flex-1 bg-slate-950 hover:bg-slate-900 text-slate-200 border border-slate-800 hover:border-orange-500/30 font-bold py-2.5 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce">
+              Specs & Rules
+            </button>
+            <button onclick="triggerCarBooking('Mahindra Thar 4x4 Automatic', 3200, 4000, 'Automatic', 'Petrol')" class="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-black py-2.5 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce">
+              Book Fast
+            </button>
+            <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20renting%20the%20Mahindra%20Thar%204x4%20Automatic%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-black py-2.5 rounded-xl uppercase tracking-wider cursor-pointer text-center btn-bounce flex items-center justify-center gap-1.5 shadow">
               <i data-lucide="message-square" class="w-4 h-4"></i>
               <span>WhatsApp</span>
             </a>
@@ -440,8 +557,219 @@
         </div>
       </div>
 
+      <!-- ================= DETAILED LOCAL SEO AUTHORITY GUIDE (12 PARAGRAPHS) ================= -->
+      <section class="mt-16 pt-12 border-t border-slate-800/60 max-w-5xl mx-auto text-left">
+        <div class="text-left space-y-6 flex flex-col justify-start">
+          <span class="text-xs font-bold text-orange-400 uppercase tracking-widest block mb-1 font-mono">Thar Authority Guide</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight font-display mb-6">
+            Off-Road Heritage, Thar Driving Rules & Coastal Adventures
+          </h2>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Securing an adventurous, highly versatile holiday experience across Goa is best completed by booking our premium <strong><a href="index.html" class="text-orange-400 font-bold hover:underline">self drive car rental Goa</a></strong> service. Bypassing rigid timings of tourist buses or the notoriously expensive off-meter local taxis lets you explore the tropical landscape on your own terms. Whether you intend on driving down for a quiet sunset over Cabo de Rama Fort or planning an active coastal crawl through the vibrant beach lanes of Arambol, having a quality cruiser delivers absolute independence.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            For passengers arriving at the new northern terminus, coordinating your landing with our direct <strong><a href="services.html" class="text-orange-400 font-bold hover:underline">Mopa Airport car handover</a></strong> desk offers the ultimate standard of ground travel speed and convenience. Our ground crew handles all fleet matching via WhatsApp, ready to greet you with clean keys directly inside arrivals Parking Slip counters in less than 4 minutes. Skip the long lines at airport counters and proceed straight onto the wide, scenic national highways leading down to your coastal lodgings.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            If your holiday dream incorporates tracking coastal beaches and tropical lanes in true iconic style, choosing a premium <strong><a href="thar-rental.html" class="text-orange-400 font-bold hover:underline">Mahindra Thar rental Goa</a></strong> package is the ultimate solution. Our thoroughly vetted Thar fleet includes well-maintained 4x4 options in both automatic and manual configurations, giving drivers a commanding viewpoint of Goa's palm-fringed lanes. There is a singular joy in cruising along standard coastal loops with the tropical wind in your hair, making every drive an unforgettable part of your vacation.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            For anniversaries, upscale destination weddings, or special corporate getaways that demand elite standards of visual prestige and luxury comfort, our specialized <strong><a href="luxury-rental.html" class="text-orange-400 font-bold hover:underline">luxury car hire Goa</a></strong> division delivers excellent refinements. We detail and sanitize every executive sedan and premium SUV to pristine showroom standards before sending it out. Show up to upscale casinos in Panaji, high-end private villas, and Michelin-starred restaurants across Assagao in absolute comfort, poise, and sophistication.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Large travel teams, groups of close friends, and families carrying extensive luggage stashes will appreciate the generous cabin widths and safety features of our dedicated <strong><a href="family-rental.html" class="text-orange-400 font-bold hover:underline">Goa family car rental</a></strong> catalog. Our multi-row MPVs, spacious station wagons, and mid-sized SUVs ensure that parents, toddlers, and grandparents travel in absolute cool and climate-conditioned relaxation. Stash beach accessories, toys, and sports equipment securely in the rear trunks and enjoy stress-free family drives to waterfalls.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Local road safety remains our absolute operational priority, which is why we encourage all self-drive guests to check our full <strong><a href="fleet.html" class="text-orange-400 font-bold hover:underline">fleet catalogs</a></strong> and read our expert <strong><a href="blogs.html" class="text-orange-400 font-bold hover:underline">road safety guidelines</a></strong> about speed radars. Our booking helpdesk is live 24/7 via our direct <strong><a href="contact.html" class="text-orange-400 font-bold hover:underline">coordination desk</a></strong> to assist tourists with instant document checks, custom packages, and rental extensions. Connect with us today and unlock the true, susegado spirit of coastal Goa responsibly.
+          </p>
+
+          <!-- SECOND COMPREHENSIVE SEO HUB SEGMENT -->
+          <span class="text-xs font-bold text-orange-400 uppercase tracking-widest block pt-8 mb-1 font-mono">Exploring Goa's Outback</span>
+          <h3 class="text-xl md:text-2xl font-extrabold text-white tracking-tight font-display mb-4">
+            Driving Across Goa's Backwaters and Trails: What Makes the Thar an Absolute Visual Masterpiece?
+          </h3>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Exploring the hidden hinterlands of North Goa on four wheels is a liberating experience, and there is no better way to conquer these winding lanes than with a robust, off-road prep <strong><a href="thar-rental.html" class="text-orange-400 font-bold hover:underline">Mahindra Thar rental Goa</a></strong>. Standard commuter hatchbacks and low-slung sedans often struggle on the narrow, uneven gravel roads that lead up to ancient ruins like Assagao's Chapora Fort or the spectacular viewpoint of Cabo de Rama. Our 4x4 self-drive SUVs give you the perfect combination of solid ground clearance and raw power to handle monsoon potholes or sandy parking bays. It is a highly satisfying machinery choice for travelers who believe that the journey itself is the heartbeat of a great vacation.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            If you plan to secure a <strong><a href="index.html" class="text-orange-400 font-bold hover:underline">self drive car rental Goa</a></strong>, starting your exploration directly at your point of entry avoids intermediate taxi transfers and heavy, variable pricing. If your flight lands at Manohar International Airport, arranging a seamless <strong><a href="services.html" class="text-orange-400 font-bold hover:underline">Mopa Airport car handover</a></strong> ensures that your keys are ready in your hand the moment you step out of the baggage claim area. Bypassing the long queues at traditional counters and taxi-stands lets you slide straight into the high-seating posture of a Thar, setting off towards the coastal villages of Mandrem and Morjim in minutes.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            The open-seating feeling of a Thar is famously tailored for photography enthusiasts, beach surfers, and road-trippers who love tropical panoramas. When you <strong><a href="thar-rental.html" class="text-orange-400 font-bold hover:underline">rent a Thar in Calangute</a></strong> or cruise past the resort avenues of Baga, the bold visual stance of a classic 4x4 gets you instant street respect. We maintain both reliable manual gearboxes for purists who love crawling steep cliffs and smooth automatic transmissions for effortless bumper-to-bumper city runs. Our Thar options undergo extensive checks to keep safety features, engine health, and climate controls tuned to absolute factory-fresh standards.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            While the visual charm of an open-air convertible jeep is undeniable, keeping safety and local laws in mind is crucial for a smooth holiday experience. Under local traffic policing guidelines, standing up on seats, sitting on the bonnet for social pictures, or driving down directly onto coastal sandbeds is strictly illegal and subject to heavy RTO penalties. To ensure a stress-free voyage, we recommend reviewing our comprehensive <strong><a href="blogs.html" class="text-orange-400 font-bold hover:underline">Goa travel safety guidelines</a></strong> to understand local speed laws and parking limits. Safeguarding your deposit is incredibly simple when you follow safe, civilized driving practices on Goan highways.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            For travelers coordinating larger family holidays or visiting with elderly relatives who might struggle with high-step entries, we also keep other spacious crossovers in our fleet directory. Combining a Thar with a secure <strong><a href="family-rental.html" class="text-orange-400 font-bold hover:underline">Goa family car rental</a></strong> gives large groups the ultimate flex: a rugged off-roader for scenic photo runs and a quiet, smooth 7-seater MPV for carrying toddlers, grandparents, and luggage on long historical temple tours. This split-setup is highly popular among wedding parties and family reunions who want to blend high-energy driving fun with passenger comfort.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Our dedicated customer desk is always live on WhatsApp to help you plan custom timelines and calculate competitive packages depending on your rental duration. Checking our official <strong><a href="fleet.html" class="text-orange-400 font-bold hover:underline">self-drive fleet layout</a></strong> lets you compare latest daily rates and examine details about other alternatives like our high-end <strong><a href="luxury-rental.html" class="text-orange-400 font-bold hover:underline">luxury car hire Goa</a></strong> fleet. If you have special requests about customized delivery locations or late-night handovers, don't hesitate to reach our responsive <strong><a href="contact.html" class="text-orange-400 font-bold hover:underline">helpline desk</a></strong>. We are fully committed to giving you an honest, high-quality, and completely transparent rental experience that honors your holiday spirit.
+          </p>
+
+          <!-- NEW ADDITIONAL EXCLUSIVE SEO ARTICLE SEGMENT -->
+          <span class="text-xs font-bold text-orange-400 uppercase tracking-widest block pt-8 mb-1 font-mono">Premium Thar Self Drive Rental Checklist</span>
+          <h3 class="text-xl md:text-2xl font-extrabold text-white tracking-tight font-display mb-4">
+            How to Choose Between Automatic And Manual Mahindra Thar Rentals in North vs South Goa
+          </h3>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Deciding on the perfect transmission for your <strong><a href="thar-rental.html" class="text-orange-400 font-bold hover:underline">Mahindra Thar rental Goa</a></strong> adventure depends heavily on your planned itineraries. If you intend to spend most of your vacation navigating the congested market lanes of Anjuna, the bustling café strips of Assagao, or cruising downhill toward Panaji's floating casinos, we highly recommend our top-tier automatic Thar variants. Renting an automatic self-drive SUV allows you to bypass knee-fatiguing clutch operations in bumper-to-bumper beach traffic, leaving you free to enjoy the high-fidelity sound systems and chilling AC cabins. 
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Conversely, seasoned off-road purists and enthusiast drivers heading down to South Goa's rural mountainous routes prefer our muscular manual Thar trims. Driving a manual shift Thar down the steep curves of Chorla Ghat or tackling rugged forest loops near Netravali Wildlife Sanctuary gives you complete gear control and maximum engine braking power. No matter your choice, our entire fleet boasts fully functional 4x4 low and high range transfer cases, durable premium alloys, and high-performance mHawk turbocharged diesel engines to ensure a safe, responsive ride wherever your curio leads.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            To maintain absolute peace of mind during your tropical road adventures, always align your itinerary with professional local recommendations. We advise all incoming tourists to read our <strong><a href="blogs.html" class="text-orange-400 font-bold hover:underline">Goa travel safety guidelines</a></strong> to stay updated on automatic NH camera speed checks and active parking regulations. For travelers who prefer a larger structure for multi-family arrivals, combining your robust off-road SUV with a spacious <strong><a href="family-rental.html" class="text-orange-400 font-bold hover:underline">Goa family car rental</a></strong> can prevent passenger crowding and ensure a premium standard of vacation comfort.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Begin your tropical holiday with optimal transition speeds by utilizing our specialized <strong><a href="services.html" class="text-orange-400 font-bold hover:underline">Mopa Airport car handover</a></strong> service. Rather than relying on unreliable airport shuttle buses or paying heavily inflated roadside taxi prices, you can step directly from Manohar Terminal arrivals into a pre-cooled, washed cabin waiting for you. Fill out our simple online quote form on our <strong><a href="index.html" class="text-orange-400 font-bold hover:underline">self drive car rental Goa</a></strong> homepage or dial our 24/7 dedicated <strong><a href="contact.html" class="text-orange-400 font-bold hover:underline">helpline desk</a></strong> to secure your bookings instantly.
+          </p>
+        </div>
+      </section>
+
     </div>
   </main>
+
+  <!-- ================= CAR DETAILED VIEW OVERLAY MODAL ================= -->
+  <div id="details-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden text-slate-300">
+      
+      <!-- Close Trigger -->
+      <button onclick="closeCarDetailDialog()" class="absolute top-4 right-4 z-10 bg-slate-950/80 hover:bg-slate-900 text-slate-400 hover:text-white p-2 rounded-full border border-slate-800 transition-colors cursor-pointer text-xs">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="max-h-[85vh] overflow-y-auto scroll-smooth">
+        <!-- Top Image frame -->
+        <div class="relative aspect-video w-full bg-slate-950">
+          <img id="detail-modal-image" src="" alt="Car Showcase" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+          
+          <span id="detail-modal-category" class="absolute top-4 left-4 bg-red-650 bg-red-600 text-white font-black text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg">
+            Thar
+          </span>
+          <span id="detail-modal-popular" class="absolute top-4 right-14 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg">
+            🔥 Best Seller
+          </span>
+        </div>
+
+        <!-- Body content wrapper -->
+        <div class="p-6 space-y-6 text-left">
+          
+          <!-- Title details -->
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/80 pb-3">
+              <div>
+                <h2 id="detail-modal-name" class="text-2xl md:text-3xl font-black text-white font-display tracking-tight">Mahindra Thar</h2>
+                <p id="detail-modal-sub" class="text-[11px] text-slate-500 mt-1 italic">Category: self drive Thar rental in Goa</p>
+              </div>
+              <span id="detail-modal-transmission" class="text-xs font-bold px-3 py-1 rounded bg-orange-500/10 text-orange-400 border border-orange-500/15">
+                Automatic
+              </span>
+            </div>
+          </div>
+
+          <!-- Price cards block -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-slate-950/60 p-4 border border-slate-850 rounded-2xl">
+              <span class="text-slate-500 text-[9px] uppercase font-black tracking-wider block font-mono">Daily Rent rate</span>
+              <div class="text-2xl md:text-3.5xl font-black text-white font-sans mt-0.5" id="detail-modal-rent">₹2,800</div>
+              <span class="text-[9.5px] text-slate-500 block font-mono">No hidden surcharges</span>
+            </div>
+            
+            <div class="bg-slate-950/60 p-4 border border-slate-850 rounded-2xl">
+              <span class="text-slate-500 text-[9px] uppercase font-black tracking-wider block font-mono">Refundable deposit</span>
+              <div class="text-2xl md:text-3.5xl font-bold text-orange-400 font-sans mt-0.5" id="detail-modal-deposit">₹4,000</div>
+              <span class="text-[9.5px] text-slate-500 block">100% Refunded at checkout</span>
+            </div>
+          </div>
+
+          <!-- Basic specifications tags -->
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+            <div class="bg-slate-950 p-2 rounded-xl border border-slate-850">
+              <span class="text-[9px] uppercase tracking-wider text-slate-550 block font-bold font-mono">Capacity</span>
+              <strong id="detail-modal-seats" class="text-xs text-white">4 Seater</strong>
+            </div>
+            
+            <div class="bg-slate-950 p-2 rounded-xl border border-slate-850">
+              <span class="text-[9px] uppercase tracking-wider text-slate-550 block font-bold font-mono">Fuel drive</span>
+              <strong id="detail-modal-fuel" class="text-xs text-white">Diesel</strong>
+            </div>
+
+            <div class="bg-slate-950 p-2 rounded-xl border border-slate-850">
+              <span class="text-[9px] uppercase tracking-wider text-slate-550 block font-bold font-mono">Baggage</span>
+              <strong id="detail-modal-bags" class="text-xs text-white">2 Bags</strong>
+            </div>
+          </div>
+
+          <!-- Complete specs sheet list -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono text-slate-300">
+            <div class="space-y-3">
+              <div class="border-b border-slate-850 pb-2">
+                <span class="text-slate-500 text-[9px] uppercase font-bold block">Engine Displacement</span>
+                <strong id="detail-modal-spec-engine" class="text-slate-200 mt-0.5 block">2.2L mHawk Turbo</strong>
+              </div>
+              <div class="border-b border-slate-850 pb-2">
+                <span class="text-slate-500 text-[9px] uppercase font-bold block">Power Capacity</span>
+                <strong id="detail-modal-spec-power" class="text-slate-200 mt-0.5 block">130 BHP</strong>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="border-b border-slate-850 pb-2">
+                <span class="text-slate-500 text-[9px] uppercase font-bold block">Ground Clearance</span>
+                <strong id="detail-modal-spec-clearance" class="text-slate-200 mt-0.5 block">226 mm</strong>
+              </div>
+              <div class="border-b border-slate-850 pb-2">
+                <span class="text-slate-500 text-[9px] uppercase font-bold block">Water Articulation</span>
+                <strong id="detail-modal-spec-wading" class="text-slate-200 mt-0.5 block">650 mm</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suitability & rules -->
+          <div class="space-y-4 pt-2 border-t border-slate-800">
+            <div>
+              <span class="text-slate-400 font-extrabold block text-xs mb-1">Trip Suitability Guidance:</span>
+              <p id="detail-modal-suit" class="text-xs text-slate-400 leading-relaxed font-sans">
+                Excellent for exploring Goa's rustic interior forest roads, historic fort drives, and steep cliff routes.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/40 border border-slate-850 rounded-2xl p-4">
+              <h4 class="text-xs font-bold text-red-500 uppercase tracking-wider mb-2 flex items-center gap-1">
+                ⚠️ Strict Rental Rules & speed limit Guidelines:
+              </h4>
+              <p id="detail-modal-rules" class="text-[11px] text-slate-400 leading-relaxed font-sans">
+                Absolute zero drift over sandy beach lines (heavy local authority fines). Ensure the vehicle stays locked in 2H mode on dry tarmac.
+              </p>
+            </div>
+          </div>
+
+          <!-- Included bullet highlights list -->
+          <div class="space-y-2.5">
+            <span class="text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono block">Accessories & Premium Packs:</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs" id="detail-modal-features-container">
+              <!-- Dynamically rendered check marks -->
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <button id="detail-modal-btn-book" onclick="" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-black py-3 rounded-xl uppercase tracking-wider text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer text-center btn-bounce">
+              Book This Car Now
+            </button>
+            <a id="detail-modal-btn-wa" href="" target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 rounded-xl uppercase tracking-wider text-xs transition-all shadow-md shadow-emerald-500/10 text-center flex items-center justify-center gap-1.5 btn-bounce">
+              <i data-lucide="message-square" class="w-4 h-4 shrink-0"></i>
+              <span>Inquiry on WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ================= INVOICE CHECKOUT MODAL ================= -->
   <div id="booking-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm items-center justify-center p-4">
@@ -553,6 +881,54 @@
           </p>
         </div>
       </div>
+
+      <!-- ================= SEO QUICKLINKS & BACKLINKS DIRECTORY ================= -->
+      <div class="border-t border-slate-900 pt-8 mt-12 text-left">
+        <h4 class="text-xs font-extrabold text-white uppercase tracking-widest font-mono mb-4 text-orange-500">Goa Self-Drive Quick Links &amp; Sitelinks</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-[11px] text-slate-405 text-slate-400">
+          <div>
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Mopa Airport (VXD)</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="index.html" class="hover:text-orange-400 transition-colors">Self Drive Car Goa</a></li>
+              <li><a href="services.html" class="hover:text-orange-400 transition-colors">Airport Car Handover Goa</a></li>
+              <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Mopa Airport Car Rentals</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Premium SUV Rental</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="thar-rental.html" class="hover:text-orange-400 transition-colors">Mahindra Thar Rental Goa</a></li>
+              <li><a href="thar-rental.html#booking-quote" class="hover:text-orange-400 transition-colors">Book Automatic Thar Goa</a></li>
+              <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Offroad Scorpio-N Elite</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Luxury Car Hire</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="luxury-rental.html" class="hover:text-orange-400 transition-colors">Luxury Car Hire Goa</a></li>
+              <li><a href="luxury-rental.html#innova-crysta" class="hover:text-orange-400 transition-colors">Innova Crysta Automatic</a></li>
+              <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Premium Wedding Cars</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Family Trip MPVs</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="family-rental.html" class="hover:text-orange-400 transition-colors">Goa Family Car Rental</a></li>
+              <li><a href="family-rental.html#ertiga" class="hover:text-orange-400 transition-colors">Maruti Suzuki Ertiga 7-Seater</a></li>
+              <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Cheap 7 Seater Cars Goa</a></li>
+            </ul>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Company &amp; safety</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="about.html" class="hover:text-orange-400 transition-colors">Agency Office Profile</a></li>
+              <li><a href="blogs.html" class="hover:text-orange-400 transition-colors">Goa Travel Safety blog</a></li>
+              <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Support Helpline 24/7</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div class="border-t border-slate-900 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
         <p>© 2026 Go Goa Car Booking. All self-driving rights reserved globally.</p>
         <div class="flex gap-4">
@@ -621,6 +997,111 @@
           }
         });
       });
+    }
+
+    // --- CAR DETAILS DIALOG LOGIC ---
+    const CARS_DATA = {
+      'thar-4x4-manual': {
+        id: 'thar-4x4-manual',
+        name: 'Mahindra Thar 4x4 MT',
+        category: 'Thar',
+        transmission: 'Manual',
+        fuelType: 'Diesel',
+        seats: 4,
+        luggage: 2,
+        pricePerDay: 2800,
+        securityDeposit: 4000,
+        imageUrl: 'https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=600',
+        features: ['Real 4x4 Low-Range Transfer Case', 'Rugged Hard-Top Roof', 'Excellent Water Wading', 'Heavy-Duty Alloy Wheels', 'Adventure GPS Tracker'],
+        engine: '2.2L mHawk Turbo Diesel',
+        power: '130 BHP @ 3750 RPM',
+        clearance: '226 mm (Class-leading height)',
+        waterWading: '650 mm (Perfect for monsoons)',
+        suitability: 'Perfect for exploring Goa\'s rustic interior forest roads, historic fort drives, and steep cliff routes of Cola & Cabo de Rama.',
+        rules: 'Absolute zero drift over sandy beach lines (heavy local authority fines). Ensure the vehicle stays locked in 2H mode on dry tarmac.',
+        classType: 'Adventure Offroad 4x4 Jeep'
+      },
+      'thar-4x4-auto': {
+        id: 'thar-4x4-auto',
+        name: 'Mahindra Thar 4x4 Automatic',
+        category: 'Thar',
+        transmission: 'Automatic',
+        fuelType: 'Petrol',
+        seats: 4,
+        luggage: 2,
+        pricePerDay: 3200,
+        securityDeposit: 4000,
+        imageUrl: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600',
+        features: ['Effortless Torque-Converter AT', 'Convertible Soft-Top (Open Air)', 'Cruising Power Grid', 'Touch Infotainment System', 'Off-road Driving Modes'],
+        engine: '2.0L mStallion Petrol',
+        power: '150 BHP @ 5050 RPM',
+        clearance: '226 mm (Class-leading height)',
+        waterWading: '650 mm (Perfect for monsoons)',
+        suitability: 'Perfect for exploring Goa\'s coastal beach towns, photogenic avenues, and catching direct wind in convertible setup.',
+        rules: 'Absolute zero drift over sandy beach lines (heavy local authority fines). Secure soft top locks correctly before leaving vehicle unattended.',
+        classType: 'Convertible Offroad Gear 4x4'
+      }
+    };
+
+    function openCarDetailDialog(carId) {
+      const car = CARS_DATA[carId];
+      if (!car) return;
+
+      document.getElementById('detail-modal-image').src = car.imageUrl;
+      document.getElementById('detail-modal-image').alt = car.name;
+      document.getElementById('detail-modal-category').textContent = car.category;
+      document.getElementById('detail-modal-name').textContent = car.name;
+      document.getElementById('detail-modal-sub').textContent = `Category: self drive ${car.category.toLowerCase()} rental in Goa`;
+      document.getElementById('detail-modal-transmission').textContent = car.transmission;
+      
+      document.getElementById('detail-modal-rent').textContent = `₹${car.pricePerDay}/day`;
+      document.getElementById('detail-modal-deposit').textContent = `₹${car.securityDeposit}`;
+      
+      document.getElementById('detail-modal-seats').textContent = `${car.seats} Seats`;
+      document.getElementById('detail-modal-fuel').textContent = car.fuelType;
+      document.getElementById('detail-modal-bags').textContent = `${car.luggage} Bags`;
+
+      document.getElementById('detail-modal-spec-engine').textContent = car.engine;
+      document.getElementById('detail-modal-spec-power').textContent = car.power;
+      document.getElementById('detail-modal-spec-clearance').textContent = car.clearance;
+      document.getElementById('detail-modal-spec-wading').textContent = car.waterWading;
+      
+      document.getElementById('detail-modal-suit').textContent = car.suitability;
+      document.getElementById('detail-modal-rules').textContent = car.rules;
+
+      const featureContainer = document.getElementById('detail-modal-features-container');
+      featureContainer.innerHTML = '';
+      car.features.forEach(feat => {
+        const item = document.createElement('div');
+        item.className = "flex items-center gap-2";
+        item.innerHTML = `
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+          <span class="text-slate-350">${feat}</span>
+        `;
+        featureContainer.appendChild(item);
+      });
+
+      // Bind book fast trigger
+      document.getElementById('detail-modal-btn-book').onclick = function() {
+        triggerCarBooking(car.name, car.pricePerDay, car.securityDeposit, car.transmission, car.fuelType);
+        closeCarDetailDialog();
+      };
+
+      const waMsg = `Hi Go Goa Car Booking! I am interested in renting the model ${car.name} (${car.transmission}) for self-drive in Goa. Please share details and availability.`;
+      document.getElementById('detail-modal-btn-wa').href = `https://wa.me/916287168644?text=${encodeURIComponent(waMsg)}`;
+
+      // Re-run Lucide
+      lucide.createIcons();
+
+      const modal = document.getElementById('details-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeCarDetailDialog() {
+      const modal = document.getElementById('details-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
     }
 
     // Modal triggers

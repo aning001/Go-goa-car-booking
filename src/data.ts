@@ -10,10 +10,10 @@ export const LOCATIONS = [
   'Dabolim Airport (Goa International Airport)',
   'Thivim Railway Station (North Goa)',
   'Madgaon Railway Station (South Goa)',
-  'Calangute Beach / Calangute Office Hub',
+  'Calangute Beach / Resort Delivery',
   'Baga Beach / Hotel Delivery',
   'Candolim Beach / Resort Delivery',
-  'Panaji (Panjim) Bus Stand / Office',
+  'Panaji (Panjim) Bus Stand / Delivery Desk',
   'Mapusa City Centre',
   'Margao City Centre / Railway Hub'
 ];
@@ -401,6 +401,6 @@ export const OFFICE_CONTACT = {
   email: 'support@gogoacarbooking.in',
   backupEmail: 'gogoacarbooking@gmail.com',
   mainAddress: 'Counter 15, Manohar International Airport, Mopa, Kasarvarne, Goa 403512',
-  calanguteAddress: 'Near Calangute Beach parking deck, Opp. Calangute Residency, Calangute, North Goa 403516',
-  dabolimAddress: 'Dabolim Airport Terminal, Ground Level Arrivals, Vasco da Gama, Goa 403801'
+  calanguteAddress: 'Opp. Calangute Mall, Calangute-Baga Road, Calangute, Goa 403516',
+  dabolimAddress: 'Shop No. 4, Ground Floor, Opp. Dabolim Airport Terminal, Dabolim, Goa 403801'
 };

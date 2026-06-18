@@ -64,6 +64,93 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+    /* ================= COMPREHENSIVE PREMIUM BUTTON HOVER EFFECTS ================= */
+    /* Universal setup for transition smoothness */
+    button, 
+    a.btn-bounce,
+    a[href^="tel:"],
+    a[href^="https://wa.me/"],
+    a[href="#booking-quote"],
+    .mobile-nav-item,
+    button[onclick^="filterFleet"],
+    #ai-chat-form button {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* 1. Primary Action Orange Buttons - Intense Hover Glow and Scale Up */
+    button.bg-orange-500,
+    a.bg-orange-500,
+    button[onclick="openBookingModal()"],
+    #detail-modal-btn-book,
+    #ai-chat-form button {
+      position: relative;
+      overflow: hidden;
+    }
+    button.bg-orange-500:hover,
+    a.bg-orange-500:hover,
+    button[onclick="openBookingModal()"]:hover,
+    #detail-modal-btn-book:hover,
+    #ai-chat-form button:hover {
+      background-color: #ef4444 !important; /* brighter fiery orange/red */
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.5), 0 0 15px rgba(239, 68, 68, 0.3) !important;
+    }
+
+    /* 2. Secondary Dark / Outline Buttons - Zoom Out / Scale Down with Border Highlight & Shadow */
+    button.bg-slate-900,
+    a.bg-slate-900,
+    button.bg-slate-950,
+    a.bg-slate-950,
+    #mobile-menu-btn {
+      border-color: rgba(248, 113, 113, 0.2) !important;
+    }
+    button.bg-slate-900:hover,
+    a.bg-slate-900:hover,
+    button.bg-slate-950:hover,
+    a.bg-slate-950:hover,
+    #mobile-menu-btn:hover {
+      transform: scale(0.96) !important; /* Zoom out effect as requested */
+      border-color: #f87171 !important; /* light red border glows */
+      box-shadow: 0 0 12px rgba(248, 113, 113, 0.15) !important;
+      color: #ffffff !important;
+    }
+
+    /* 3. Success / WhatsApp Buttons - Pulse scale and Emerald Glow */
+    button.bg-emerald-600,
+    a.bg-emerald-600,
+    a.bg-emerald-500,
+    button.bg-emerald-500,
+    [onclick^="dispatchWhatsApp"] {
+      position: relative;
+    }
+    button.bg-emerald-600:hover,
+    a.bg-emerald-600:hover,
+    a.bg-emerald-500:hover,
+    button.bg-emerald-500:hover,
+    [onclick^="dispatchWhatsApp"]:hover {
+      background-color: #059669 !important; /* bright green */
+      transform: translateY(-1px) scale(1.04) !important;
+      box-shadow: 0 8px 20px -4px rgba(5, 150, 105, 0.4), 0 0 12px rgba(5, 150, 105, 0.2) !important;
+    }
+
+    /* 4. Tab Capsule Filters - Bounce & Active Tracking Shift */
+    button[onclick^="filterFleet"]:hover {
+      transform: translateY(-1.5px) scale(1.02) !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.05em;
+    }
+
+    /* 5. Close/Exit micro-interaction - Gentle Rotate on Hover */
+    button[onclick^="close"] {
+      transition: all 0.2s ease !important;
+    }
+    button[onclick^="close"]:hover {
+      transform: rotate(90deg) scale(1.1) !important;
+      color: #ef4444 !important;
+      background-color: rgba(239, 68, 68, 0.1) !important;
+    }
+
+    /* Elegant button scale transitions */
     .btn-bounce:active {
       transform: scale(0.97);
     }
@@ -208,6 +295,28 @@
           Back to Home
         </a>
       </div>
+
+      <!-- ================= QUICK HOP LINK SHORTCUTS ================= -->
+      <div class="mb-8 flex flex-wrap items-center gap-2 text-xs text-slate-300">
+        <span class="font-extrabold uppercase font-mono tracking-wider text-[10px] text-orange-400 mr-1 flex items-center gap-1">
+          <i data-lucide="zap" class="w-3.5 h-3.5 animate-pulse shrink-0"></i> Quick links:
+        </span>
+        <a href="thar-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>🚙 Thar Offroad</span>
+        </a>
+        <a href="luxury-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>👑 Luxury Fleet</span>
+        </a>
+        <a href="family-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>👨‍👩‍👦 Family Cars</span>
+        </a>
+        <a href="fleet.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>🚘 All Budget Cars</span>
+        </a>
+        <a href="services.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
+          <span>🛎️ VIP Services</span>
+        </a>
+      </div>
       
       <!-- Services Intro Banner -->
       <div class="relative rounded-3xl overflow-hidden mb-12 bg-gradient-to-r from-orange-600/10 via-slate-900 to-slate-950 border border-slate-850 p-8 md:p-12">
@@ -277,6 +386,34 @@
 
       </div>
 
+      <!-- ================= DETAILED LOCAL SEO AUTHORITY GUIDE (6 PARAGRAPHS) ================= -->
+      <section class="mt-16 pt-12 border-t border-slate-800/60 max-w-5xl mx-auto">
+        <div class="text-left space-y-6">
+          <span class="text-xs font-bold text-orange-400 uppercase tracking-widest block mb-1 font-mono">Expert Services Manual</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight font-display mb-6">
+            Pristine Deliveries, Full-Vetting & Elite Roadside Reliability
+          </h2>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Navigating Goa's lush, sun-soaked coastal belts requires a deeply reliable, fully independent transport solution, which is why securing a custom <strong><a href="index.html" class="text-orange-400 font-bold hover:underline">self drive car rental Goa</a></strong> package is the smartest holiday move. Driving yourself completely frees your travel companions from arbitrary day-taxi expenses and waiting around in heat for unvetted rides. Having your own thoroughly maintained vehicle lets you control your schedule, exploring everything from quiet early morning surf breaks to bustling night markets in complete relaxation.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            For those touching down at Manohar International Arrivals, utilizing our premium <strong><a href="services.html" class="text-orange-400 font-bold hover:underline">Mopa Airport car handover</a></strong> ensures you proceed from flights to scenic roadways with zero friction. Our operations staff monitors your incoming flight coordinates, greeting your party directly outside the terminal exit to deliver detailed keys in less than four minutes. It is a seamless, highly optimized pathway that completely bypasses slow tourist lines and airport cab booking counters.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            If your personal vacation vision incorporates tracking sandy resort loops and heritage routes in bold style, checking our active <strong><a href="thar-rental.html" class="text-orange-400 font-bold hover:underline">Mahindra Thar rental Goa</a></strong> program is highly recommended. We keep pristine manuals and automatic 4x4 Thar models ready to turn headways along Chapora or Arambol beach loops. Driving an open-air adventurer provides a commanding viewpoint and deep excitement that standard cars simply cannot replace, turning simple coordinates into lifetime travel memories.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            For anniversaries, upscale family getaways, and corporate executive retreats requiring top-class visual prestige and whisper-quiet cabins, our <strong><a href="luxury-rental.html" class="text-orange-400 font-bold hover:underline">luxury car hire Goa</a></strong> category offers ultimate refinements. We inspect, detail, and polish every luxury sedan and premium SUV to pristine showroom standards before handover. Experience seamless drives along Mandovi riverfronts, upscale casinos, and high-end dining spots in Panaji in immaculate luxury, prestige, and poise.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Large travel teams, groups of close friends, and multi-row family circles will find unmatched safety and space inside our versatile <strong><a href="family-rental.html" class="text-orange-400 font-bold hover:underline">Goa family car rental</a></strong> segment. Our multi-row MPVs and spacious station wagons ensure that parents, grandparents, and children enjoy premium climate control and generous legroom. Load up heavy bags, luggage, and beach items in the rear trunk effortlessly, making your trips to waterfalls and heritage churches extraordinarily peaceful and comfortable.
+          </p>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+            Local road compliance remains our absolute operational priority, which is why our entire <strong><a href="fleet.html" class="text-orange-400 font-bold hover:underline">fleet catalog</a></strong> undergoes fifty rigorous visual and structural safety audits before each booking. We invite all guests to read our helpful <strong><a href="blogs.html" class="text-orange-400 font-bold hover:underline">safety logs</a></strong> about local automatic speed radars to keep your rental deposit fully safe. Reach out to our dedicated operations desk 24/7 on our direct <strong><a href="contact.html" class="text-orange-400 font-bold hover:underline">coordination desk</a></strong> to reserve your favorite certified vehicle today.
+          </p>
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -323,6 +460,54 @@
           </p>
         </div>
       </div>
+
+      <!-- ================= SEO QUICKLINKS & BACKLINKS DIRECTORY ================= -->
+      <div class="border-t border-slate-900 pt-8 mt-12 text-left">
+        <h4 class="text-xs font-extrabold text-white uppercase tracking-widest font-mono mb-4 text-orange-500">Goa Self-Drive Quick Links &amp; Sitelinks</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-[11px] text-slate-405 text-slate-400">
+          <div>
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Mopa Airport (VXD)</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="index.html" class="hover:text-orange-400 transition-colors">Self Drive Car Goa</a></li>
+              <li><a href="services.html" class="hover:text-orange-400 transition-colors">Airport Car Handover Goa</a></li>
+              <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Mopa Airport Car Rentals</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Premium SUV Rental</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="thar-rental.html" class="hover:text-orange-400 transition-colors">Mahindra Thar Rental Goa</a></li>
+              <li><a href="thar-rental.html#booking-quote" class="hover:text-orange-400 transition-colors">Book Automatic Thar Goa</a></li>
+              <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Offroad Scorpio-N Elite</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Luxury Car Hire</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="luxury-rental.html" class="hover:text-orange-400 transition-colors">Luxury Car Hire Goa</a></li>
+              <li><a href="luxury-rental.html#innova-crysta" class="hover:text-orange-400 transition-colors">Innova Crysta Automatic</a></li>
+              <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Premium Wedding Cars</a></li>
+            </ul>
+          </div>
+          <div>
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Family Trip MPVs</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="family-rental.html" class="hover:text-orange-400 transition-colors">Goa Family Car Rental</a></li>
+              <li><a href="family-rental.html#ertiga" class="hover:text-orange-400 transition-colors">Maruti Suzuki Ertiga 7-Seater</a></li>
+              <li><a href="fleet.html" class="hover:text-orange-400 transition-colors">Cheap 7 Seater Cars Goa</a></li>
+            </ul>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Company &amp; safety</span>
+            <ul class="space-y-1.5 font-medium">
+              <li><a href="about.html" class="hover:text-orange-400 transition-colors">Agency Office Profile</a></li>
+              <li><a href="blogs.html" class="hover:text-orange-400 transition-colors">Goa Travel Safety blog</a></li>
+              <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Support Helpline 24/7</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div class="border-t border-slate-900 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
         <p>© 2026 Go Goa Car Booking. All self-driving rights reserved globally.</p>
         <div class="flex gap-4">
