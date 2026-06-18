@@ -1315,6 +1315,7 @@
                 <li><a href="about.html" class="hover:text-orange-400 transition-colors">Agency Office Profile</a></li>
                 <li><a href="blogs.html" class="hover:text-orange-400 transition-colors">Goa Travel Safety blog</a></li>
                 <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Support Helpline 24/7</a></li>
+                <li><a href="ai-faq.html" class="text-orange-400 font-bold hover:underline transition-colors">AI Overview FAQs</a></li>
               </ul>
             </div>
           </div>
@@ -1660,6 +1661,8 @@
 
 
   <!-- ================= DYNAMIC DATA & INTERACTION ENGINE (JAVASCRIPT) ================= -->
+  <!-- Include Centralized Cars Database -->
+  <script src="./cars.js"></script>
   <script>
     // --- 1. CORE DATA STRUCTS MATCHING DATA.TS ---
     const LOCATIONS = [
@@ -1675,274 +1678,7 @@
       'Margao City Centre / Railway Hub Point'
     ];
 
-    const CARS = [
-      {
-        id: 'wagon-r',
-        name: 'Maruti Wagon R',
-        category: 'Hatchback',
-        transmission: 'Manual',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 2,
-        pricePerDay: 1000,
-        securityDeposit: 2000,
-        imageUrl: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=600',
-        features: ['Power Steering', 'Air Conditioner', 'Bluetooth Music System', 'USB Charging', 'Excellent Mileage'],
-        isPopular: true
-      },
-      {
-        id: 'swift-manual',
-        name: 'Maruti Suzuki Swift',
-        category: 'Hatchback',
-        transmission: 'Manual',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 2,
-        pricePerDay: 1300,
-        securityDeposit: 2000,
-        imageUrl: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=600',
-        features: ['Touchscreen Apple CarPlay', 'Reverse Parking Sensors', 'Air Conditioner', 'Dual Airbags', 'Alloy Wheels'],
-        isPopular: true
-      },
-      {
-        id: 'swift-auto',
-        name: 'Maruti Suzuki Swift AMT',
-        category: 'Hatchback',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 2,
-        pricePerDay: 1500,
-        securityDeposit: 3000,
-        imageUrl: 'https://images.unsplash.com/photo-1525609004556-c46c7d6cf0a3?auto=format&fit=crop&q=80&w=600',
-        features: ['Smooth Automatic AMT', 'Keyless Push Start', 'Touchscreen Infotainment', 'Steering Mounted Controls', 'Dual Airbags'],
-        isPopular: false
-      },
-      {
-        id: 'baleno-auto',
-        name: 'Maruti Suzuki Baleno Alpha',
-        category: 'Hatchback',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 3,
-        pricePerDay: 1700,
-        securityDeposit: 3000,
-        imageUrl: 'https://images.unsplash.com/photo-1619682855113-dced48f654b0?auto=format&fit=crop&q=80&w=600',
-        features: ['Premium Cabin Space', '360 View Camera', 'Head-Up Display (HUD)', 'Automatic Climate Control', 'Push Button Start'],
-        isPopular: true
-      },
-      {
-        id: 'creta',
-        name: 'Hyundai Creta SX',
-        category: 'SUV',
-        transmission: 'Manual',
-        fuelType: 'Diesel',
-        seats: 5,
-        luggage: 4,
-        pricePerDay: 2300,
-        securityDeposit: 3000,
-        imageUrl: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600',
-        features: ['Panoramic Sunroof', 'Digital Instrument Cluster', 'Powerful CRDi Turbo Engine', 'Cooling Glove Box', 'LED Headlamps'],
-        isPopular: true
-      },
-      {
-        id: 'thar-4x4-manual',
-        name: 'Mahindra Thar 4x4 MT',
-        category: 'Thar',
-        transmission: 'Manual',
-        fuelType: 'Diesel',
-        seats: 4,
-        luggage: 2,
-        pricePerDay: 2800,
-        securityDeposit: 4000,
-        imageUrl: 'https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=600',
-        features: ['Real 4x4 Low-Range Transfer Case', 'Rugged Hard-Top Roof', 'Excellent Water Wading', 'Heavy-Duty Alloy Wheels', 'Adventure GPS Tracker'],
-        isPopular: true
-      },
-      {
-        id: 'thar-4x4-auto',
-        name: 'Mahindra Thar 4x4 Automatic',
-        category: 'Thar',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 4,
-        luggage: 2,
-        pricePerDay: 3200,
-        securityDeposit: 4000,
-        imageUrl: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600',
-        features: ['Effortless Torque-Converter AT', 'Convertible Soft-Top (Open Air)', 'Cruising Power Grid', 'Touch Infotainment System', 'Off-road Driving Modes'],
-        isPopular: true
-      },
-      {
-        id: 'ertiga',
-        name: 'Maruti Suzuki Ertiga (7-Seater)',
-        category: 'SUV',
-        transmission: 'Manual',
-        fuelType: 'Petrol',
-        seats: 7,
-        luggage: 4,
-        pricePerDay: 2200,
-        securityDeposit: 3000,
-        imageUrl: 'https://images.unsplash.com/photo-1626847037657-fd3622613ce3?auto=format&fit=crop&q=80&w=600',
-        features: ['Spacious 3-Row Seating', 'Roof Mounted Rear AC Vents', 'Convertible Cargo Space', 'Excellent for Groups & Families', 'Elegant Projector Lamps'],
-        isPopular: true
-      },
-      {
-        id: 'innova-crysta',
-        name: 'Toyota Innova Crysta ZX',
-        category: 'Luxury',
-        transmission: 'Automatic',
-        fuelType: 'Diesel',
-        seats: 7,
-        luggage: 5,
-        pricePerDay: 4500,
-        securityDeposit: 5000,
-        imageUrl: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=600',
-        features: ['Captain Seats Luxury Pack', 'Whisper-Quiet Cabin', 'Premium Leather Interiors', 'Dual SRS Airbags with ABS', 'Bulletproof Toyota Reliability'],
-        isPopular: true
-      },
-      {
-        id: 'dzire-manual',
-        name: 'Maruti Suzuki Dzire VXI',
-        category: 'Hatchback',
-        transmission: 'Manual',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 3,
-        pricePerDay: 1400,
-        securityDeposit: 2000,
-        imageUrl: 'https://images.unsplash.com/photo-1532581291347-9c39cf10a73c?auto=format&fit=crop&q=80&w=600',
-        features: ['Comfortable Sedan Boot', 'Very High Fuel Economy', 'SmartPlay Infotainment', 'Rear AC Vents', 'Smooth Suspension Click'],
-        isPopular: false
-      },
-      {
-        id: 'jimny-manual',
-        name: 'Maruti Suzuki Jimny 4x4 MT',
-        category: 'Thar',
-        transmission: 'Manual',
-        fuelType: 'Petrol',
-        seats: 4,
-        luggage: 2,
-        pricePerDay: 2300,
-        securityDeposit: 3000,
-        imageUrl: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=600',
-        features: ['Compact 4x4 Offroader', 'ALLGRIP PRO Engine Tech', 'Retro Nostalgic Looks', 'Solid Off-Road Axles', 'Spacious Cabin Utility'],
-        isPopular: true
-      },
-      {
-        id: 'thar-rwd-auto',
-        name: 'Mahindra Thar RWD Automatic',
-        category: 'Thar',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 4,
-        luggage: 2,
-        pricePerDay: 2900,
-        securityDeposit: 4000,
-        imageUrl: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&q=80&w=600',
-        features: ['Responsive Turbo Petrol AT', 'RWD High Ground Clearance', 'Sporty Black Alloy Rims', 'Thumping Music System', 'Perfect For Sunset Cruising'],
-        isPopular: true
-      },
-      {
-        id: 'scorpio-classic',
-        name: 'Mahindra Scorpio Classic S11',
-        category: 'SUV',
-        transmission: 'Manual',
-        fuelType: 'Diesel',
-        seats: 7,
-        luggage: 4,
-        pricePerDay: 2600,
-        securityDeposit: 3000,
-        imageUrl: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=600',
-        features: ['Legendary Muscular Stance', 'mHawk Turbo Diesel Power', 'Premium 9-inch Touchscreen', 'Captain Seats Arrangement', 'Very Commanding Views'],
-        isPopular: false
-      },
-      {
-        id: 'i20-auto',
-        name: 'Hyundai i20 Asta IVT',
-        category: 'Hatchback',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 2,
-        pricePerDay: 1600,
-        securityDeposit: 2000,
-        imageUrl: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=600',
-        features: ['Premium Hatchback Comfort', 'Super Smooth IVT Automatic', 'Electric Sunroof Deck', 'Bose Premium Speakers', 'Ambient Cabin Lighting'],
-        isPopular: false
-      },
-      {
-        id: 'seltos-auto',
-        name: 'Kia Seltos HTX CVT',
-        category: 'SUV',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 3,
-        pricePerDay: 2400,
-        securityDeposit: 3000,
-        imageUrl: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=600',
-        features: ['Panoramic Sunroof Glass', 'Dual-Screen High-Tech Dashboard', 'LED Crown Jewel Headlamps', 'Smart Pure Air Purifier', 'Extremely Smooth Driving'],
-        isPopular: true
-      },
-      {
-        id: 'audi-q3',
-        name: 'Audi Q3 Premium Automatic',
-        category: 'Luxury',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 4,
-        pricePerDay: 6550,
-        securityDeposit: 7000,
-        imageUrl: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=600',
-        features: ['Quattro All-Wheel Drive', 'Panoramic Dual Sunroof', 'Virtual Cockpit Display', 'Leather Sports Seats', 'Elite Luxury Status Symbol'],
-        isPopular: true
-      },
-      {
-        id: 'fortuner-suv',
-        name: 'Toyota Fortuner Sigma 4x4',
-        category: 'Luxury',
-        transmission: 'Automatic',
-        fuelType: 'Diesel',
-        seats: 7,
-        luggage: 5,
-        pricePerDay: 5500,
-        securityDeposit: 6000,
-        imageUrl: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600',
-        features: ['Brutal 4x4 Off-Road Power', 'Commanding Road Presence', 'Ventilated Front Seats', 'Premium JBL Audio System', 'Legendary Toyota Reliability'],
-        isPopular: true
-      },
-      {
-        id: 'nexon-ev',
-        name: 'Tata Nexon EV Max',
-        category: 'SUV',
-        transmission: 'Automatic',
-        fuelType: 'Electric',
-        seats: 5,
-        luggage: 3,
-        pricePerDay: 2000,
-        securityDeposit: 3000,
-        imageUrl: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=600',
-        features: ['100% Eco-Friendly Drive', 'Sunroof & Ventilated Seats', 'Quiet & Instant Torque', 'Wireless Charger Pad', 'Very Low Travel Energy Cost'],
-        isPopular: false
-      },
-      {
-        id: 'bmw-3',
-        name: 'BMW 3 Series M Sport',
-        category: 'Luxury',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 5,
-        luggage: 3,
-        pricePerDay: 8500,
-        securityDeposit: 10000,
-        imageUrl: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=600',
-        features: ['M Sport Aerodynamic Kit', 'Harman Kardon Surround Sound', 'Live Virtual Live Cockpit', 'Dynamic Driving Control Modes', 'Ultra Premium Luxury Drive'],
-        isPopular: true
-      }
-    ];
+    const CARS = window.CARS;
 
     const FAQS = [
       {
@@ -2417,99 +2153,17 @@
     }
 
     // --- CAR DETAILS DIALOG LOGIC ---
-    function getStaticSpecsData(id) {
-      switch (id) {
-        case 'thar-4x4-manual':
-        case 'thar-4x4-auto':
-        case 'thar-rwd-auto':
-          return {
-            engine: '2.2L mHawk Turbo Diesel / 2.0L mStallion Petrol',
-            power: '130 - 150 BHP @ 3750 RPM',
-            clearance: '226 mm (Class-leading offroad height)',
-            waterWading: '650 mm (Perfect for monsoon tides)',
-            suitability: 'Perfect for exploring Goa\'s rustic interior forest roads, historic fort drives, and steep cliff routes of Cola & Cabo de Rama.',
-            rules: 'Absolute zero drift over sandy beach lines (heavy local authority fines). Ensure the vehicle stays locked in 2H mode on dry tarmac.',
-            classType: 'Adventure Offroad 4x4 Jeep'
-          };
-        case 'jimny-manual':
-          return {
-            engine: '1.5L K15B 4-Cylinder Petrol',
-            power: '103 BHP @ 6000 RPM',
-            clearance: '210 mm (Superior high articulation axle)',
-            waterWading: '400 mm',
-            suitability: 'Compact offroader that is nimble to drive down narrow village bypass lines and fits tight parking spaces in central Panjim.',
-            rules: 'Turn off heavy 4-wheel lockers when maneuvering sharp cement street twists; drive responsibly.',
-            classType: 'Compact Articulated 4x4 SUV'
-          };
-        case 'innova-crysta':
-          return {
-            engine: '2.4L GD-Series Turbo Intercooled Diesel',
-            power: '148 BHP @ 3400 RPM',
-            clearance: '178 mm (Optimized lounge ride suspension)',
-            waterWading: '300 mm',
-            suitability: 'Absolute VIP premium comfort best-in-class choice for multi-generational families, destination weddings, and heavy bags airport transit.',
-            rules: 'Leather Captain Seats must be protected. Absolutely zero liquids or pet transits on raw leather to avoid security deposit cuts.',
-            classType: 'VIP Exec Lounge Cruiser'
-          };
-        case 'audi-q3':
-        case 'bmw-3':
-          return {
-            engine: '2.0L TFSI / TwinPower Sport Turbo Gasoline',
-            power: '190 BHP - 250 BHP Elite dynamic torque',
-            clearance: '140 mm - 170 mm track preservation',
-            waterWading: '200 mm',
-            suitability: 'Prestige luxury travels, high-class business conferences, wedding arrivals, and premium beach-resort holiday styling.',
-            rules: 'Premium high-octane petrol highly recommended; strict caution advised on deep concrete gutter slopes to protect bumpers.',
-            classType: 'Elite Super Luxury Premium Series'
-          };
-        case 'fortuner-suv':
-          return {
-            engine: '2.8L GD-Series Common Rail Turbocharged Diesel',
-            power: '201 BHP @ 3400 RPM',
-            clearance: '220 mm (Ladder-frame rugged chassis)',
-            waterWading: '700 mm (Superior deep river wading line)',
-            suitability: 'The gold standard of VIP presence. Slices through heavy mud roads, hill ranges of Western Ghats, and accommodates massive luggage comfortably.',
-            rules: 'Do not drift or slide heavy weight on slippery roads. Preserve premium driving lanes.',
-            classType: 'Heavyweight Landmark VIP SUV'
-          };
-        case 'seltos-auto':
-        case 'scorpio-n':
-        case 'scorpio-classic':
-          return {
-            engine: '1.5L CRDi Turbo Diesel / Diesel mHawk options',
-            power: '115 - 172 BHP commanding power',
-            clearance: '180 mm - 209 mm high-view setup',
-            waterWading: '350 mm standard clearance',
-            suitability: 'Brilliant highway speed stability cruiser. Offers massive commanding road posture for standard groups sightseeing in comfort.',
-            rules: 'Strictly maintain speeds below 70 km/h in radar target zones to safeguard against traffic fine receipts.',
-            classType: 'Mid-Size High Command SUV'
-          };
-        case 'nexon-ev':
-          return {
-            engine: 'Ziptron High-Voltage Permanent Magnet Motor',
-            power: '141 BHP of instant EV silent torque',
-            clearance: '205 mm battery-armor protection',
-            waterWading: '300 mm',
-            suitability: 'Whisper-silent, environment-friendly luxury driving experience. Zero engine vibrations, perfect for short coastal sightseeing.',
-            rules: 'Always charge state at authorized rapid chargers in main cities; do not deplete charge underneath 15% line.',
-            classType: 'Eco-Smart Clean Energy EV'
-          };
-        default:
-          return {
-            engine: '1.2L K-Series DualJet Dual VVT Petrol',
-            power: '88.5 BHP @ 6000 RPM',
-            clearance: '163 mm - 170 mm standard suspension',
-            waterWading: '150 mm',
-            suitability: 'Best fuel-economical hatchback for navigating heavy beach corridors of Baga-Calangute or fitting small tight parking layouts.',
-            rules: 'Maintain speeds under 70 km/h. Keep clutch riding minimized on extremely steep forest hill sections.',
-            classType: 'Budget Compact Family Hatchback'
-          };
-      }
-    }
-
     function openCarDetailDialog(carId) {
       const car = CARS.find(c => c.id === carId) || CARS[0];
-      const modelSpecs = getStaticSpecsData(car.id);
+      const modelSpecs = {
+        engine: car.engine || '1.2L K-Series DualJet Dual VVT Petrol',
+        power: car.power || '88.5 BHP @ 6000 RPM',
+        clearance: car.clearance || '163 mm - 170 mm standard suspension',
+        waterWading: car.waterWading || '150 mm',
+        suitability: car.suitability || 'Best fuel-economical hatchback for navigating heavy beach corridors of Baga-Calangute or fitting small tight parking layouts.',
+        rules: car.rules || 'Maintain speeds under 70 km/h. Keep clutch riding minimized on extremely steep forest hill sections.',
+        classType: car.classType || 'Budget Compact Family Hatchback'
+      };
 
       // Populate elements
       document.getElementById('detail-modal-image').src = car.imageUrl;

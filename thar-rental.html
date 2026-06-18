@@ -924,6 +924,7 @@
               <li><a href="about.html" class="hover:text-orange-400 transition-colors">Agency Office Profile</a></li>
               <li><a href="blogs.html" class="hover:text-orange-400 transition-colors">Goa Travel Safety blog</a></li>
               <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Support Helpline 24/7</a></li>
+              <li><a href="ai-faq.html" class="text-orange-400 font-bold hover:underline transition-colors">AI Overview FAQs</a></li>
             </ul>
           </div>
         </div>
@@ -951,6 +952,8 @@
     </a>
   </div>
 
+  <!-- Include Centralized Cars Database -->
+  <script src="./cars.js"></script>
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
@@ -1000,48 +1003,7 @@
     }
 
     // --- CAR DETAILS DIALOG LOGIC ---
-    const CARS_DATA = {
-      'thar-4x4-manual': {
-        id: 'thar-4x4-manual',
-        name: 'Mahindra Thar 4x4 MT',
-        category: 'Thar',
-        transmission: 'Manual',
-        fuelType: 'Diesel',
-        seats: 4,
-        luggage: 2,
-        pricePerDay: 2800,
-        securityDeposit: 4000,
-        imageUrl: 'https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=600',
-        features: ['Real 4x4 Low-Range Transfer Case', 'Rugged Hard-Top Roof', 'Excellent Water Wading', 'Heavy-Duty Alloy Wheels', 'Adventure GPS Tracker'],
-        engine: '2.2L mHawk Turbo Diesel',
-        power: '130 BHP @ 3750 RPM',
-        clearance: '226 mm (Class-leading height)',
-        waterWading: '650 mm (Perfect for monsoons)',
-        suitability: 'Perfect for exploring Goa\'s rustic interior forest roads, historic fort drives, and steep cliff routes of Cola & Cabo de Rama.',
-        rules: 'Absolute zero drift over sandy beach lines (heavy local authority fines). Ensure the vehicle stays locked in 2H mode on dry tarmac.',
-        classType: 'Adventure Offroad 4x4 Jeep'
-      },
-      'thar-4x4-auto': {
-        id: 'thar-4x4-auto',
-        name: 'Mahindra Thar 4x4 Automatic',
-        category: 'Thar',
-        transmission: 'Automatic',
-        fuelType: 'Petrol',
-        seats: 4,
-        luggage: 2,
-        pricePerDay: 3200,
-        securityDeposit: 4000,
-        imageUrl: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600',
-        features: ['Effortless Torque-Converter AT', 'Convertible Soft-Top (Open Air)', 'Cruising Power Grid', 'Touch Infotainment System', 'Off-road Driving Modes'],
-        engine: '2.0L mStallion Petrol',
-        power: '150 BHP @ 5050 RPM',
-        clearance: '226 mm (Class-leading height)',
-        waterWading: '650 mm (Perfect for monsoons)',
-        suitability: 'Perfect for exploring Goa\'s coastal beach towns, photogenic avenues, and catching direct wind in convertible setup.',
-        rules: 'Absolute zero drift over sandy beach lines (heavy local authority fines). Secure soft top locks correctly before leaving vehicle unattended.',
-        classType: 'Convertible Offroad Gear 4x4'
-      }
-    };
+    const CARS_DATA = window.CARS_DATA;
 
     function openCarDetailDialog(carId) {
       const car = CARS_DATA[carId];

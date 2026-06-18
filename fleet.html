@@ -833,6 +833,7 @@
               <li><a href="about.html" class="hover:text-orange-400 transition-colors">Agency Office Profile</a></li>
               <li><a href="blogs.html" class="hover:text-orange-400 transition-colors">Goa Travel Safety blog</a></li>
               <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Support Helpline 24/7</a></li>
+              <li><a href="ai-faq.html" class="text-orange-400 font-bold hover:underline transition-colors">AI Overview FAQs</a></li>
             </ul>
           </div>
         </div>
@@ -860,7 +861,11 @@
     </a>
   </div>
 
+  <!-- Include Centralized Cars Database -->
+  <script src="./cars.js"></script>
   <script>
+    const CARS = window.CARS;
+
     // Initialize Lucide icons
     lucide.createIcons();
 
@@ -908,9 +913,11 @@
       });
     }
 
+    let activeCategory = 'all';
+
     // Dynamic Filter function
     function filterFleet(category) {
-      const cards = document.querySelectorAll('.car-card');
+      activeCategory = category;
       const tabs = document.querySelectorAll('[id^="tab-"]');
 
       // Update button visual state
@@ -923,15 +930,55 @@
         currentTab.className = "px-5 py-2.5 rounded-full border border-orange-500 bg-orange-600 text-white font-extrabold cursor-pointer transition-all";
       }
 
-      // Filter elements
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      renderFilteredFleet();
     }
+
+    function renderFilteredFleet() {
+      const grid = document.getElementById('fleet-grid');
+      if (!grid) return;
+
+      const filtered = activeCategory === 'all' 
+        ? CARS 
+        : CARS.filter(c => c.category === activeCategory);
+
+      grid.innerHTML = '';
+      filtered.forEach(car => {
+        const card = document.createElement('div');
+        card.className = "car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between group";
+        
+        card.innerHTML = `
+          <div>
+            <div class="h-48 relative overflow-hidden bg-slate-950">
+              <img src="${car.imageUrl}" alt="${car.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" referrerPolicy="no-referrer">
+              <!-- Sticky Price tag sticker -->
+              <div class="absolute top-3.5 right-3.5 z-10 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹${car.pricePerDay}/day
+              </div>
+            </div>
+            <div class="p-6 text-left">
+              <h3 class="text-base font-black text-white font-display mb-1">${car.name}</h3>
+              <span class="text-[10px] text-slate-400 block font-mono mb-4">${car.category} • ${car.transmission} Transmission • ${car.fuelType}</span>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex gap-2">
+            <a href="tel:+916287168644" class="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl uppercase tracking-wider btn-bounce flex items-center justify-center gap-1.5 shadow">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+            </a>
+            <button onclick="triggerCarBooking('${car.name}', ${car.pricePerDay}, ${car.securityDeposit}, '${car.transmission}', '${car.fuelType}')" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl uppercase tracking-wider btn-bounce flex items-center justify-center gap-1.5 shadow cursor-pointer">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    // Render initially on load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderFilteredFleet();
+    });
 
     // Modal triggers
     function triggerCarBooking(carName, pricePerDay, depositAmount, transmission, fuel) {

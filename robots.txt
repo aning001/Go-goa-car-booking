@@ -1,0 +1,43 @@
+# robots.txt optimized for Google Search, AI Overviews, and LLM Scrapers
+# Website: Go Goa Car Booking (https://gogoacarbooking.in)
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /fleet.html
+Allow: /thar-rental.html
+Allow: /luxury-rental.html
+Allow: /family-rental.html
+Allow: /services.html
+Allow: /about.html
+Allow: /blogs.html
+Allow: /contact.html
+Allow: /ai-faq.html
+Allow: /cars.js
+Allow: /llms.txt
+Allow: /llm.txt
+
+# Encourage specialized AI Search Engine Crawlers and LLM Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-AI
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Reference Sitemap location
+Sitemap: https://gogoacarbooking.in/sitemap.xml
