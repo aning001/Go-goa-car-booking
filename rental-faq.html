@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goa Car Rental FAQs &amp; Help Center — Go Goa Car Booking</title>
+  
+  <meta name="description" content="Get official answers to frequently asked questions about renting self-drive cars in Goa. Learn about pick-up procedures at Mopa Airport Counter 15, documents needed, and local road regulations.">
+  
+  <!-- Elegant Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;850;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Pure Manual CSS (Zero Tailwind, Fully Styled from Scratch) -->
+  <style type="text/css">
+    /* Core Variables & Base Reset */
+    :root {
+      --bg-page: #030305;
+      --bg-card: #0a0a0e;
+      --bg-card-alt: #111118;
+      --bg-header: rgba(10, 10, 14, 0.9);
+      --accent-primary: #ef4444; /* Vivid Brand Red */
+      --accent-secondary: #dc2626; /* Deep Sporty Red */
+      --accent-light: #f87171; /* Accent Coral Red */
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dark: #64748b;
+      --border-color: #1e293b;
+      --border-glow: rgba(239, 68, 68, 0.15);
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.25s ease-in-out;
+    }
+
+    /* Common typography sets */
+    .font-display { font-family: var(--font-display); }
+    .font-mono { font-family: var(--font-mono); }
+    .text-orange { color: var(--accent-light); }
+    .text-red { color: var(--accent-primary); }
+    .text-muted { color: var(--text-muted); }
+
+    /* Header & Navigation Styles */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg-header);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Logo structure */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-badge {
+      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+      padding: 10px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+    }
+
+    .logo-badge i {
+      color: white;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .logo-text-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+      display: block;
+    }
+
+    .logo-text-subtitle {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 9px;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      display: block;
+      margin-top: -3px;
+    }
+
+    .main-nav {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        font-weight: 700;
+        font-size: 0.7rem;
+      }
+    }
+
+    .nav-link {
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-primary);
+    }
+
+    /* Header Actions */
+    .header-ctas {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-card);
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #cbd5e1;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+      color: white;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(239, 68, 68, 0.4);
+    }
+
+    .hamburger-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 12px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    @media (min-width: 992px) {
+      .hamburger-btn {
+        display: none;
+      }
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      background-color: rgba(3, 3, 5, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 4rem;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    }
+
+    .mobile-drawer.active {
+      display: flex;
+    }
+
+    .mobile-nav-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .mobile-nav-item:hover {
+      background-color: var(--bg-card);
+      border-color: var(--border-color);
+      color: white;
+    }
+
+    /* Back To Home Button */
+    .back-btn-container {
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-back:hover {
+      border-color: rgba(239, 68, 68, 0.4);
+      color: white;
+      transform: translateX(-2px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 9px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .pulsing-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-primary);
+      border-radius: 9999px;
+      box-shadow: 0 0 8px var(--accent-primary);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2.25rem;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 1rem;
+      letter-spacing: -0.027em;
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title { font-size: 3.25rem; }
+    }
+
+    /* Accordion Styles */
+    .faq-container {
+      background-color: #050508;
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 1.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .faq-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-bottom: 1rem;
+      border-b: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .faq-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background-color: rgba(10, 10, 14, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(239, 68, 68, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 1.5rem;
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .faq-chevron {
+      color: var(--accent-primary);
+      transition: transform 0.3s ease-in-out;
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-answer-inner {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .faq-item.active {
+      border-color: rgba(239, 68, 68, 0.4);
+      background-color: rgba(10, 10, 14, 0.9);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 350px;
+    }
+
+    .faq-item.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer-inner p {
+      margin-bottom: 0.75rem;
+    }
+
+    .faq-answer-inner p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-list-items {
+      list-style-type: decimal;
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-list-items li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Grid Section for secondary guides */
+    .guides-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (min-width: 768px) {
+      .guides-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .guide-card {
+      background-color: #050508;
+      border: 1px solid var(--border-color);
+      padding: 1.75rem;
+      border-radius: 24px;
+      text-align: left;
+    }
+
+    .guide-icon-badge {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .guide-icon-badge.red-bg {
+      background-color: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .guide-icon-badge.green-bg {
+      background-color: rgba(5, 150, 105, 0.1);
+      border: 1px solid rgba(5, 150, 105, 0.2);
+    }
+
+    .guide-heading {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .guide-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .guide-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-small {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 0.75rem;
+      border-radius: 10px;
+      color: var(--text-muted);
+    }
+
+    .btn-small:hover {
+      border-color: var(--accent-primary);
+      color: white;
+    }
+
+    .btn-green {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-color: #059669;
+      padding: 0.5rem 0.75rem;
+      border-radius: 10px;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-green:hover {
+      background-color: #047857;
+      box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3);
+    }
+
+    /* Footer Design */
+    footer {
+      background-color: #030305;
+      border-top: 1px solid var(--border-color);
+      padding: 5rem 0 3rem 0;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-heading {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: white;
+      margin-bottom: 1rem;
+      border-left: 2px solid var(--accent-primary);
+      padding-left: 8px;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-link {
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-light);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .social-btn {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 10px;
+      background-color: rgba(10, 10, 14, 0.5);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    .social-btn:hover {
+      border-color: var(--accent-primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom-txt {
+      font-size: 11px;
+      color: var(--text-dark);
+    }
+
+    .footer-bottom-link {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-bottom-link:hover {
+      color: var(--accent-primary);
+    }
+
+    /* Floating Corner Buttons */
+    .floating-container {
+      position: fixed;
+      left: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+    }
+
+    .float-phone {
+      background-color: var(--bg-card);
+      border-color: var(--border-color);
+      color: var(--accent-primary);
+      animation: floatBouncePhone 1.5s infinite ease-in-out;
+    }
+
+    .float-phone:hover {
+      background-color: #0f0f14;
+      transform: scale(1.05);
+    }
+
+    .float-whatsapp {
+      background-color: #059669;
+      border-color: rgba(5, 150, 105, 0.2);
+      animation: floatBounceWA 2.2s infinite ease-in-out;
+    }
+
+    @keyframes floatBouncePhone {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes floatBounceWA {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+  </style>
+
+  <!-- Structured schema for Google FAQ search snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to secure the best self drive car rental in Goa with Go Goa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Booking a self drive car rental in Goa is highly streamlined. Go Goa offers the cheapest, commission-free rates directly via their online booking system or 24/7 hotline. Select your perfect vehicle (such as a Thar 4x4, Ertiga 7-Seater, or budget Swift), input your pickup date and drop-off hotspot, and confirm details with our customer representative over phone or WhatsApp support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is the physical Go Goa client counter located at Manohar International Airport (MOPA)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go Goa operates an official physically staffed airport desk located at Counter 15, Manohar International Airport (Mopa), Kasarvarne, Goa 403512, India. Our team initiates direct keys-in-hand airport handovers right at the Arrivals Parking Bay and services terminal passenger arrivals 24 hours a day, 7 days a week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What driving documents are compulsory for booking self drive cars in Goa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To rent or drive any compact car, luxury sedan, or off-road SUV from the Go Goa fleet, renters must furnish two documents: 1) An original laminated Indian Driving License (valid, non-learner category). 2) A valid Aadhaar Identification Card for biometric identity validation. Both are digitally scanned during the quick 5-minute security check before key handovers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there unlimited kilometers on self drive car rentals with Go Goa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Go Goa provides completely unlimited kilometers on our entire self-drive rental catalog. Whether you are conducting long scenic highway drives to Palolem in South Goa, crossing into the rustic Ghats forest sections, or navigating local coastal routes in North Goa, you pay a simple flat day rate without additional distance fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What speed guidelines and road regulations should I maintain in Goa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Goa's traffic police regularly operate automated radar speed enforcement corridors. It is mandatory for all self-drive car renters to keep vehicle speeds strictly beneath 70 km/h on national highways and lower limits inside village districts. Fines generated by speed camera violations are the sole responsibility of the renter, which are deducted from the security deposit."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Lucide Icons Library for Manual Injection -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- ================= HEADER SECTION ================= -->
+  <header>
+    <div class="header-inner">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo-container">
+        <div class="logo-badge">
+          <i data-lucide="car"></i>
+        </div>
+        <div>
+          <span class="logo-text-title">Go Goa</span>
+          <span class="logo-text-subtitle">Car Rental</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="fleet.html" class="nav-link">Car Fleet</a>
+        <a href="thar-rental.html" class="nav-link">🚙 Thar Rental</a>
+        <a href="luxury-rental.html" class="nav-link">👑 Luxury Rental</a>
+        <a href="family-rental.html" class="nav-link">👨‍👩‍👦 Family &amp; SUV</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blogs.html" class="nav-link">Blogs</a>
+        <a href="terms-and-privacy.html" class="nav-link">Terms &amp; Privacy</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-ctas">
+        <a href="tel:+916287168644" class="btn-outline">
+          <i data-lucide="phone-call" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+          <span>Call Support</span>
+        </a>
+        <a href="index.html#booking-quote" class="btn-primary">
+          Book Car
+        </a>
+        
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" id="menu-icon-hamburger" style="width:20px; height:20px; color:var(--accent-primary);"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
+  <div id="mobile-nav-panel" class="mobile-drawer">
+    <a href="index.html" class="mobile-nav-item">
+      <span>Home</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="about.html" class="mobile-nav-item">
+      <span>About Us</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="fleet.html" class="mobile-nav-item">
+      <span>Car Fleet</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="thar-rental.html" class="mobile-nav-item">
+      <span>🚙 Thar Rental</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="luxury-rental.html" class="mobile-nav-item">
+      <span>👑 Luxury Rental</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="family-rental.html" class="mobile-nav-item">
+      <span>👨‍👩‍👦 Family &amp; SUV</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="services.html" class="mobile-nav-item">
+      <span>Services</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="blogs.html" class="mobile-nav-item">
+      <span>Blogs</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="terms-and-privacy.html" class="mobile-nav-item">
+      <span>Terms &amp; Privacy</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+    <a href="contact.html" class="mobile-nav-item">
+      <span>Contact Us</span>
+      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    </a>
+  </div>
+
+  <!-- ================= MAIN SITE CONTENT ================= -->
+  <main class="container">
+    
+    <!-- Back Button -->
+    <div class="back-btn-container">
+      <a href="index.html" class="btn-back">
+        <i data-lucide="arrow-left" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+
+    <!-- Hero Header -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <span class="pulsing-dot"></span>
+        <span>Goa Traveller Help Center &amp; Guidelines</span>
+      </div>
+      <h1 class="hero-title">
+        Goa Self-Drive Cars<br>
+        <span class="text-orange">Common Rental FAQs</span>
+      </h1>
+      <p class="hero-subtitle">
+        Get quick, transparent, and accurate answers regarding our self-drive car rental policies, document requirements, and handovers in Goa.
+      </p>
+    </section>
+
+    <!-- Interactive FAQ Accordion Block -->
+    <section class="faq-container">
+      <h2 class="faq-title">
+        <i data-lucide="help-circle" style="width:18px; height:18px; color:var(--accent-primary);"></i>
+        <span>Core Rental &amp; Travel Q&amp;As</span>
+      </h2>
+
+      <div class="faq-panel">
+        
+        <!-- Question 1 -->
+        <div class="faq-item active" onclick="toggleFaq(this)">
+          <div class="faq-question-btn">
+            <span>Q1: How do I book a premium self-drive car rental in Goa with Go Goa?</span>
+            <i data-lucide="chevron-down" class="faq-chevron" style="width:16px; height:16px;"></i>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>To secure a premium <strong>self drive car rental in Goa</strong>, complete these rapid steps:</p>
+              <ul class="faq-list-items">
+                <li>Navigate to Go Goa's interactive online Booking Form or rate estimator.</li>
+                <li>Pick your desired car model, rental start/end dates, and preferred delivery hotspots.</li>
+                <li>Submit your telephone details. Our client representative will reach out on WhatsApp/Call to confirm document verification.</li>
+              </ul>
+              <p class="text-orange" style="font-weight: 600;">
+                Benefit: Direct booking is 100% commission-free with absolutely zero hidden state charges or middleman fees.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question-btn">
+            <span>Q2: Where is the physical Go Goa counter for Mopa Airport arrivals?</span>
+            <i data-lucide="chevron-down" class="faq-chevron" style="width:16px; height:16px;"></i>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Our physical rental terminal desk is officially located at:</p>
+              <div class="font-mono" style="background-color: var(--bg-card-alt); padding: 12px; margin: 12px 0; border: 1px solid var(--border-color); border-radius: 12px; font-size: 11px;">
+                <strong>Counter 15, Manohar International Airport (MOPA)</strong><br>
+                Kasarvarne, Pernem District, Goa 403512, India.
+              </div>
+              <p>We deliver vehicle handovers directly within the arrival flight parking zone block 24/7. When your flight touches down, walk straight to Counter 15; your assigned driver will hand over physical ignition keys immediately.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question-btn">
+            <span>Q3: Which documents are mandatory for self-drive cars in Goa?</span>
+            <i data-lucide="chevron-down" class="faq-chevron" style="width:16px; height:16px;"></i>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>To complete safety verification and state compliance checks, the following two documents are strictly mandatory:</p>
+              <ul class="faq-list-items">
+                <li><strong>An Original Indian Driving License:</strong> Laminated, authorized category, non-learner type. We also accept DigiLocker validations.</li>
+                <li><strong>A Valid Government-Issued Aadhaar Card:</strong> Serves as biometric and identity validation for our records.</li>
+              </ul>
+              <p>Our agent will run a rapid 5-minute digital check on these documents at the precise moment of car handover. Local Goa regulations restrict bookings if original documents are unavailable.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question-btn">
+            <span>Q4: Are there daily limits or extra charges for long drives?</span>
+            <i data-lucide="chevron-down" class="faq-chevron" style="width:16px; height:16px;"></i>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Absolutely none! We provide <strong>100% Unlimited Kilometers</strong> on all car bookings. You have complete geographical freedom to drive from historical Arambol beaches in the north to breathtaking serene coastlines in Southern Canacona. Fares remain fixed purely based on car daily rates, ensuring zero mileage stress or surprise distance calculations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question-btn">
+            <span>Q5: What are the speed camera rules and compliance speed limits?</span>
+            <i data-lucide="chevron-down" class="faq-chevron" style="width:16px; height:16px;"></i>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>The state of Goa has deployed dense, automated speed radar cameras on highways (such as the Zuari Bridge, Mandovi Bypass, and new Mopa Link road). The strict legal limit is <strong>70 km/h to 80 km/h</strong> on state highways and 40 km/h in village and coastal zones. Violating these speed radars incurs automatic digitized traffic receipts issued directly to the vehicle registration, which are adjusted from the security reserve.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question-btn">
+            <span>Q6: How does the security deposit refund system operate?</span>
+            <i data-lucide="chevron-down" class="faq-chevron" style="width:16px; height:16px;"></i>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Go Goa acts with 100% financial compliance. We hold a small security deposit (ranging from ₹3,000 for hatchbacks to ₹5,000 for Mahindra Thar 4x4s). This deposit is <strong>fully refunded in cash or instant Google Pay / UPI transfer</strong> at the exact minute of checkout, following a standard circular vehicle paint check for scratches or body damage.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Secondary Guides Section -->
+    <section class="guides-grid">
+      
+      <!-- Card 1 -->
+      <div class="guide-card">
+        <div class="guide-icon-badge red-bg">
+          <i data-lucide="file-text" style="color:var(--accent-primary); width:20px; height:20px;"></i>
+        </div>
+        <h3 class="guide-heading">Detailed Travel Policy</h3>
+        <p class="guide-text">We provide live prices, desk coordinates, support lines, and terminal delivery terms transparently to all customers before renting.</p>
+        <div class="guide-links">
+          <a href="terms-and-privacy.html" class="btn-small">Terms of Rent</a>
+          <a href="terms-and-privacy.html#deposit" class="btn-small">Refund Guide</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="guide-card">
+        <div class="guide-icon-badge green-bg">
+          <i data-lucide="database" style="color:#059669; width:20px; height:20px;"></i>
+        </div>
+        <h3 class="guide-heading">Complete Site Directory</h3>
+        <p class="guide-text">Using verified sitemap structures and pre-processed tables, we ensure that tourists can locate the cheapest custom quotes and rent cars with zero friction.</p>
+        <a href="sitemap.xml" class="btn-green">
+          <i data-lucide="map" style="width:12px; height:12px;"></i>
+          <span>Read Sitemap.xml</span>
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER SECTION ================= -->
+  <footer>
+    <div class="footer-grid">
+      
+      <!-- col 1 -->
+      <div class="footer-brand" style="text-align:left;">
+        <a href="index.html" class="logo-container" style="margin-bottom:1rem;">
+          <div class="logo-badge">
+            <i data-lucide="car"></i>
+          </div>
+          <div>
+            <span class="logo-text-title">Go Goa</span>
+            <span class="logo-text-subtitle">Car Rental</span>
+          </div>
+        </a>
+        <p style="line-height:1.6; margin-bottom:1rem; color:var(--text-muted);">
+          Go Goa operates a premium fleet of self-drive hatchbacks, off-road 4x4 Thar cruisers, and luxury tourist multi-purpose vehicles directly inside Goa's principal airport terminals.
+        </p>
+        <div class="footer-socials">
+          <a href="tel:+916287168644" class="social-btn"><i data-lucide="phone" style="width:16px; height:16px;"></i></a>
+          <a href="https://wa.me/916287168644" class="social-btn"><i data-lucide="message-square" style="width:16px; height:16px;"></i></a>
+        </div>
+      </div>
+
+      <!-- col 2 -->
+      <div style="text-align:left;">
+        <h4 class="footer-heading font-display">Premium Links</h4>
+        <ul class="footer-list">
+          <li><a href="fleet.html" class="footer-link">Complete Rental Fleet</a></li>
+          <li><a href="thar-rental.html" class="footer-link">Mahindra Thar Rental</a></li>
+          <li><a href="luxury-rental.html" class="footer-link">Luxury Car Rental</a></li>
+          <li><a href="family-rental.html" class="footer-link">Family Carrier Rentals</a></li>
+        </ul>
+      </div>
+
+      <!-- col 3 -->
+      <div style="text-align:left;">
+        <h4 class="footer-heading font-display">Company &amp; Resources</h4>
+        <ul class="footer-list">
+          <li><a href="rental-faq.html" class="footer-link" style="color:var(--accent-light); font-weight:700;">Traveller FAQs</a></li>
+          <li><a href="terms-and-privacy.html" class="footer-link">Rental Code &amp; Privacy</a></li>
+          <li><a href="sitemap.xml" class="footer-link">Sitemap XML</a></li>
+          <li><a href="about.html" class="footer-link">Agency Office Profile</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Support</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- bottom footer row -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-txt">
+        © 2026 Go Goa Car Booking. All self-driving rights reserved globally.
+      </div>
+      <div class="footer-links-row">
+        <a href="terms-and-privacy.html" class="footer-bottom-link font-mono" style="color:var(--accent-primary); font-weight:750;">Rental Code &amp; Privacy Policy</a>
+        <a href="rental-faq.html" class="footer-bottom-link">Booking FAQs Help</a>
+        <a href="sitemap.xml" class="footer-bottom-link">Sitemap index</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING CORNER CONTACT BUTTONS ================= -->
+  <div class="floating-container">
+    <a href="tel:+916287168644" class="float-btn float-phone" title="Call Support Hotline">
+      <i data-lucide="phone" style="width:20px; height:20px;"></i>
+    </a>
+    <a href="https://wa.me/916287168644?text=Hi,%20I%20want%2520to%252520rent%2520a%2520self-drive%2520car%2520for%2520my%252520Goa%2520trip." target="_blank" rel="noreferrer" class="float-btn float-whatsapp" title="WhatsApp Support Desk">
+      <!-- Custom Whatsapp SVG -->
+      <svg viewBox="0 0 24 24" style="width:20px; height:20px; fill:currentColor;" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Lucide Icons & Accordion Mechanics -->
+  <script type="text/javascript">
+    // Initialize Lucide Vector Icons
+    lucide.createIcons();
+
+    // Toggle FAQ Accordion State
+    function toggleFaq(itemElement) {
+      const isActive = itemElement.classList.contains('active');
+      
+      // Close all items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // If it wasn't active, activate it
+      if (!isActive) {
+        itemElement.classList.add('active');
+      }
+    }
+
+    // Mobile Hamburger Navigation Drawer Toggle
+    const mobileMenuTrigger = document.getElementById('mobile-menu-btn');
+    const mobileNavDrawer = document.getElementById('mobile-nav-panel');
+    const menuIconHamburger = document.getElementById('menu-icon-hamburger');
+    
+    if (mobileMenuTrigger && mobileNavDrawer) {
+      mobileMenuTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        
+        const isCurrentlyActive = mobileNavDrawer.classList.contains('active');
+        if (!isCurrentlyActive) {
+          mobileNavDrawer.classList.add('active');
+          if (menuIconHamburger) {
+            menuIconHamburger.setAttribute('data-lucide', 'x');
+            lucide.createIcons();
+          }
+        } else {
+          mobileNavDrawer.classList.remove('active');
+          if (menuIconHamburger) {
+            menuIconHamburger.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+          }
+        }
+      });
+      
+      document.addEventListener('click', () => {
+        mobileNavDrawer.classList.remove('active');
+        if (menuIconHamburger) {
+          menuIconHamburger.setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -20,10 +20,16 @@ export default function Header({ activeTab, setActiveTab, isMobileMenuOpen, setI
     { id: 'family-rental', label: '👨‍👩‍👦 Family & SUV' },
     { id: 'services', label: 'Services' },
     { id: 'blogs', label: 'Blogs' },
+    { id: 'terms-and-privacy', label: 'Terms & Privacy' },
     { id: 'contact', label: 'Contact Us' }
   ];
 
   const handlePageSelect = (tabId: any) => {
+    if (tabId === 'terms-and-privacy') {
+      window.location.href = 'terms-and-privacy.html';
+      setIsMobileMenuOpen(false);
+      return;
+    }
     setActiveTab(tabId);
     setIsMobileMenuOpen(false);
     // Instant snap to top to prevent dynamic overlay from scrolling

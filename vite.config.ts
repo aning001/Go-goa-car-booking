@@ -23,6 +23,8 @@ export default defineConfig(() => {
           services: path.resolve(__dirname, 'services.html'),
           blogs: path.resolve(__dirname, 'blogs.html'),
           contact: path.resolve(__dirname, 'contact.html'),
+          faq: path.resolve(__dirname, 'rental-faq.html'),
+          terms: path.resolve(__dirname, 'terms-and-privacy.html'),
         },
       },
     },

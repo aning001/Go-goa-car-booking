@@ -205,7 +205,7 @@ app.post('/api/chat', async (req, res) => {
 // Auto-rewrite extension-less custom URLs to serve their corresponding HTML variants
 app.use((req, res, next) => {
   if (req.method === 'GET' && !path.extname(req.path)) {
-    const cleanPages = ['about', 'thar-rental', 'luxury-rental', 'family-rental', 'fleet', 'services', 'blogs', 'contact'];
+    const cleanPages = ['about', 'thar-rental', 'luxury-rental', 'family-rental', 'fleet', 'services', 'blogs', 'contact', 'terms-and-privacy', 'rental-faq'];
     const requested = req.path.replace(/^\/|\/$/g, '');
     if (cleanPages.includes(requested)) {
       if (process.env.NODE_ENV !== 'production') {

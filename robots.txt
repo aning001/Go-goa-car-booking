@@ -1,4 +1,4 @@
-# robots.txt optimized for Google Search, AI Overviews, and LLM Scrapers
+# robots.txt for Go Goa Car Booking
 # Website: Go Goa Car Booking (https://gogoacarbooking.in)
 
 User-agent: *
@@ -12,12 +12,12 @@ Allow: /services.html
 Allow: /about.html
 Allow: /blogs.html
 Allow: /contact.html
-Allow: /ai-faq.html
+Allow: /rental-faq.html
 Allow: /cars.js
 Allow: /llms.txt
 Allow: /llm.txt
 
-# Encourage specialized AI Search Engine Crawlers and LLM Bots
+# Allow search engine crawlers
 User-agent: Googlebot
 Allow: /
 
