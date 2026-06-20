@@ -223,7 +223,7 @@ async function setupAndStart() {
     // Development Mode - Use Vite middleware Mode
     const vite = await createViteServer({
       server: { middlewareMode: true },
-      appType: 'spa',
+      appType: 'mpa',
     });
     app.use(vite.middlewares);
     console.log('[Go Goa Car Booking] Vite Dev Middleware mounted.');

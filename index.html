@@ -13,51 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;850;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS CDN v3 (The ultimate helper for live editing without local npm build) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            // RED & BLACK THEME: Map orange & amber keywords to high-performance deep red shades
-            orange: {
-              50: '#fff5f5',
-              100: '#fee2e2',
-              200: '#fecaca',
-              300: '#fca5a5',
-              400: '#f87171', // light sporty red
-              450: '#ef4444', // vibrant brand red
-              500: '#dc2626', // elegant rich red
-              600: '#b91c1c', // deep luxurious red
-              700: '#991b1b', // dark crimson red
-              800: '#7f1d1d', // dark maroon
-              900: '#5c1010', // deep mahogany root red
-            },
-            amber: {
-              400: '#ef4444', // red-500
-              500: '#dc2626', // red-600
-              600: '#b91c1c', // red-700
-            },
-            // Enhancing slate to pure obsidian blacks and pitch darks
-            slate: {
-              900: '#0a0a0e', // ultra-dark aesthetic black
-              950: '#030305', // near absolute pitch black
-            },
-            // Enhancing indigo to dark obsidian to support boxes/overlays
-            indigo: {
-              950: '#07070a'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Link Manual Handcrafted Brand CSS and Script Systems -->
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 
   <style type="text/css">
     /* Custom Hide scrollbars across devices but keep scrolling active */
@@ -230,16 +188,16 @@
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-5 text-[11px] font-bold text-slate-300">
+      <nav class="hidden lg:flex items-center gap-1.5 xl:gap-4 text-[10px] xl:text-[11px] font-bold text-slate-300 shrink">
         <a href="index.html" class="text-orange-400 font-extrabold transition-colors">Home</a>
         <a href="about.html" class="hover:text-orange-400 transition-colors">About Us</a>
         <a href="fleet.html" class="hover:text-orange-400 transition-colors">Car Fleet</a>
-        <a href="thar-rental.html" class="hover:text-orange-400 transition-colors">🚙 Thar Rental</a>
-        <a href="luxury-rental.html" class="hover:text-orange-400 transition-colors">👑 Luxury Rental</a>
-        <a href="family-rental.html" class="hover:text-orange-400 transition-colors">👨‍👩‍👦 Family & SUV</a>
+        <a href="thar-rental.html" class="hover:text-orange-400 transition-colors">Thar Rental</a>
+        <a href="luxury-rental.html" class="hover:text-orange-400 transition-colors">Luxury Car</a>
+        <a href="family-rental.html" class="hover:text-orange-400 transition-colors">Family &amp; SUV</a>
         <a href="services.html" class="hover:text-orange-400 transition-colors">Services</a>
         <a href="blogs.html" class="hover:text-orange-400 transition-colors">Blogs</a>
-        <a href="terms-and-privacy.html" class="hover:text-orange-400 transition-colors">Terms &amp; Privacy</a>
+        <a href="terms-and-privacy.html" class="hover:text-orange-400 transition-colors text-nowrap">Privacy &amp; Terms</a>
         <a href="contact.html" class="hover:text-orange-400 transition-colors">Contact Us</a>
       </nav>
 
@@ -263,7 +221,7 @@
   </header>
 
   <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
-  <div id="mobile-nav-panel" class="hidden fixed inset-x-0 top-16 bg-slate-950/98 backdrop-blur-lg border-b border-slate-800 z-40 p-4 flex flex-col gap-2 font-semibold text-xs tracking-wider uppercase transition-all shadow-2xl">
+  <div id="mobile-nav-panel" class="hidden fixed inset-x-0 top-16 bg-slate-950/98 backdrop-blur-lg border-b border-slate-800 z-40 p-4 flex flex-col gap-2 font-semibold text-xs tracking-wider uppercase transition-all shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto">
     <a href="index.html" class="mobile-nav-item py-3 px-4 rounded-xl text-white bg-slate-900 border border-slate-800 flex items-center justify-between transition-all">
       <span>Home</span>
       <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
@@ -297,7 +255,7 @@
       <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
     </a>
     <a href="terms-and-privacy.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>Terms &amp; Privacy</span>
+      <span>Privacy Policy &amp; Terms</span>
       <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
     </a>
     <a href="contact.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
@@ -310,9 +268,9 @@
   <main>
 
     <!-- Narrow Contact Hotline Marquee -->
-    <div class="w-full bg-slate-900/50 border-y border-slate-800/85 py-1.5 overflow-hidden select-none relative z-20">
-      <div class="animate-marquee-text flex gap-8 whitespace-nowrap pl-4 text-[10px] md:text-sm font-semibold tracking-wider text-slate-400 capitalize">
-        <div class="flex gap-8 items-center">
+    <div class="w-full bg-slate-900/50 border-y border-slate-800/85 py-2.5 overflow-hidden select-none relative z-20">
+      <div class="animate-marquee-text flex whitespace-nowrap text-[11px] md:text-sm font-semibold tracking-wider text-slate-400 capitalize">
+        <div class="flex gap-12 items-center shrink-0 pr-16 md:pr-32">
           <span>📞 Goa booking hotline direct link: <a href="tel:+916287168644" class="text-orange-400 hover:text-orange-300 font-extrabold hover:underline">+91 62871 68644</a></span>
           <span>•</span>
           <span>🏖️ Delivery hotspots details: Mopa airport • Calangute beach • Candolim resort hubs • Baga delivery portal</span>
@@ -321,7 +279,7 @@
           <span>•</span>
           <span>👍 book safe, book trusted, explore goa with absolute freedom!</span>
         </div>
-        <div class="flex gap-8 items-center">
+        <div class="flex gap-12 items-center shrink-0 pr-16 md:pr-32">
           <span>📞 Goa booking hotline direct link: <a href="tel:+916287168644" class="text-orange-400 hover:text-orange-300 font-extrabold hover:underline">+91 62871 68644</a></span>
           <span>•</span>
           <span>🏖️ Delivery hotspots details: Mopa airport • Calangute beach • Candolim resort hubs • Baga delivery portal</span>
@@ -336,6 +294,12 @@
     <!-- ================= HERO LANDING SECTION ================= -->
     <section id="hero" class="relative pb-12 md:pb-20 lg:pb-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-900 overflow-hidden">
       
+      <!-- Background Image with Dark Vignette/Overlay for High Text Readability -->
+      <div class="absolute inset-0 z-0 select-none pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&q=80&w=1920" alt="Scenic road background" class="w-full h-full object-cover opacity-[0.16]" referrerPolicy="no-referrer">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/95 via-slate-900/40 to-slate-950"></div>
+      </div>
+
       <!-- TV Headlines Scrolling Ticker at the head / top of the Hero Section -->
       <div class="w-full bg-[#0a0002] border-b border-red-950/40 relative z-20 flex items-center h-10 select-none overflow-hidden text-[10px] md:text-xs mb-10">
         <!-- Standing TV Tag -->
@@ -352,26 +316,26 @@
         
         <!-- Continuous scrolling headlines -->
         <div class="flex-1 overflow-hidden h-full flex items-center">
-          <div class="animate-marquee-text flex gap-12 shrink-0 whitespace-nowrap pl-4">
-            <div class="flex gap-12 items-center text-red-100 font-semibold font-sans">
+          <div class="animate-marquee-text flex whitespace-nowrap">
+            <div class="flex gap-12 items-center text-red-100 font-semibold font-sans shrink-0 pr-16 md:pr-32">
               <span>🔥 <span class="text-amber-400 font-extrabold">POPULAR OPTION:</span> Choose our trusted <a href="fleet.html" class="underline text-white hover:text-orange-400 font-semibold">Self Drive Car Rental Goa</a> service for seamless coastal voyages starting at ₹1000/day!</span>
               <span>•</span>
               <span>⚡ <span class="text-orange-400 font-extrabold">ADVENTURE JEEP:</span> Secure an iconic <a href="thar-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Mahindra Thar Rental Goa</a> 4x4 soft-top & automatic hard-top!</span>
               <span>•</span>
               <span>✨ <span class="text-amber-300 font-extrabold">GOLD STANDARD:</span> Experience elite VIP status when renting with premier <a href="luxury-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Luxury Car Hire Goa</a>!</span>
               <span>•</span>
-              <span>👨‍👩‍👧‍👦 <span class="text-emerald-400 font-extrabold">SPACIOUS RUN:</span> Ride in supreme comfort with the 7-Seater <a href="family-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Goa Family Car Rental</a> fleet!</span>
+              <span>👨+👩+👧+👦 <span class="text-emerald-400 font-extrabold">SPACIOUS RUN:</span> Ride in supreme comfort with the 7-Seater <a href="family-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Goa Family Car Rental</a> fleet!</span>
               <span>•</span>
               <span>📞 <span class="text-white font-extrabold">AIRPORT SPECIAL:</span> Direct <a href="services.html" class="underline text-white hover:text-orange-400 font-semibold">Mopa Airport Car Handover</a> with counters-free arrivals pickup!</span>
             </div>
-            <div class="flex gap-12 items-center text-red-100 font-semibold font-sans">
+            <div class="flex gap-12 items-center text-red-100 font-semibold font-sans shrink-0 pr-16 md:pr-32">
               <span>🔥 <span class="text-amber-400 font-extrabold">POPULAR OPTION:</span> Choose our trusted <a href="fleet.html" class="underline text-white hover:text-orange-400 font-semibold">Self Drive Car Rental Goa</a> service for seamless coastal voyages starting at ₹1000/day!</span>
               <span>•</span>
               <span>⚡ <span class="text-orange-400 font-extrabold">ADVENTURE JEEP:</span> Secure an iconic <a href="thar-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Mahindra Thar Rental Goa</a> 4x4 soft-top & automatic hard-top!</span>
               <span>•</span>
               <span>✨ <span class="text-amber-300 font-extrabold">GOLD STANDARD:</span> Experience elite VIP status when renting with premier <a href="luxury-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Luxury Car Hire Goa</a>!</span>
               <span>•</span>
-              <span>👨‍👩‍👧‍👦 <span class="text-emerald-400 font-extrabold">SPACIOUS RUN:</span> Ride in supreme comfort with the 7-Seater <a href="family-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Goa Family Car Rental</a> fleet!</span>
+              <span>👨+👩+👧+👦 <span class="text-emerald-400 font-extrabold">SPACIOUS RUN:</span> Ride in supreme comfort with the 7-Seater <a href="family-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Goa Family Car Rental</a> fleet!</span>
               <span>•</span>
               <span>📞 <span class="text-white font-extrabold">AIRPORT SPECIAL:</span> Direct <a href="services.html" class="underline text-white hover:text-orange-400 font-semibold">Mopa Airport Car Handover</a> with counters-free arrivals pickup!</span>
             </div>
@@ -538,9 +502,252 @@
           </div>
         </div>
 
-        <!-- Fleet Grid container filled dynamically via JavaScript -->
+        <!-- Fleet Grid container filled manually in plain, editable HTML -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="fleet-grid">
-          <!-- Dynamically populated card blocks go here -->
+          
+          <!-- Card 1: Maruti Wagon R -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="Hatchback" data-car-id="wagon-r">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('wagon-r')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=600" alt="Maruti Wagon R" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹1000/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('wagon-r')">Maruti Wagon R</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('wagon-r')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20Maruti%20Wagon%20R%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Maruti Suzuki Swift -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="Hatchback" data-car-id="swift-manual">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('swift-manual')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=600" alt="Maruti Suzuki Swift" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹1300/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('swift-manual')">Maruti Suzuki Swift</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('swift-manual')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20Maruti%20Suzuki%20Swift%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Maruti Suzuki Swift AMT -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="Hatchback" data-car-id="swift-auto">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('swift-auto')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf0a3?auto=format&fit=crop&q=80&w=600" alt="Maruti Suzuki Swift AMT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹1500/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('swift-auto')">Maruti Suzuki Swift AMT</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('swift-auto')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20Maruti%20Suzuki%20Swift%20AMT%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Hyundai Creta SX -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="SUV" data-car-id="creta">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('creta')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600" alt="Hyundai Creta SX" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹2300/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('creta')">Hyundai Creta SX</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('creta')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20Hyundai%20Creta%20SX%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Mahindra Thar 4x4 MT -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="Thar" data-car-id="thar-4x4-manual">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('thar-4x4-manual')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=600" alt="Mahindra Thar 4x4 MT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹2800/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('thar-4x4-manual')">Mahindra Thar 4x4 MT</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('thar-4x4-manual')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20Mahindra%20Thar%204x4%20MT%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Mahindra Thar 4x4 Automatic -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="Thar" data-car-id="thar-4x4-auto">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('thar-4x4-auto')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" alt="Mahindra Thar 4x4 Automatic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹3200/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('thar-4x4-auto')">Mahindra Thar 4x4 Automatic</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('thar-4x4-auto')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20Mahindra%20Thar%204x4%20Automatic%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Maruti Suzuki Ertiga -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="SUV" data-car-id="ertiga">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('ertiga')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1626847037657-fd3622613ce3?auto=format&fit=crop&q=80&w=600" alt="Maruti Suzuki Ertiga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹2200/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('ertiga')">Maruti Suzuki Ertiga</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('ertiga')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20Maruti%20Suzuki%20Ertiga%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Toyota Innova Crysta ZX -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="Luxury" data-car-id="innova-crysta">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('innova-crysta')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=600" alt="Toyota Innova Crysta ZX" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹4500/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('innova-crysta')">Toyota Innova Crysta ZX</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('innova-crysta')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20Toyota%20Innova%20Crysta%20ZX%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9: BMW 3 Series M Sport -->
+          <div class="car-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group" data-category="Luxury" data-car-id="bmw-3">
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('bmw-3')" title="Click to view full specifications">
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=600" alt="BMW 3 Series" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
+                ₹8500/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('bmw-3')">BMW 3 Series M Sport</h3>
+                <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('bmw-3')">View Specs & Rules →</span>
+              </div>
+              <div class="border-t border-slate-800/80 pt-4 mt-auto">
+                <div class="grid grid-cols-2 gap-2">
+                  <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call Us
+                  </a>
+                  <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%20the%20BMW%203%20Series%20M%20Sport%20for%20self-drive%20in%20Goa." target="_blank" rel="noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -1525,7 +1732,7 @@
   </main>
 
   <!-- ================= STICKY SIDEBAR FLOATING ACTIONS (VISIBLE ON ALL PAGES) ================= -->
-  <div class="fixed left-4 bottom-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-40 flex flex-col gap-2.5">
+  <div id="floating-sticky-sidebar" class="fixed left-4 bottom-28 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-40 flex flex-col gap-2.5">
     
     <!-- Floating Direct Phone Support -->
     <a href="tel:+916287168644" 
@@ -1625,10 +1832,10 @@
     <!-- Floating Trigger Button -->
     <button
       onclick="toggleAIChat()"
-      class="bg-slate-950 border border-slate-800 hover:bg-slate-900 text-white px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-2.5 cursor-pointer transition-all hover:-translate-y-0.5 select-none font-mono font-bold uppercase text-xs"
+      class="bg-slate-950 border border-slate-800 hover:bg-slate-900 text-white p-3.5 md:px-5 md:py-3.5 rounded-full shadow-2xl flex items-center justify-center gap-2 cursor-pointer transition-all hover:-translate-y-0.5 select-none font-mono font-bold uppercase text-xs"
     >
-      <i data-lucide="sparkles" class="w-4 h-4 text-orange-500 animate-pulse"></i>
-      <span>Consult AI Planner</span>
+      <i data-lucide="sparkles" class="w-5 h-5 md:w-4 md:h-4 text-orange-500 animate-pulse shrink-0"></i>
+      <span class="hidden md:inline">Consult AI Planner</span>
     </button>
   </div>
 
@@ -1951,6 +2158,7 @@
           if (isHidden) {
             mobileNavPanel.classList.remove('hidden');
             mobileNavPanel.classList.add('flex');
+            document.body.style.overflow = 'hidden';
             if (menuIconHamburger) {
               menuIconHamburger.setAttribute('data-lucide', 'x');
               lucide.createIcons();
@@ -1958,6 +2166,7 @@
           } else {
             mobileNavPanel.classList.add('hidden');
             mobileNavPanel.classList.remove('flex');
+            document.body.style.overflow = '';
             if (menuIconHamburger) {
               menuIconHamburger.setAttribute('data-lucide', 'menu');
               lucide.createIcons();
@@ -1970,6 +2179,7 @@
           item.addEventListener('click', () => {
             mobileNavPanel.classList.add('hidden');
             mobileNavPanel.classList.remove('flex');
+            document.body.style.overflow = '';
             if (menuIconHamburger) {
               menuIconHamburger.setAttribute('data-lucide', 'menu');
               lucide.createIcons();
@@ -2166,64 +2376,16 @@
     }
 
     function renderFilteredFleet() {
-      const grid = document.getElementById('fleet-grid');
-      if (!grid) return;
+      const cards = document.querySelectorAll('.car-card');
+      if (!cards || cards.length === 0) return;
 
-      const filtered = activeCategory === 'all' 
-        ? CARS 
-        : CARS.filter(c => c.category === activeCategory);
-
-      grid.innerHTML = '';
-      filtered.forEach(car => {
-        const card = document.createElement('div');
-        card.className = "group flex flex-col bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left justify-between";
-        
-        card.innerHTML = `
-          <!-- image frame -->
-          <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden cursor-pointer group" onclick="openCarDetailDialog('${car.id}')" title="Click to view full specifications">
-            <img src="${car.imageUrl}" alt="${car.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
-            
-            <!-- Highly Focused Sticker Price Badge -->
-            <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)] border-2 border-slate-950 -rotate-3 group-hover:rotate-1 group-hover:scale-110 transition-all duration-300">
-              ₹${car.pricePerDay}/day
-            </div>
-          </div>
-
-          <!-- details info wrapper -->
-          <div class="p-5 flex-1 flex flex-col justify-between gap-4">
-            
-            <div class="space-y-2">
-              <div class="flex justify-between items-start gap-1">
-                <div>
-                  <h3 class="font-extrabold text-white text-base tracking-tight font-display hover:text-orange-400 transition-colors cursor-pointer" onclick="openCarDetailDialog('${car.id}')">${car.name}</h3>
-                  <span class="text-[10px] text-orange-400 hover:underline cursor-pointer block mt-1" onclick="openCarDetailDialog('${car.id}')">View Specs & Rules →</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Footer actions -->
-            <div class="border-t border-slate-800/80 pt-4 mt-auto">
-              <!-- Action button selectors -->
-              <div class="grid grid-cols-2 gap-2">
-                <a href="tel:+916287168644" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce">
-                  <i data-lucide="phone" class="w-3.5 h-3.5"></i>
-                  <span>Call Us</span>
-                </a>
-                
-                <a href="https://wa.me/916287168644?text=Hi,%20I%20am%20interested%20in%20booking%2520the%20${encodeURIComponent(car.name)}%20for%20self-drive%2520in%2520Goa." 
-                   target="_blank" rel="noreferrer" 
-                   class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 shadow btn-bounce"
-                   title="WhatsApp Inquiry">
-                  <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-                  <span>WhatsApp</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        `;
-        grid.appendChild(card);
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (activeCategory === 'all' || cat === activeCategory) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
       });
 
       lucide.createIcons();
@@ -2532,7 +2694,7 @@
         
         itemBox.innerHTML = `
           <!-- Accordion Header Title Clickable -->
-          <button onclick="toggleAccordion('${item.id}')" class="w-full py-4 px-5 flex items-center justify-between text-slate-200 hover:text-white font-bold text-xs sm:text-sm font-display text-left">
+          <button onclick="toggleAccordion('${item.id}')" class="w-full bg-transparent border-none outline-none focus:outline-none py-4 px-5 flex items-center justify-between text-slate-200 hover:text-white font-bold text-xs sm:text-sm font-display text-left">
             <span>${item.question}</span>
             <i data-lucide="chevron-down" id="faq-chevron-${item.id}" class="w-4 h-4 text-orange-400 transition-transform duration-300"></i>
           </button>
@@ -2590,16 +2752,25 @@
 
     function toggleAIChat() {
       const chatBox = document.getElementById('ai-chat-box');
+      const stickyActions = document.getElementById('floating-sticky-sidebar');
       if (chatBox.classList.contains('hidden')) {
         chatBox.classList.remove('hidden');
         chatBox.classList.add('flex');
+        if (window.innerWidth < 768 && stickyActions) {
+          stickyActions.classList.add('hidden');
+        }
         
         // Scroll to bottom on open to ensure message is viewed
         const historyEl = document.getElementById('ai-chat-history');
-        historyEl.scrollTop = historyEl.scrollHeight;
+        if (historyEl) {
+          historyEl.scrollTop = historyEl.scrollHeight;
+        }
       } else {
         chatBox.classList.add('hidden');
         chatBox.classList.remove('flex');
+        if (stickyActions) {
+          stickyActions.classList.remove('hidden');
+        }
       }
     }
 

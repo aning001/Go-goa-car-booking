@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;850;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
   <!-- Custom Pure Manual CSS (Zero Tailwind, Fully Styled from Scratch) -->
   <style type="text/css">
     /* Core Variables & Base Reset */
@@ -20,14 +19,14 @@
       --bg-card: #0a0a0e;
       --bg-card-alt: #111118;
       --bg-header: rgba(10, 10, 14, 0.9);
-      --accent-primary: #ef4444; /* Vivid Brand Red */
-      --accent-secondary: #dc2626; /* Deep Sporty Red */
-      --accent-light: #f87171; /* Accent Coral Red */
+      --accent-primary: #fbbf24; /* Premium Luxury Amber Gold */
+      --accent-secondary: #d97706; /* Deep Sporty Bronze/Gold */
+      --accent-light: #fbbf24; /* Accent Gold */
       --text-main: #f1f5f9;
       --text-muted: #94a3b8;
       --text-dark: #64748b;
-      --border-color: #1e293b;
-      --border-glow: rgba(239, 68, 68, 0.15);
+      --border-color: #222530;
+      --border-glow: rgba(251, 191, 36, 0.15);
       --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
       --font-display: 'Space Grotesk', system-ui, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -37,6 +36,11 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
     }
 
     body {
@@ -101,7 +105,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+      box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
     }
 
     .logo-badge i {
@@ -178,12 +182,12 @@
     .btn-outline:hover {
       border-color: var(--accent-light);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
       color: white;
     }
 
     .btn-primary {
-      background-color: var(--accent-primary);
+      background-color: var(--accent-secondary);
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 12px;
@@ -192,9 +196,9 @@
     }
 
     .btn-primary:hover {
-      background-color: var(--accent-secondary);
+      background-color: var(--accent-primary);
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px -5px rgba(239, 68, 68, 0.4);
+      box-shadow: 0 10px 20px -5px rgba(251, 191, 36, 0.4);
     }
 
     .hamburger-btn {
@@ -230,6 +234,8 @@
       right: 0;
       z-index: 90;
       box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+      max-height: calc(100vh - 4rem);
+      overflow-y: auto;
     }
 
     .mobile-drawer.active {
@@ -278,7 +284,7 @@
     }
 
     .btn-back:hover {
-      border-color: rgba(239, 68, 68, 0.4);
+      border-color: rgba(251, 191, 36, 0.4);
       color: white;
       transform: translateX(-2px);
     }
@@ -377,13 +383,14 @@
     }
 
     .faq-item:hover {
-      border-color: rgba(239, 68, 68, 0.3);
+      border-color: rgba(251, 191, 36, 0.3);
       transform: translateY(-1px);
     }
 
     .faq-question-btn {
       width: 100%;
-      background: none;
+      background-color: transparent !important;
+      background: transparent !important;
       border: none;
       padding: 1.25rem 1.5rem;
       color: white;
@@ -418,7 +425,7 @@
     }
 
     .faq-item.active {
-      border-color: rgba(239, 68, 68, 0.4);
+      border-color: rgba(251, 191, 36, 0.4);
       background-color: rgba(10, 10, 14, 0.9);
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
@@ -483,8 +490,8 @@
     }
 
     .guide-icon-badge.red-bg {
-      background-color: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.2);
+      background-color: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.2);
     }
 
     .guide-icon-badge.green-bg {
@@ -682,7 +689,7 @@
     .floating-container {
       position: fixed;
       left: 1.5rem;
-      bottom: 1.5rem;
+      bottom: 6.5rem;
       z-index: 99;
       display: flex;
       flex-direction: column;
@@ -811,7 +818,7 @@
         <a href="family-rental.html" class="nav-link">👨‍👩‍👦 Family &amp; SUV</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="blogs.html" class="nav-link">Blogs</a>
-        <a href="terms-and-privacy.html" class="nav-link">Terms &amp; Privacy</a>
+        <a href="terms-and-privacy.html" class="nav-link">Privacy Policy &amp; Terms</a>
         <a href="contact.html" class="nav-link">Contact Us</a>
       </nav>
 
@@ -869,7 +876,7 @@
       <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
     </a>
     <a href="terms-and-privacy.html" class="mobile-nav-item">
-      <span>Terms &amp; Privacy</span>
+      <span>Privacy Policy &amp; Terms</span>
       <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
     </a>
     <a href="contact.html" class="mobile-nav-item">
@@ -1152,12 +1159,14 @@
         const isCurrentlyActive = mobileNavDrawer.classList.contains('active');
         if (!isCurrentlyActive) {
           mobileNavDrawer.classList.add('active');
+          document.body.style.overflow = 'hidden';
           if (menuIconHamburger) {
             menuIconHamburger.setAttribute('data-lucide', 'x');
             lucide.createIcons();
           }
         } else {
           mobileNavDrawer.classList.remove('active');
+          document.body.style.overflow = '';
           if (menuIconHamburger) {
             menuIconHamburger.setAttribute('data-lucide', 'menu');
             lucide.createIcons();
@@ -1167,6 +1176,7 @@
       
       document.addEventListener('click', () => {
         mobileNavDrawer.classList.remove('active');
+        document.body.style.overflow = '';
         if (menuIconHamburger) {
           menuIconHamburger.setAttribute('data-lucide', 'menu');
           lucide.createIcons();
