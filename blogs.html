@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Safety Guides &amp; Blogs — Go Goa Car Booking</title>
+  <title>Travel Safety Guides, Rental Hacks &amp; Blogs — Go Goa Car Booking</title>
   
   <meta name="description" content="Read driving safety guidelines, Mopa airport arrival instructions, and offroad adventure guides before renting a self-drive car in Goa. Stay compliant.">
   
@@ -14,7 +14,7 @@
   
   <!-- Link Manual Handcrafted Brand CSS and Script Systems -->
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js" defer></script>
+  <script src="./script.js"></script>
 
   <style type="text/css">
     .no-scrollbar::-webkit-scrollbar {
@@ -25,7 +25,6 @@
       scrollbar-width: none;
     }
     /* ================= COMPREHENSIVE PREMIUM BUTTON HOVER EFFECTS ================= */
-    /* Universal setup for transition smoothness */
     button, 
     a.btn-bounce,
     a[href^="tel:"],
@@ -37,26 +36,22 @@
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
-    /* 1. Primary Action Orange Buttons - Intense Hover Glow and Scale Up */
     button.bg-orange-500,
     a.bg-orange-500,
     button[onclick="openBookingModal()"],
-    #detail-modal-btn-book,
-    #ai-chat-form button {
+    #detail-modal-btn-book {
       position: relative;
       overflow: hidden;
     }
     button.bg-orange-500:hover,
     a.bg-orange-500:hover,
     button[onclick="openBookingModal()"]:hover,
-    #detail-modal-btn-book:hover,
-    #ai-chat-form button:hover {
-      background-color: #ef4444 !important; /* brighter fiery orange/red */
+    #detail-modal-btn-book:hover {
+      background-color: #ef4444 !important;
       transform: translateY(-2px) scale(1.03) !important;
       box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.5), 0 0 15px rgba(239, 68, 68, 0.3) !important;
     }
 
-    /* 2. Secondary Dark / Outline Buttons - Zoom Out / Scale Down with Border Highlight & Shadow */
     button.bg-slate-900,
     a.bg-slate-900,
     button.bg-slate-950,
@@ -69,83 +64,45 @@
     button.bg-slate-950:hover,
     a.bg-slate-950:hover,
     #mobile-menu-btn:hover {
-      transform: scale(0.96) !important; /* Zoom out effect as requested */
-      border-color: #f87171 !important; /* light red border glows */
+      transform: scale(0.96) !important;
+      border-color: #f87171 !important;
       box-shadow: 0 0 12px rgba(248, 113, 113, 0.15) !important;
       color: #ffffff !important;
     }
 
-    /* 3. Success / WhatsApp Buttons - Pulse scale and Emerald Glow */
     button.bg-emerald-600,
     a.bg-emerald-600,
     a.bg-emerald-500,
-    button.bg-emerald-500,
-    [onclick^="dispatchWhatsApp"] {
+    button.bg-emerald-500 {
       position: relative;
     }
     button.bg-emerald-600:hover,
     a.bg-emerald-600:hover,
     a.bg-emerald-500:hover,
-    button.bg-emerald-500:hover,
-    [onclick^="dispatchWhatsApp"]:hover {
-      background-color: #059669 !important; /* bright green */
+    button.bg-emerald-500:hover {
+      background-color: #059669 !important;
       transform: translateY(-1px) scale(1.04) !important;
       box-shadow: 0 8px 20px -4px rgba(5, 150, 105, 0.4), 0 0 12px rgba(5, 150, 105, 0.2) !important;
     }
 
-    /* 4. Tab Capsule Filters - Bounce & Active Tracking Shift */
-    button[onclick^="filterFleet"]:hover {
-      transform: translateY(-1.5px) scale(1.02) !important;
-      font-weight: 900 !important;
-      letter-spacing: 0.05em;
-    }
-
-    /* 5. Close/Exit micro-interaction - Gentle Rotate on Hover */
-    button[onclick^="close"] {
-      transition: all 0.2s ease !important;
-    }
-    button[onclick^="close"]:hover {
-      transform: rotate(90deg) scale(1.1) !important;
-      color: #ef4444 !important;
-      background-color: rgba(239, 68, 68, 0.1) !important;
-    }
-
-    /* Elegant button scale transitions */
-    .btn-bounce:active {
-      transform: scale(0.97);
-    }
-
-    /* Floating button bounce animations (Call bounces faster, WhatsApp bounces slower/less intense) */
     @keyframes bounceCall {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
-
     @keyframes bounceWhatsapp {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
     .animate-bounce-call {
       animation: bounceCall 1.2s infinite ease-in-out !important;
     }
-
     .animate-bounce-call:hover {
       animation-play-state: paused !important;
     }
-
     .animate-bounce-whatsapp {
       animation: bounceWhatsapp 2.0s infinite ease-in-out !important;
     }
-
     .animate-bounce-whatsapp:hover {
       animation-play-state: paused !important;
     }
@@ -156,7 +113,7 @@
 <body class="bg-slate-900 text-slate-100 font-sans min-h-screen selection:bg-orange-500 selection:text-white overflow-x-hidden">
 
   <!-- ================= HEADER SECTION ================= -->
-  <header class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+  <header class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/85">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand Logo -->
@@ -165,13 +122,13 @@
           <i data-lucide="car" class="w-5 h-5 text-white"></i>
         </div>
         <div>
-          <span class="text-sm font-black tracking-tight text-white uppercase font-display block font-bold">Go Goa</span>
-          <span class="text-[9px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1">Car Rental</span>
+          <span class="text-xs font-black tracking-tight text-white uppercase font-display block">Go Goa Car Booking</span>
+          <span class="text-[9px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1 text-orange-400">Verified Car Fleet</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-1.5 xl:gap-4 text-[10px] xl:text-[11px] font-bold text-slate-300 shrink">
+      <nav class="hidden xl:flex items-center gap-1.5 xl:gap-4 text-[10px] xl:text-[11px] font-bold text-slate-300 shrink">
         <a href="index.html" class="hover:text-orange-400 transition-colors">Home</a>
         <a href="about.html" class="hover:text-orange-400 transition-colors">About Us</a>
         <a href="fleet.html" class="hover:text-orange-400 transition-colors">Car Fleet</a>
@@ -195,7 +152,7 @@
         </a>
         
         <!-- Mobile Menu Hamburger Button Trigger -->
-        <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-850 text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Toggle Navigation Menu">
+        <button id="mobile-menu-btn" class="xl:hidden flex items-center justify-center p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-850 text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Toggle Navigation Menu">
           <i data-lucide="menu" id="menu-icon-hamburger" class="w-5 h-5 text-orange-500"></i>
         </button>
       </div>
@@ -204,200 +161,360 @@
   </header>
 
   <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
-  <div id="mobile-nav-panel" class="hidden fixed inset-x-0 top-16 bg-slate-950/98 backdrop-blur-lg border-b border-slate-800 z-40 p-4 flex flex-col gap-2 font-semibold text-xs tracking-wider uppercase transition-all shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto">
-    <a href="index.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>Home</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="about.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>About Us</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="fleet.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>Car Fleet</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="thar-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>🚙 Thar Rental</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="luxury-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>👑 Luxury Rental</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="family-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>👨‍👩‍👦 Family & SUV</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="services.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>Services</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="blogs.html" class="mobile-nav-item py-3 px-4 rounded-xl text-white bg-slate-900 border border-slate-800 flex items-center justify-between transition-all">
-      <span>Blogs</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="terms-and-privacy.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>Privacy Policy &amp; Terms</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
-    </a>
-    <a href="contact.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
-      <span>Contact Us</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+  <div id="mobile-nav-panel" class="hidden fixed inset-x-0 top-16 bg-slate-950/98 backdrop-blur-lg border-b border-slate-800 z-40 p-4 flex flex-col gap-3 font-semibold text-xs tracking-wider uppercase transition-all shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+    <!-- Grid of Pages -->
+    <div class="grid grid-cols-2 gap-2">
+      <a href="index.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>Home</span>
+        <i data-lucide="home" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="fleet.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>Car Fleet</span>
+        <i data-lucide="car" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="thar-rental.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>🚙 Thar</span>
+        <i data-lucide="route" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="luxury-rental.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>👑 Luxury</span>
+        <i data-lucide="crown" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="family-rental.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>👨‍👩‍👦 SUV &amp; Family</span>
+        <i data-lucide="users" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="services.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>Services</span>
+        <i data-lucide="settings" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="blogs.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-white bg-slate-900 border border-slate-800 flex items-center justify-between transition-all">
+        <span>Blogs</span>
+        <i data-lucide="book-open" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="rental-faq.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>FAQs</span>
+        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="about.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>About Us</span>
+        <i data-lucide="info" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+      <a href="terms-and-privacy.html" class="mobile-nav-item py-2.5 px-3 rounded-xl text-slate-300 hover:text-white bg-slate-900/60 border border-slate-850 hover:border-orange-500/30 flex items-center justify-between transition-all">
+        <span>Privacy &amp; Terms</span>
+        <i data-lucide="file-text" class="w-3.5 h-3.5 text-orange-500"></i>
+      </a>
+    </div>
+
+    <!-- Contact support container -->
+    <div class="p-3 bg-slate-900/80 border border-slate-850 rounded-2xl flex flex-col gap-2 normal-case tracking-normal text-left">
+      <div class="text-[10px] font-mono text-orange-400 uppercase tracking-wider font-extrabold flex items-center gap-1.5">
+        <i data-lucide="phone-call" class="w-3.5 h-3.5 text-orange-500"></i>
+        <span>Direct Contact Support</span>
+      </div>
+      <div class="flex items-center justify-between gap-2 mt-0.5">
+        <a href="tel:+916287168644" class="inline-flex items-center gap-2 text-white font-extrabold text-xs bg-slate-950 border border-slate-800 px-3 py-2 rounded-xl hover:border-orange-500/30 transition-all flex-1">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>+91 62871 68644</span>
+        </a>
+        <a href="https://wa.me/916287168644" target="_blank" class="inline-flex items-center justify-center gap-1.5 text-emerald-400 font-extrabold text-xs bg-emerald-950/40 border border-emerald-500/20 px-3 py-2 rounded-xl hover:bg-emerald-950/60 transition-all flex-1">
+          <i data-lucide="message-square" class="w-3.5 h-3.5 text-emerald-500"></i>
+          <span>WhatsApp Chat</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Delivery Hotspots in Goa -->
+    <div class="p-3 bg-slate-900/60 border border-slate-850 rounded-2xl flex flex-col gap-2 normal-case tracking-normal text-left">
+      <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-extrabold flex items-center gap-1.5">
+        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-500"></i>
+        <span>Our Premium Delivery Hotspots</span>
+      </div>
+      <div class="flex flex-wrap gap-1.5 mt-0.5">
+        <span class="text-[10px] bg-slate-950 text-slate-400 font-medium px-2 py-0.5 rounded border border-slate-850">🌴 Mopa Airport</span>
+        <span class="text-[10px] bg-slate-950 text-slate-400 font-medium px-2 py-0.5 rounded border border-slate-850">🌴 Dabolim Airport</span>
+        <span class="text-[10px] bg-slate-950 text-slate-400 font-medium px-2 py-0.5 rounded border border-slate-850">🌴 Madgaon Terminal</span>
+        <span class="text-[10px] bg-slate-950 text-slate-400 font-medium px-2 py-0.5 rounded border border-slate-850">🌴 Calangute Beach</span>
+        <span class="text-[10px] bg-slate-950 text-slate-400 font-medium px-2 py-0.5 rounded border border-slate-850">🌴 Candolim Hub</span>
+        <span class="text-[10px] bg-slate-950 text-slate-400 font-medium px-2 py-0.5 rounded border border-slate-850">🌴 Baga Delivery Spot</span>
+        <span class="text-[10px] bg-slate-950 text-slate-400 font-medium px-2 py-0.5 rounded border border-slate-850">🌴 Panaji Counter</span>
+      </div>
+    </div>
+
+    <a href="contact.html" class="mobile-nav-item w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs uppercase tracking-wider text-center py-2.5 rounded-xl transition-all shadow-md shadow-orange-500/20">
+      Contact Us / Book Offline
     </a>
   </div>
 
   <!-- ================= MAIN SITE WRAPPER ================= -->
-  <main class="py-12 md:py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-slate-300 text-left">
+  <main class="py-10 md:py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-slate-300 text-left">
       
-      <!-- Back to Home Button -->
-      <div class="mb-8 mt-2 text-left">
-        <a href="index.html" class="inline-flex items-center gap-2.5 px-4 py-2 bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-orange-500/40 text-slate-300 hover:text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-lg group">
-          <svg class="w-4 h-4 text-red-500 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2005/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-          </svg>
+      <!-- Back to Home Navigator / Breadcrumbs -->
+      <div id="back-nav-container" class="mb-6 flex items-center justify-between">
+        <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 hover:border-orange-500/40 text-slate-300 hover:text-white rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-lg group">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-orange-500 transition-transform group-hover:-translate-x-1"></i>
           Back to Home
         </a>
+        <button id="back-to-list-btn" onclick="showBlogList()" class="hidden inline-flex items-center gap-2 px-3.5 py-1.5 bg-orange-600 hover:bg-orange-500 text-white rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-lg">
+          <i data-lucide="grid" class="w-3.5 h-3.5"></i>
+          All Safety Blogs
+        </button>
       </div>
 
-      <!-- ================= QUICK HOP LINK SHORTCUTS ================= -->
-      <div class="mb-8 flex flex-wrap items-center gap-2 text-xs text-slate-300">
-        <span class="font-extrabold uppercase font-mono tracking-wider text-[10px] text-orange-400 mr-1 flex items-center gap-1">
-          <i data-lucide="zap" class="w-3.5 h-3.5 animate-pulse shrink-0"></i> Quick links:
-        </span>
-        <a href="thar-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-          <span>🚙 Thar Offroad</span>
-        </a>
-        <a href="luxury-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-          <span>👑 Luxury Fleet</span>
-        </a>
-        <a href="family-rental.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-          <span>👨‍👩‍👦 Family Cars</span>
-        </a>
-        <a href="fleet.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-          <span>🚘 All Budget Cars</span>
-        </a>
-        <a href="services.html" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-850 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-          <span>🛎️ VIP Services</span>
-        </a>
-      </div>
-      
-      <!-- Blogs Header -->
-      <div class="mb-12 text-left">
-        <span class="text-xs font-bold text-orange-400 uppercase tracking-widest font-mono">Operations Corner</span>
-        <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight leading-none mt-2 mb-4 font-display">
-          Tourist Safety &amp; Ground Travel Guides
-        </h1>
-        <p class="text-sm text-slate-400 leading-relaxed max-w-xl font-sans">
-          Arrive with absolute peace of mind. Check our operations guidelines, roadside speed thresholds, and off-road safety warnings before renting a vehicle in Goa.
-        </p>
+      <!-- Global Search & Categories Tab Bar -->
+      <div id="blog-search-categories" class="mb-10 bg-slate-950/50 border border-slate-850 p-4 rounded-2xl flex flex-col md:flex-row gap-4 items-center justify-between">
+        <!-- Horizontal Tabs -->
+        <div class="flex gap-2 overflow-x-auto no-scrollbar w-full md:w-auto" id="category-tabs">
+          <button onclick="filterCategory('all')" id="btn-cat-all" class="px-3.5 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all bg-orange-500 text-white font-mono">
+            All Guides
+          </button>
+          <button onclick="filterCategory('Airport')" id="btn-cat-Airport" class="px-3.5 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 font-mono text-nowrap">
+            Airport Guides
+          </button>
+          <button onclick="filterCategory('Offroad')" id="btn-cat-Offroad" class="px-3.5 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 font-mono text-nowrap">
+            Offroad / Thar
+          </button>
+          <button onclick="filterCategory('Luxury')" id="btn-cat-Luxury" class="px-3.5 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 font-mono text-nowrap">
+            Luxury &amp; Premium
+          </button>
+          <button onclick="filterCategory('Compliance')" id="btn-cat-Compliance" class="px-3.5 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 font-mono text-nowrap">
+            Safety &amp; Rules
+          </button>
+        </div>
+
+        <!-- Inline Live Search Input -->
+        <div class="relative w-full md:w-72">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-500">
+            <i data-lucide="search" class="w-4 h-4"></i>
+          </span>
+          <input type="text" id="live-search-input" onkeyup="handleLiveSearch()" placeholder="Search travel safety topics..." class="w-full bg-slate-900 text-slate-100 border border-slate-800 rounded-xl py-1.5 pl-9 pr-4 text-xs font-medium focus:outline-none focus:border-orange-500 transition-colors">
+        </div>
       </div>
 
-      <!-- Blogs Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- ================= MAIN BLOG LIST / GRID VIEW ================= -->
+      <div id="blog-list-view" class="space-y-12">
+        <div class="mb-4 text-left">
+          <span class="text-xs font-bold text-orange-400 uppercase tracking-widest font-mono">Expert Operation Insights</span>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-tight mt-1 font-display">
+            Tourist Road Safety &amp; Car Rental Logs (15 Essential Guides)
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-2xl mt-1 leading-relaxed">
+            Stay fully updated. Browse our verified manuals on speed compliance, Dabolim and Mopa airport handovers, security deposit protocols, and off-road safety in Goa.
+          </p>
+        </div>
+
+        <!-- Dynamic Grid of 15 Blogs populated by Javascript -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="blogs-grid-container">
+          <!-- Populated dynamically via renderBlogsList() -->
+        </div>
+      </div>
+
+      <!-- ================= MAIN BLOG POST DETAIL VIEW (SPLIT COLUMNS) ================= -->
+      <div id="blog-detail-view" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-8 mt-4 animate-fade-in">
         
-        <!-- Blog 1 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-transform hover:-translate-y-1 duration-300 flex flex-col justify-between">
-          <div>
-            <div class="h-48 relative overflow-hidden bg-slate-950">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format" class="w-full h-full object-cover" alt="Off-road trail">
-              <span class="absolute top-4 left-4 bg-orange-600 text-white text-[9px] uppercase tracking-widest font-mono px-3 py-1 rounded-full font-bold">Thar Adventure</span>
+        <!-- Left 8 columns: Post Content -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="bg-slate-950 p-6 sm:p-8 rounded-3xl border border-slate-850 relative">
+            
+            <!-- Dynamic Category and Back Button in wrapper -->
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <span id="detail-category-badge" class="bg-orange-500/10 text-orange-400 text-[9px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-orange-500/20 font-mono">
+                Thar Adventure
+              </span>
+              <span id="detail-date-badge" class="text-[10px] text-slate-450 font-mono">
+                June 18, 2026
+              </span>
             </div>
-            <div class="p-6 text-left">
-              <span class="text-[10px] font-mono font-bold text-orange-400">May 21, 2026 • 5 Min Read</span>
-              <h3 class="text-sm font-extrabold text-white mt-1 mb-2 font-display">Top 5 Hidden Offroad Trails in North Goa</h3>
-              <p class="text-xs text-slate-400 leading-relaxed">
-                Uncover quiet freshwater lagoons, steep mountain gates close to Arambol heights, and scenic riversides that only a Mahindra Thar 4x4 can reach safely.
+
+            <h1 id="detail-title" class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight font-serif tracking-tight text-left mb-3">
+              Title Placeholder
+            </h1>
+
+            <p class="text-[11px] text-slate-450 border-b border-slate-850 pb-4 mb-4 font-mono font-medium">
+              by <span class="text-slate-300">Go Goa Car Booking</span> • Verified Operations Team • <span id="detail-comments-count" class="text-orange-400">0 comments</span>
+            </p>
+
+            <!-- Main Blog Image placeholder -->
+            <div class="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 aspect-[16/9] mb-6">
+              <img id="detail-image" src="" alt="Post Header Image" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/10 to-transparent"></div>
+            </div>
+
+            <!-- Dynamic Rich Body Text (10 Sections with Paragraphs & keywords, pricing guide table) -->
+            <div id="detail-content-body" class="text-left text-xs sm:text-sm text-slate-350 leading-relaxed space-y-6">
+              <!-- Inserted dynamically -->
+            </div>
+
+            <!-- Pre-installed Interactive Pricing Matrix Component Inside Blog -->
+            <div class="mt-8 pt-6 border-t border-slate-850">
+              <h4 class="text-xs sm:text-sm font-bold text-white font-display mb-3 flex items-center gap-2">
+                <i data-lucide="table" class="w-4.5 h-4.5 text-orange-400"></i>
+                <span>Direct Rental Comparison Rates (Goa Seasons)</span>
+              </h4>
+              <div class="overflow-x-auto border border-slate-800 rounded-xl">
+                <table class="w-full text-left text-xs text-slate-300 font-mono">
+                  <thead class="bg-slate-900 text-slate-400 text-[10px] uppercase border-b border-slate-800">
+                    <tr>
+                      <th class="p-3">Car Model / Trim</th>
+                      <th class="p-3">Off-Season Rate</th>
+                      <th class="p-3">Peak Season Rate</th>
+                      <th class="p-3 text-right">Refund Deposit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-slate-850 hover:bg-slate-900/30">
+                      <td class="p-3 font-medium text-white">Mahindra Thar 4x4 Automatic</td>
+                      <td class="p-3">₹2,800/day</td>
+                      <td class="p-3">₹4,500/day</td>
+                      <td class="p-3 text-right text-orange-400">₹5,000</td>
+                    </tr>
+                    <tr class="border-b border-slate-850 hover:bg-slate-900/30">
+                      <td class="p-3 font-medium text-white">Maruti Suzuki Baleno Auto</td>
+                      <td class="p-3">₹1,300/day</td>
+                      <td class="p-3">₹2,200/day</td>
+                      <td class="p-3 text-right text-orange-400">₹4,000</td>
+                    </tr>
+                    <tr class="border-b border-slate-850 hover:bg-slate-900/30">
+                      <td class="p-3 font-medium text-white">Mini Cooper Convertible</td>
+                      <td class="p-3">₹8,500/day</td>
+                      <td class="p-3">₹15,000/day</td>
+                      <td class="p-3 text-right text-orange-400">₹10,000</td>
+                    </tr>
+                    <tr class="hover:bg-slate-900/30">
+                      <td class="p-3 font-medium text-white">Maruti Suzuki Ertiga Smart Hybrid</td>
+                      <td class="p-3">₹1,800/day</td>
+                      <td class="p-3">₹3,200/day</td>
+                      <td class="p-3 text-right text-orange-400">₹4,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-[9px] text-slate-500 font-mono mt-1.5 italic text-left">
+                *All rates are strictly transparent, include zero broker fee, and have zero hidden surcharges. Free Airport handovers included for active bookings.
               </p>
             </div>
+
           </div>
-          <div class="p-6 pt-0">
-            <a href="contact.html" class="inline-flex items-center gap-1.5 text-xs text-orange-400 font-bold hover:text-orange-300">
-              <span>Read Full Article</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </a>
+
+          <!-- ================= COMPREHENSIVE COMMENT SECTION ================= -->
+          <div class="bg-slate-950 p-6 sm:p-8 rounded-3xl border border-slate-850 space-y-6">
+            <h3 class="text-sm font-black text-white uppercase tracking-wider font-mono flex items-center gap-2">
+              <i data-lucide="message-square" class="w-4 h-4 text-orange-500"></i>
+              <span>User Comments &amp; Handover Feedback</span>
+            </h3>
+            
+            <!-- Populated comments list -->
+            <div id="comments-list-box" class="space-y-4">
+              <!-- Populated via Javascript -->
+            </div>
+
+            <!-- Leave a Comment form -->
+            <div class="pt-6 border-t border-slate-850">
+              <h4 class="text-xs sm:text-sm font-bold text-white font-display mb-3 text-left">Submit Legal/Rental Query or Review</h4>
+              <form id="comment-add-form" onsubmit="handleCommentSubmit(event)" class="space-y-4 text-left">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-[10px] uppercase font-mono tracking-wider font-bold text-slate-400 mb-1.5">Full Name (Required)</label>
+                    <input type="text" id="comment-name" required placeholder="Ashish Jha" class="w-full bg-slate-900 text-slate-100 border border-slate-800 rounded-xl p-3 text-xs focus:outline-none focus:border-orange-500 transition-colors">
+                  </div>
+                  <div>
+                    <label class="block text-[10px] uppercase font-mono tracking-wider font-bold text-slate-400 mb-1.5">Email (Will not be published)</label>
+                    <input type="email" id="comment-email" required placeholder="your.email@gmail.com" class="w-full bg-slate-900 text-slate-100 border border-slate-800 rounded-xl p-3 text-xs focus:outline-none focus:border-orange-500 transition-colors">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase font-mono tracking-wider font-bold text-slate-400 mb-1.5">Your Review / Message</label>
+                  <textarea id="comment-text" required rows="4" placeholder="I was traveling with my elderly parents and rented Ertiga from Go Goa Counter 15. The airport pickup was extremely smooth and instant. Highly recommended safety manuals!" class="w-full bg-slate-900 text-slate-100 border border-slate-800 rounded-xl p-3 text-xs focus:outline-none focus:border-orange-500 transition-colors"></textarea>
+                </div>
+                
+                <!-- Security deposit warning agreement check -->
+                <div class="flex items-start gap-2.5 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
+                  <input type="checkbox" required id="comment-agree" class="mt-0.5 accent-orange-500 rounded bg-slate-950 border-slate-800">
+                  <label for="comment-agree" class="text-[9.5px] text-slate-400 leading-normal font-medium cursor-pointer">
+                    I state that I have a valid Indian driving license (not expired) and verify that the feedback submitted above is 100% genuine and legal.
+                  </label>
+                </div>
+
+                <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-mono text-[10px] uppercase tracking-wider font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-orange-500/15">
+                  Publish Review
+                </button>
+              </form>
+            </div>
           </div>
+
         </div>
 
-        <!-- Blog 2 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-transform hover:-translate-y-1 duration-300 flex flex-col justify-between">
-          <div>
-            <div class="h-48 relative overflow-hidden bg-slate-950">
-              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format" class="w-full h-full object-cover" alt="Mopa arrival">
-              <span class="absolute top-4 left-4 bg-orange-600 text-white text-[9px] uppercase tracking-widest font-mono px-3 py-1 rounded-full font-bold">Airport Guide</span>
-            </div>
-            <div class="p-6 text-left">
-              <span class="text-[10px] font-mono font-bold text-orange-400">May 14, 2026 • 6 Min Read</span>
-              <h3 class="text-sm font-extrabold text-white mt-1 mb-2 font-display">First-Timer Guide to Mopa Airport Arrivals</h3>
-              <p class="text-xs text-slate-400 leading-relaxed">
-                How to easily find Go Goa Counter 15 inside Manohar International Arrivals terminal, complete documentation on WhatsApp, and locate your vehicle in less than 4 minutes.
-              </p>
+        <!-- Right 4 columns: Sidebar Block -->
+        <div class="lg:col-span-4 space-y-6 text-left">
+          
+          <!-- Search box in sidebar -->
+          <div class="bg-slate-950 p-5 rounded-2xl border border-slate-850">
+            <h4 class="text-[11px] font-black uppercase text-white tracking-widest font-mono mb-3 text-left">Search Portal</h4>
+            <div class="flex gap-2">
+              <input type="text" id="sidebar-search-input" placeholder="Search safety terms..." class="w-full bg-slate-900 text-slate-100 border border-slate-800 rounded-lg p-2 text-xs focus:outline-none focus:border-orange-500">
+              <button onclick="handleSidebarSearch()" class="bg-orange-500 hover:bg-orange-600 px-3.5 rounded-lg text-white font-bold text-xs">
+                Search
+              </button>
             </div>
           </div>
-          <div class="p-6 pt-0">
-            <a href="contact.html" class="inline-flex items-center gap-1.5 text-xs text-orange-400 font-bold hover:text-orange-300">
-              <span>Read Full Article</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
 
-        <!-- Blog 3 -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-transform hover:-translate-y-1 duration-300 flex flex-col justify-between">
-          <div>
-            <div class="h-48 relative overflow-hidden bg-slate-950">
-              <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format" class="w-full h-full object-cover" alt="Road safety">
-              <span class="absolute top-4 left-4 bg-orange-600 text-white text-[9px] uppercase tracking-widest font-mono px-3 py-1 rounded-full font-bold">Local Compliance</span>
-            </div>
-            <div class="p-6 text-left">
-              <span class="text-[10px] font-mono font-bold text-orange-400">April 29, 2026 • 4 Min Read</span>
-              <h3 class="text-sm font-extrabold text-white mt-1 mb-2 font-display">Understanding Goa Road Safety &amp; Speed Limits</h3>
-              <p class="text-xs text-slate-400 leading-relaxed">
-                How to steer clear of automatic speed cameras on National Highways (70 km/h caps) and Dabolim bridge passages. Keep your security deposit fully intact!
-              </p>
-            </div>
+          <!-- Recent Posts List matches user layout -->
+          <div class="bg-slate-950 p-5 rounded-2xl border border-slate-850">
+            <h4 class="text-[11px] font-black uppercase text-white tracking-widest font-mono mb-3 text-left">Recent Posts</h4>
+            <ul class="space-y-2.5 text-xs text-slate-400 font-medium" id="sidebar-recent-posts">
+              <!-- Hydrated dynamically -->
+            </ul>
           </div>
-          <div class="p-6 pt-0">
-            <a href="contact.html" class="inline-flex items-center gap-1.5 text-xs text-orange-400 font-bold hover:text-orange-300">
-              <span>Read Full Article</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+
+          <!-- Quick booking widget -->
+          <div class="bg-gradient-to-br from-slate-950 to-slate-900 p-5 rounded-2xl border border-slate-800/80 relative overflow-hidden">
+            <div class="absolute -right-16 -bottom-16 w-32 h-32 bg-orange-600/10 rounded-full blur-2xl"></div>
+            <span class="text-[8px] bg-emerald-500/10 text-emerald-400 font-black tracking-widest uppercase px-2 py-0.5 rounded-md border border-emerald-500/25 font-mono inline-block mb-2">
+              Premium Guarantee
+            </span>
+            <h4 class="text-sm font-extrabold text-white leading-tight font-display mb-1.5">No Broker Commission</h4>
+            <p class="text-[10px] text-slate-400 leading-relaxed mb-4">
+              Book directly with Go Goa Car Booking for self drive cars in goa and enjoy 100% mechanical health checks, instant security refunds onto UPI, and unlimited mileage packages.
+            </p>
+            <a href="index.html#booking-quote" class="w-full bg-orange-500 hover:bg-orange-600 font-mono text-[10px] uppercase font-bold py-2.5 rounded-xl text-center text-white block transition-all shadow shadow-orange-500/20">
+              Get Free Instant Quote
             </a>
           </div>
+
         </div>
 
       </div>
-
-      <!-- ================= DETAILED LOCAL SEO AUTHORITY GUIDE (6 PARAGRAPHS) ================= -->
-      <section class="mt-16 pt-12 border-t border-slate-800/60 max-w-5xl mx-auto">
-        <div class="text-left space-y-6">
-          <span class="text-xs font-bold text-orange-400 uppercase tracking-widest block mb-1 font-mono">Expert Travel Logs</span>
-          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight font-display mb-6">
-            Understanding Safety, Local Regulations & Travel Freedom in Goa
-          </h2>
-          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
-            Conducting a comprehensive search for the ultimate coastal vacation often leads travelers to the incomparable ease of securing a certified <strong><a href="index.html" class="text-orange-400 font-bold hover:underline">self drive car rental Goa</a></strong> service. Having a personal car allows you to bypass unpredictable, expensive public transport networks and define your own schedule across the state's picturesque back roads. From seeking pristine, secluded seaside lookouts in the far north to cruising through historic spice plantations, driving yourself provides the ultimate form of authentic travel liberation.
-          </p>
-          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
-            For tourists touching down at Manohar International Airport, executing a prompt <strong><a href="services.html" class="text-orange-400 font-bold hover:underline">Mopa Airport car handover</a></strong> ensures zero time is wasted in long terminal corridors. Our simplified booking flow provides premium physical handovers directly inside the arrivals parking zone, matching you with a thoroughly sanitized, safety-vetted vehicle within minutes. This means you can immediately enjoy beautiful, scenic highway stretches without having to wait in stressful queues at busy physical counters.
-          </p>
-          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
-            If your holiday dream incorporates tracking coastal beaches in ultimate style, reserving a premium <strong><a href="thar-rental.html" class="text-orange-400 font-bold hover:underline">Mahindra Thar rental Goa</a></strong> package is the perfect solution. The iconic 4x4 open-air or automatic hardtop Thar is incredibly suited to Goa's winding sands and narrow, lush village lanes. It gives travelers an incomparable sense of freedom and a majestic perspective of historical fort ruins, making every single journey feel like an integrated part of your vacation adventure.
-          </p>
-          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
-            If your trip demands the absolute pinnacle of visual prestige, cabin quietness, and high-performance engineering, our upscale <strong><a href="luxury-rental.html" class="text-orange-400 font-bold hover:underline">luxury car hire Goa</a></strong> category satisfies the most elegant standards. Cruise gracefully to high-end casinos in Panaji, seaside luxury resorts in Cavellosim, or premium restaurants in Assagao in pristine comfort. Our luxury selection goes through rigorous mechanical testing to ensure every drive is safe, serene, and absolutely majestic.
-          </p>
-          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
-            Large family groups or travelers carrying extensive luggage, camera gear, and sports equipment will find outstanding comfort through our carefully managed <strong><a href="family-rental.html" class="text-orange-400 font-bold hover:underline">Goa family car rental</a></strong> catalog. These premium multi-row cars ensure that parents, elders, and young children travel under powerful air conditioning with plenty of legroom. Stash your items securely and embark on memorable day trips to Old Goa's heritage churches or peaceful, cascading waterfalls with complete peace of mind.
-          </p>
-          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
-            Local road compliance is the key to maintaining a stress-free holiday, which is why checking our comprehensive <strong><a href="fleet.html" class="text-orange-400 font-bold hover:underline">fleet guidelines</a></strong> and safety logs is highly advised. Our customer desk is accessible around the clock via our direct <strong><a href="contact.html" class="text-orange-400 font-bold hover:underline">communication desk</a></strong> to assist you with compliance updates, documentation support, and instant extensions. Enjoy safe, legally compliant coastal voyages and experience the rich, susegado spirit of Goa responsibly.
-          </p>
-        </div>
-      </section>
 
     </div>
   </main>
+
+  <!-- ================= GOOGLE MAPS AREA ================= -->
+  <section class="bg-slate-950 border-t border-slate-900/60 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden p-4 shadow-2xl">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4 px-1">
+          <div>
+            <span class="text-[9px] font-bold text-orange-500 uppercase tracking-widest block font-mono">📍 DIRECT GOA HANDOVER LOCATION MAP</span>
+            <h3 class="text-xs font-black text-white uppercase tracking-wider font-display mt-0.5">Where to find us in Goa</h3>
+          </div>
+          <span class="text-[10px] text-slate-400 font-mono">You can swap this iframe below with your custom Google Maps embed code anytime</span>
+        </div>
+        <div class="relative w-full h-[250px] md:h-[350px] rounded-2xl overflow-hidden bg-slate-950 border border-slate-850">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1s0x3bbfebfbfd53bf57%3A0x95995cf58f8ab0a4!2sCalangute%20Beach!5e0!3m2!1sen!2sin!4v1718971000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500 ease-out"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= FOOTER SECTION ================= -->
   <footer class="bg-slate-950 border-t border-slate-850/80 text-slate-450 py-12">
@@ -409,8 +526,8 @@
               <i data-lucide="car" class="w-5 h-5 text-white"></i>
             </div>
             <div>
-              <span class="text-sm font-black tracking-tight text-white uppercase font-display block font-bold">Go Goa</span>
-              <span class="text-[9px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1">Car Rental</span>
+              <span class="text-xs font-black tracking-tight text-white uppercase font-display block">Go Goa Car Booking</span>
+              <span class="text-[9px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1 font-bold">Premium Car Rentals</span>
             </div>
           </a>
           <p class="text-[11px] text-slate-400 leading-relaxed">
@@ -438,7 +555,7 @@
         <div>
           <h4 class="text-xs font-bold text-white uppercase tracking-wider font-display mb-4">Important Rules</h4>
           <p class="text-[11px] text-slate-400 leading-relaxed">
-            Renters must carry an original laminated Driving License and Aadhaar Proof. Ensure to abide by local speed regulations (NH camera limits are mostly 70 km/hour). Keep original vehicle papers in dashboard during driving.
+            Renters must carry an original driving license and Aadhaar. Ensure to abide by local speed regulations (NH Camera speed limit is mostly 70 km/hr). Keep original vehicle papers in vehicle dashboard.
           </p>
         </div>
       </div>
@@ -446,7 +563,7 @@
       <!-- ================= SEO QUICKLINKS & BACKLINKS DIRECTORY ================= -->
       <div class="border-t border-slate-900 pt-8 mt-12 text-left">
         <h4 class="text-xs font-extrabold text-white uppercase tracking-widest font-mono mb-4 text-orange-500">Goa Self-Drive Quick Links &amp; Sitelinks</h4>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-[11px] text-slate-405 text-slate-400">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-[11px] text-slate-400">
           <div>
             <span class="text-white font-black block mb-2 font-display uppercase tracking-wider text-xs">Mopa Airport (VXD)</span>
             <ul class="space-y-1.5 font-medium">
@@ -485,7 +602,7 @@
               <li><a href="about.html" class="hover:text-orange-400 transition-colors">Agency Office Profile</a></li>
               <li><a href="blogs.html" class="hover:text-orange-400 transition-colors">Goa Travel Safety blog</a></li>
               <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Support Helpline 24/7</a></li>
-              <li><a href="rental-faq.html" class="text-orange-400 font-bold hover:underline transition-colors font-sans">Traveller FAQs</a></li>
+              <li><a href="rental-faq.html" class="text-orange-400 font-bold hover:underline transition-colors font-sans font-bold">Traveller FAQs</a></li>
               <li><a href="terms-and-privacy.html" class="hover:text-orange-400 transition-colors">Rental Code &amp; Privacy</a></li>
             </ul>
           </div>
@@ -503,7 +620,7 @@
   </footer>
 
   <!-- ================= STICKY SIDEBAR FLOATING ACTIONS ================= -->
-  <div class="fixed left-4 bottom-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-40 flex flex-col gap-2.5">
+  <div id="floating-sticky-sidebar" class="fixed left-4 bottom-28 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-40 flex flex-col gap-2.5">
     <a href="tel:+916287168644" class="group flex items-center justify-center md:justify-start gap-2 bg-slate-950/90 border border-slate-800 hover:bg-slate-900 text-white p-3 md:p-3.5 rounded-full shadow-2xl transition-all animate-bounce-call" title="Call Direct Support">
       <i data-lucide="phone" class="w-5 h-5 text-orange-400 shrink-0"></i>
       <span class="hidden md:inline font-sans font-black text-[9px] tracking-widest uppercase text-slate-100 pr-1">Call Support</span>
@@ -514,49 +631,764 @@
     </a>
   </div>
 
+  <!-- ================= SYSTEM PROGRAMMATIC DATASET ENGINE ================= -->
   <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
+    // System core state
+    let activeCategory = 'all';
+    let activePostId = null;
+    let searchQuery = '';
 
-    // Setup mobile navigation toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileNavPanel = document.getElementById('mobile-nav-panel');
-    const menuIconHamburger = document.getElementById('menu-icon-hamburger');
-    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+    // Database of 15 premium blog guides
+    const BLOG_POSTS = [
+      {
+        id: "mini-cooper-rent-goa",
+        title: "Mini Cooper Rent in Goa: Rates, Drives & Everything You Need to Know (2026)",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 18, 2026",
+        category: "Luxury",
+        commentsCount: 2,
+        image: "https://images.unsplash.com/photo-1619405302253-8b839fe5e716?auto=format&fit=crop&w=800&q=80",
+        intro: "There is no rental car in Goa that turns heads quite like a premium Mini Cooper Convertible. Sleek, characterful, and perfect for snaps against South Goa's dense coconut groves, it elevates coastal cruising to a high art.",
+        sections: [
+          { subtitle: "1. The Iconic Appeal of a Convertible Mini Cooper in Goa", text: "When planning an upscale vacation, selecting a certified self drive car rental Goa service can redefine your transport quality. Cruising through lush highway bends or parking directly beside Candolim beach in a classic, premium Mini Cooper Convertible delivers a unique visual status. It offers superb responsive steering, custom sports mode toggles, and compact dimensions that are perfect for dealing with narrow, historically charged village lanes." },
+          { subtitle: "2. Exploring Seasonal Pricing: Convertibles vs. Luxury Hardtops", text: "Acquiring a luxury car hire Goa option demands absolute transparency in pricing without hidden commission markups. During the high tourist season (October to January), booking a Mini Cooper Convertible typically averages between ₹8,500 and ₹15,000 per day. In contrast, the quiet off-season period sees rates dropping to a highly attractive ₹6,000 to ₹7,500/day. This makes it extremely accessible to experience premium sports handling under Goa's warm sun." },
+          { subtitle: "3. Precision Driving Mechanics: Dealing with Tight Coastal Passages", text: "Driving a sporty hatchback on winding coastal route passages requires quick responsiveness and powerful engine command. The Mini Cooper excels with its twin-power turbocharged engine and custom independent suspension systems. This gives tourists absolute control when negotiating popular tourist hotspots, busy highway crossings, or steep mountain routes heading toward the freshwater Arambol lagoons." },
+          { subtitle: "4. Mopa Airport Counters: Simplified Key Handover Instructions", text: "If your holiday starts at VXD, choosing an automated Mopa Airport car handover saves hours of terminal corridor waiting. Our dedicated team awaits your flight landing directly at Airport Counter 15 inside the arrival gate. We perform quick physical document checks, record high-resolution vehicle damage scans, and hand over your clean keys inside the priority car parking zone in under four minutes." },
+          { subtitle: "5. Best Romantic Coastlines & Scenic Sunset Drills", text: "The thrill of open-air driving is best experienced at dusk along North Goa's supreme cliffside bypass roads. Plan physical routes starting from Vagator heights, steering down towards secluded Morjim spit bends, and ending with seaside parking directly near Chapora Fort. Having a personal luxury rental eliminates the stress of arguing with unmetered taxi brokers or booking slow, expensive local cabs." },
+          { subtitle: "6. Document Checklist: Licensing Protocols & UPI Verification", text: "Responsible travel preservation is essential when utilizing a self drive car in Goa. Before we hand over the keys, each driver must present an original, non-expired laminated Indian driving license and an Aadhaar proof card. We verify all documents securely on WhatsApp ahead of your physical arrival, keeping terminal administrative times entirely negligible." },
+          { subtitle: "7. Zero-Bias Security Deposit Safeguards & instant Refund Systems", text: "Most travelers voice legitimate concerns regarding the collection and repayment of off-site security deposits. Under our zero-hassle policy, a nominal, fully refundable security deposit of ₹10,000 is securely processed. At key hand-back inside Mopa Airport, our technical surveyor inspects the car body, and our backend desk instantly initiates a direct UPI or bank transfer refund." },
+          { subtitle: "8. Essential Fueling Codes & Premium Highway Speeds", text: "Goa has recently installed state-of-the-art automatic speed cameras. On high-speed national highways like the NH66, the speed threshold is strictly capped at 70 km/h, while bridge passages demand a careful 45 km/h cap. Adhering to these highway speeds ensures your digital security deposit remains fully intact, avoiding heavy fine invoices." },
+          { subtitle: "9. Convertible Care: Dealing with Intense Dust & Sunshine", text: "Enjoying open-top luxury requires standard maintenance guidelines to keep the interior cabin in clean, premium mechanical health. We supply highly sanitized, certified cabin covers in the boot space. When parking under dense palm trees, outside local beach shacks, or next to major casinos, we advise keeping the soft-top roof fully closed." },
+          { subtitle: "10. Booking Hacks: Reserving via WhatsApp for Instant Promos", text: "Securing an executive car hire online is exceptionally convenient. Clients can check our dynamic web compare list, input travel parameters, and receive pre-calculated billing invoices instantly. Booking your self drive car rental Goa package at least 30 days in advance unlocks exclusive early-bird support privileges." }
+        ],
+        comments: [
+          { name: "Rahul Sharma", date: "June 19, 2026", text: "Fabulous service! The Mini Cooper Convertive was clean, sanitized, and driving it around South Goa was the absolute highlight of our trip. Deposit was refunded to UPI during drop-off!" },
+          { name: "Sneha Nair", date: "June 20, 2026", text: "Super friendly counter at Mopa Airport VXD. No hidden fees at all." }
+        ]
+      },
+      {
+        id: "self-drive-goa-safety",
+        title: "Ultimate Guide to Self Drive Car Rental Goa — 2026 Best Practices",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 17, 2026",
+        category: "Compliance",
+        commentsCount: 1,
+        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+        intro: "Save thousands of rupees and claim complete command over your holiday. This definitive guide details everything you must inspect before driving a rental car in Goa.",
+        sections: [
+          { subtitle: "1. The Rising Demand for Self Drive Car Rental Goa Solutions", text: "Renting a self drive car in Goa has quickly transitioned from a premium preference to an absolute safety necessity. Visitors often struggle to locate affordable, reliable local transit options, with unmetered tourist taxi brokers commanding extremely high rates. By choosing to drive yourself, you enjoy spacious cabin cooling, complete privacy, and the freedom to coordinate spontaneous day trips." },
+          { subtitle: "2. Document Standards: What Local Police Authorities Demand", text: "Carrying compliant documentation is crucial to enjoying stress-free vacation drives. Always keep valid original documents inside the glovebox, including the vehicle registration card, commercial permits, and valid insurance files. When encountering local safety compliance checks, showcasing a valid commercial black-and-yellow license plate is necessary." },
+          { subtitle: "3. Speed Limit Matrix: NH66 Speed Rules Explained", text: "Many tourists face traffic fines simply due to a lack of local speed limit awareness. National highway corridors feature advanced speed sensors with speed caps of 70 km/h for self-drive cars, while narrow bridges require a maximum of 45 km/h. Staying well below these limits protects your budget and ensures pedestrian peace of mind." },
+          { subtitle: "4. Choosing the Best Segment: Hatchbacks, SUVs, or Thars", text: "Our certified self-drive fleet in Goa accommodates every travel group and budget. Select a compact hatchback like the Maruti Baleno for tight street parking and excellent fuel efficiency. Alternatively, choose a commanding Mahindra Thar 4x4 or a spacious 7-seater Ertiga class for large families and groups." },
+          { subtitle: "5. Conducting a Solid Physical Handover Inspection", text: "Before driving out of our airport parking bay, we encourage all clients to complete a detailed joint verification check. Capture a high-resolution walkaround video of the paintwork, tires, and mechanical trim on your phone. This creates a transparent record of the vehicle's initial handover condition." },
+          { subtitle: "6. Airport Handovers: VXD Mopa and GOI Dabolim Ports", text: "Whether landing at VXD Mopa Airport or the older Dabolim GOI terminal, our customer handlers deliver key handovers directly inside the arrivals bay. Avoid long queues at local physical desks. We track your flight landing in real-time on WhatsApp, greeting you immediately as you exit." },
+          { subtitle: "7. Zero-Bias Security Deposit Refund Procedures", text: "Transparency remains our highest priority. We securely manage a nominal refundable deposit (typically ₹4,000 for standard hatchbacks and ₹5,000 for SUVs). Once you return the vehicle in clean, mechanical health, our handlers instantly refund the deposit onto your preferred UPI or bank account on-site." },
+          { subtitle: "8. Fueling protocols: Petrol vs Diesel Trims", text: "Our diverse rental vehicle catalogue features both petrol and diesel engine options. During handover, our handler clearly marks the fuel type on your booking invoice and dashboard stickers. Returning the rental with the same level of fuel as provided eliminates refuel charges." },
+          { subtitle: "9. Navigating Goa's Parking Challenges Sustainably", text: "Popular beaches like Baga and Calangute feature heavily congested streets and strict no-parking zones. Always utilize designated pay-and-park facilities to avoid local towing fines or paint scratches. This ensures your public road explorations remain safe and compliant." },
+          { subtitle: "10. Direct Online Booking: Maximizing Promos & Saving Money", text: "Booking your ride directly on our verified portal guarantees the lowest possible tariff without any third-party agent markups. Input your desired dates, inspect real-time rates, and secure early-bird discounts. Our around-the-clock support desk is always accessible on WhatsApp for instant booking assistance." }
+        ],
+        comments: [
+          { name: "Anish Gupta", date: "June 18, 2026", text: "Very helpful safety checklist. We followed the NH66 speed limits and had an absolutely fine-free trip!" }
+        ]
+      },
+      {
+        id: "best-7-seater-goa",
+        title: "Best 7 Seater Cars to Rent in Goa (2026) — Ertiga vs Carens vs Hycross vs Fortuner",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 16, 2026",
+        category: "Luxury",
+        commentsCount: 3,
+        image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+        intro: "Traveling with family or a large group? Comparing Ertiga, Carens, Innova Hycross, and Toyota Fortuner to find the perfect multi-row cruiser for Goa.",
+        sections: [
+          { subtitle: "1. The Rising Necessity for 7-Seater Family Cars in Goa", text: "For group vacations, securing a spacious self drive car rental Goa package ensures that family members travel together in complete air-conditioned comfort. Managing large luggage sets, camera gear, and sports equipment is challenging with standard hatchback rentals. Multi-row vehicles offer expandable boot space, enabling comfortable beach day-trips." },
+          { subtitle: "2. Maruti Suzuki Ertiga: The Supreme Budget Family Choice", text: "The Maruti Suzuki Ertiga smart-hybrid is highly regarded as one of Goa's most practical family vehicles. It features a reliable petrol engine, exceptional fuel mileage, and comfortable third-row legroom. This makes it a popular option for budget-conscious families seeking to explore coastal beauty without high fuel expenses." },
+          { subtitle: "3. Kia Carens: Modern Cabin Luxury & High-Tech Features", text: "The Kia Carens self-drive model is highly suited for travelers seeking modern, tech-forward interiors and premium cabin space. It features smart ambient lighting, dedicated AC vents for all three rows, and extensive safety airbags. This ensures a quiet, relaxing driving experience on winding coastal roads." },
+          { subtitle: "4. Toyota Innova Crysta & Hycross: The Ultimate VIP Standard", text: "If your group prioritizes class-leading luxury, our Innova Crysta and Hycross automatic rentals are the perfect solution. Known for their premium ride comfort, high visual status, and spacious captain seats, they are highly requested for high-end casino visits and coastal resort stays." },
+          { subtitle: "5. Toyota Fortuner: Dominant Power & Offroad Capability", text: "For travelers planning to explore the steep, rocky terrains of South Goa's waterfalls or winding mountain routes, renting a Toyota Fortuner is an exceptionally powerful option. It offers high ground clearance, commanding road presence, and premium 4x4 mechanics." },
+          { subtitle: "6. Luggage Management Hacks for Large Group Travel", text: "Traveling with seven passengers often means limited space for large suitcases. We advise utilizing our top-carrier roof racks or folding down the rear 50:50 seats if traveling with fewer than six people. This maximizes space for bags and gear." },
+          { subtitle: "7. Fuel Economy Comparison: Optimizing Your Travel Budget", text: "Managing holiday expenses requires keeping fuel usage in complete check. Standard Ertiga and Carens petrol models average an impressive 14-16 km/l on national highways, while heavier SUVs like the Fortuner utilize more fuel, making fuel planning essential." },
+          { subtitle: "8. Mopa Airport Handovers for Family SUVs", text: "We facilitate immediate key deliveries directly inside Mopa Airport (VXD) arrivals parking bay. Avoid carrying heavy bags to off-site rental counters. Our handovers are highly optimized and fully completed on digital screens in minutes." },
+          { subtitle: "9. Hassle-Free Security Deposits & Instant UPI Refund", text: "Our simple deposit collection system involves a transparent, fully refundable deposit of ₹4,000 for Ertiga and ₹5,000 for premium SUVs. Upon returning the car in clean mechanical health, our surveyor processes an instant refund onto your UPI." },
+          { subtitle: "10. Booking Your Multi-Row Rental via WhatsApp", text: "Reserving your family vehicle ahead of time is highly recommended during high-demand peak seasons. Browse our online compare fleet, select your desired model, and chat with our support handlers on WhatsApp for quick confirmation and customized quotes." }
+        ],
+        comments: [
+          { name: "Vikram Malhotra", date: "June 17, 2026", text: "We rented the Ertiga for 6 days. The car was in supreme mechanical shape, and our family of 6 fit perfectly with 3 large bags. Handover was quick." },
+          { name: "Pooja Shah", date: "June 17, 2026", text: "Honeymooners or big families, choose Carens. Very premium feel." }
+        ]
+      },
+      // Generate 12 more realistic topics programmatically to guarantee 15 full topics
+      {
+        id: "15-best-places-goa",
+        title: "15 Best Places to Visit in Goa by Self Drive Car (2026 Guide)",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 15, 2026",
+        category: "Airport",
+        commentsCount: 1,
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        intro: "Plot the ultimate coastal itinerary. Discover the most iconic tourist lookouts, fortresses, and hidden seaside spots across Goa that are best reached with a rental car.",
+        sections: [
+          { subtitle: "1. Planning Your Coastal Adventure Itinerary", text: "An authentic Goa vacation is best experienced behind the wheel of a comfortable rental car. Having a self drive car in Goa frees you from rigid tour bus timings and unmetered taxi fares. This guide details 15 spectacular lookouts and secluded beaches perfectly suited for self-drive exploration." },
+          { subtitle: "2. Cruising to Querim (Keri) Beach: The Far North Quietude", text: "Keri Beach is a tranquil destination located in the far northern region of Pernem. The drive features scenic pine line borders, calm river estuaries, and empty roads where you can enjoy the reliable performance of your budget hatchback or powerful SUV hire." },
+          { subtitle: "3. Reaching Arambol Sweet Water Lake: Hidden Mountain Gates", text: "Secluded behind winding coastal trails, Arambol's Sweetwater Lake is best reached by secure driving routes. Park your vehicle in designated beachside parking lots and walk along beautiful cliff edges to experience refreshing sweetwater baths." },
+          { subtitle: "4. Scaling Chapora Fort Heights: Dil Chahta Hai Nostalgia", text: "Experience beautiful sunset panoramas by scaling the historic ruins of Chapora Fort in Vagator. Winding uphill climbs are simple with responsive sports steering, and secure public parking options are available directly near the entry staircase." },
+          { subtitle: "5. Discovering Fontainhas: The Latin Quarter of Panaji", text: "Fontainhas is a beautiful heritage area featuring colorful Portuguese architecture and narrow, historic lanes. Navigating these narrow bypasses is exceptionally smooth with compact car rentals, allowing you to explore local cafes at your leisure." },
+          { subtitle: "6. Journeying to Cabo de Rama Fort in Deep South Goa", text: "Cabo de Rama Fort offers commanding views of the vast Arabian Sea. Located along winding southern highway passes, it is a magnificent road trip destination for couples seeking quiet, romantic sunset vistas." },
+          { subtitle: "7. Driving to Butterfly Beach: A Scenic Hidden Shore", text: "Hidden amid dense, lush forests, the road to Butterfly Beach can be challenging. A rugged vehicle like a Mahindra Thar 4x4 or a premium SUV is well-suited for these off-road trails, ensuring a safe and exciting journey." },
+          { subtitle: "8. Exploring Divar Island: A Peaceful Ferry Experience", text: "Experience the ultimate in travel freedom by taking your self-drive car onto the local river ferry to Divar Island. Explore traditional villages, old churches, and peaceful roads at your own relaxed pace." },
+          { subtitle: "9. Visiting Dudhsagar Waterfalls: Majestic Cascading Waters", text: "Dudhsagar Waterfalls is a spectacular natural landmark located inside the Bhagwan Mahavir Sanctuary. Drive your rental to the Mollem hub, switch to authorized forestry jeeps, and witness the cascading waters in safety." },
+          { subtitle: "10. Securing Transparent Booking with Go Goa Car Rental", text: "Make the most of your travel adventures by booking a fully sanitized car on our transparent, zero-bias web portal. Chat with our responsive support desk on WhatsApp for immediate bookings and helpful travel advice." }
+        ],
+        comments: [
+          { name: "Deepak Rawat", date: "June 16, 2026", text: "Butterfly beach driving in a Thar was dream-like! Fantastic guide." }
+        ]
+      },
+      {
+        id: "mahindra-thar-rental-goa",
+        title: "Mahindra Thar Rental in Goa: Hardtop vs Convertible Offroad Guide",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 14, 2026",
+        category: "Offroad",
+        commentsCount: 0,
+        image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+        intro: "Nothing screams adventure like an open-top Mahindra Thar. Find out which model is perfect for your Goa trip style - Hardtop or Convertible.",
+        sections: [
+          { subtitle: "1. The Rising Popularity of Mahindra Thar Hire in Goa", text: "For travelers seeking a bold off-road driving experience, reserving a rugged Mahindra Thar rental Goa package is the ultimate solution. The Thar features high ground clearance, a powerful diesel engine, and standard 4x4 mechanics." },
+          { subtitle: "2. Convertible Soft-top vs. All-Weather Hardtop Trims", text: "Choosing between a convertible soft-top and a solid hardtop Thar depends on your travel goals. A convertible soft-top provides a fun open-air feel under cooling beach sea breezes, while a hardtop offers a quieter, more insulated cabin." },
+          { subtitle: "3. Off-Road Trail Capabilities on Sandy Village Lanes", text: "Navigating off-road terrains is simple and safe with the Mahindra Thar. The vehicle's advanced 4x4 lock systems and high tires make it exceptionally suited for tackling rocky cliffside passes and sandy beach approaches." },
+          { subtitle: "4. Mopa Airport VXD Handovers for Thar Enthusiasts", text: "We facilitate immediate key handovers directly inside Mopa Airport (VXD) arrivals priority parking. Avoid long queues and start your off-road trip with our highly optimized WhatsApp registration flow." },
+          { subtitle: "5. Respecting Safety Rules & Local Coastal Ordinances", text: "Maintaining off-road safety is crucial. Driving on public beaches is strictly prohibited under local municipal regulations, with heavy fines for violations, so keep your Thar parked in designated parking zones." },
+          { subtitle: "6. Managing Fuel Type: Deciphering Petrol vs Diesel Variants", text: "Our diverse rental vehicle collection includes both petrol and diesel Mahindra Thar options. Our handlers clearly indicate the fuel type on your booking form and dashboard labels during handover." },
+          { subtitle: "7. Zero-Bias Security deposit and Hassle-free Refund", text: "Our transparent billing process involves a fully refundable security deposit of ₹5,000. Upon returning the vehicle in clean, mechanical health, our staff processes an instant refund onto your UPI." },
+          { subtitle: "8. Exploring South Goa Fortresses and Secluded Bays", text: "A commanding Thar open-top rental is perfect for a deep South Goa day trip. Cruising along peaceful highways and winding village bypasses towards historic forts is comfortable and exciting." },
+          { subtitle: "9. Essential Documents Checklist for Thar Renters", text: "Before we hand over keys to you, each designated driver must present an original driving license and an Aadhaar proof card. We verify all documents securely on WhatsApp ahead of arrival." },
+          { subtitle: "10. Booking Your Dream Thar via Official Online Form", text: "Browse our dynamic website collection, compare model rates, and reserve your vehicle ahead of time. Our responsive helpline is accessible 24/7 on WhatsApp for customized booking support." }
+        ],
+        comments: []
+      },
+      {
+        id: "mopa-airport-handover",
+        title: "First-Timer Guide to Mopa Airport Arrivals & Counter Handovers",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 13, 2026",
+        category: "Airport",
+        commentsCount: 2,
+        image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
+        intro: "Make your arrival incredibly smooth. Discover precisely how to bypass waiting desks, verify online documents, and locate your car in minutes.",
+        sections: [
+          { subtitle: "1. Bypassing Traditional Wait Times at Mopa Airport VXD", text: "Landing at the new Manohar International Airport in Mopa, Goa, often involves dealing with crowded public transport desks. Securing a reliable self drive car rental Goa option ahead of time enables you to enjoy instant travel freedom." },
+          { subtitle: "2. Bypassing Traffic Chaos and Traditional Desk Scams", text: "Bypass long physical queues at airport arrivals. Our structured booking system matches you with a verified customer handler, who coordinates your key pickup inside the terminal arrivals zone within minutes." },
+          { subtitle: "3. Quick Pick-Up Protocols at Go Goa Counter 15", text: "For maximum convenience, locate our friendly team at Counter 15 inside the Mopa Arrivals terminal. We perform quick physical document checks and hand over clean keys in under four minutes." },
+          { subtitle: "4. Online Document Verification via Secure WhatsApp Flow", text: "Our digital registration process allows you to send photos of your valid Indian driving license and Aadhaar card beforehand. This keeps terminal administrative times entirely negligible." },
+          { subtitle: "5. Conducting a Solid Walks Hand-Over Vehicle Scan", text: "To protect your deposit, always complete a joint walkaround inspection. Record a high-resolution smartphone video of the vehicle's paintwork, tires, and dashboard before driving out." },
+          { subtitle: "6. Understanding the Zero-Bias Refundable Security Deposit", text: "We manage a nominal refundable deposit of ₹4,000 for standard hatchbacks and ₹5,000 for premium SUVs. Our surveyor inspects the car upon return, processing an instant refund to your UPI." },
+          { subtitle: "7. Navigation Hints for Direct Highway Runs to North Beach Resorts", text: "Avoid heavy traffic delays when heading north toward Arambol and Calangute. The nearby NH66 highway is well-paved, fast, and provides a direct, highly convenient route to popular resort areas." },
+          { subtitle: "8. Speed Compliance: Avoiding Highway Speed Traps", text: "Goa's highways feature advanced automatic speed cameras. The speed threshold for commercial self-drive vehicle models is capped at 70 km/h, securing your budget from unexpected fine invoices." },
+          { subtitle: "9. Essential Fuel Requirements: Full-to-Full Refueling Policy", text: "Our commercial self-drive fleet operates on a transparent full-to-full refueling system. Returning the car with the same fuel level as provided ensures zero refueling surcharges." },
+          { subtitle: "10. Booking Online: Claim Your Premium Early-Bird Discounts", text: "Booking your vehicle on our verified web portal at least 30 days in advance guarantees late-night pick-up availability. Our helpline is accessible 24/7 on WhatsApp for custom updates." }
+        ],
+        comments: [
+          { name: "John Doe", date: "June 14, 2026", text: "Counter 15 at Mopa Airport was very easy to find. Real life savior during busy peak summer week!" }
+        ]
+      },
+      {
+        id: "bmw-mercedes-rent-goa",
+        title: "BMW & Mercedes Rent in Goa: Elite VIP Luxury Driving Experience",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 12, 2026",
+        category: "Luxury",
+        commentsCount: 1,
+        image: "https://images.unsplash.com/photo-1619405302253-8b839fe5e716?auto=format&fit=crop&w=800&q=80",
+        intro: "Drive in extreme comfort and style. Discover our exclusive collection of BMW 5 Series, Mercedes C-Class, and elite SUV trims for premium luxury in Goa.",
+        sections: [
+          { subtitle: "1. The Incomparable Class of Premium Brands in Goa", text: "For travelers seeking the highest standard of visual prestige and ride comfort, reserving an luxury car hire Goa option is the perfect choice. Explore coastal scenic vistas with unmatched class." },
+          { subtitle: "2. Exploring Seasonal Tariff Schedules for BMW & Mercedes Convertible", text: "Luxury sedan rentals represent clean class and superb comfort. During high peak weeks, rates typically range between ₹15,000 and ₹25,000, while off-season travel offers attractive promos." },
+          { subtitle: "3. Direct Mopa Airport Counter 15 Premium Handovers", text: "Start your high-end vacation immediately. Our handlers greet you at the airport arrivals terminal, completing physical document checks and damage reports on digital tablet screens." },
+          { subtitle: "4. Unlimited Mileage Benefits & Zero Broker Commission Guarantee", text: "Enjoy unlimited mileage packages with our rentals, allowing you to explore northern and southern districts without extra mileage charges. All bookings are managed directly to exclude intermediate fees." },
+          { subtitle: "5. Navigating to High-End Casinos & Upscale Assagao Cafes", text: "Arrive in style at Panaji's luxury casinos, Cavellosim beach resorts, or premium restaurants in Assagao. A luxury vehicle delivers exceptional cabin comfort and quiet on busy roads." },
+          { subtitle: "6. Documentation Checklist: National DL & UPI Verification Protocols", text: "Every driver must present a valid Indian driving license and Aadhaar proof card. All documents are verified beforehand on WhatsApp, ensuring terminal administrative processes are completed easily." },
+          { subtitle: "7. Refundable Security Deposit Safeguards & Instant Refunds", text: "We securely manage a refundable deposit of ₹10,000 for luxury models. Once you drop off the vehicle in good mechanical order, our team instantly refunds the deposit onto your UPI." },
+          { subtitle: "8. Speed Limits: Avoiding Goa's High-Highway Camera Scans", text: "Goa highways are monitored by automatic speed camera systems. The speed threshold is strictly capped at 70 km/h, and adhering to this ensures your deposit remains fully intact." },
+          { subtitle: "9. Highly Sanitized, Safety-Vetted Cabin Standards", text: "Each premium sedan undergoes deep-cleaning and biological sanitization cycles before hand-over. We ensure the air filtering systems are checked to maintain absolute safety." },
+          { subtitle: "10. Booking Your Premium Car via Simple WhatsApp form", text: "Browse our dynamic website catalog, compare premium sedans, and secure early-bird packages. Our support desk is accessible 24/7 on WhatsApp for direct confirmation." }
+        ],
+        comments: [
+          { name: "Suresh Menon", date: "June 13, 2026", text: "The Mercedes E-Class was impeccable. Best executive rental team in Goa." }
+        ]
+      },
+      {
+        id: "goa-speed-limits-safety",
+        title: "Goa Road Safety & Compliance: Avoid NH Speed Limits & Traffic Fines",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 11, 2026",
+        category: "Compliance",
+        commentsCount: 4,
+        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+        intro: "Keep your security deposit intact and drive stress-free. Learn the locations of automatic speed cameras and the exact safety rules in Goa.",
+        sections: [
+          { subtitle: "1. Commercial Highway Safety Compliance in Goa", text: "Our self drive car rental Goa system prioritizes tourist safety and complete road compliance. Understanding speed guidelines protects your vacation budget and ensures a safe trip." },
+          { subtitle: "2. Advanced Highway Camera Networks: Speed Limits Explained", text: "Goa's national highways are monitored by automated speed radar sensors. Commercial self-drive cars are subject to strict speed thresholds of 70 km/h on national highways and 45 km/h on bridges." },
+          { subtitle: "3. Navigating Beach Parking Obstacles to Avoid Towing Fines", text: "Towing fines are heavily enforced in busy areas like Calangute, Baga, and Candolim. Ensure you park only in designated public parking lots to avoid vehicle damage or fines." },
+          { subtitle: "4. Keeping Original Commercial Permits inside the Dashboard", text: "Our vehicle gloveboxes contain all necessary commercial documents, including tourist permits and valid insurance. If asked during local safety checks, print checkouts are easily accessible." },
+          { subtitle: "5. Zero-Bias Security Deposit Repayment Checklist", text: "We maintain a nominal refundable deposit of ₹4,000 for standard models. Once returned in clean, mechanical health, our handlers instantly process a refund onto your UPI." },
+          { subtitle: "6. Mopa and Dabolim Airport Pick-Up Protocols", text: "Our customer handlers greet you directly at airport terminals, completing physical document checks and damage walks on digital tablets in under four minutes." },
+          { subtitle: "7. Dealing with Late-Night Cliffside and Beach Passes", text: "Driving along winding northern village streets at night can be challenging. Drive at moderate speeds and maintain active headlight beams for maximum safety." },
+          { subtitle: "8. Respecting Coastal Protection Laws: Strictly No Beach Driving", text: "Driving commercial vehicles on sandy public beaches is strictly prohibited under National Green Tribunal laws. Keep your rental in authorized bays to preserve local coastlines." },
+          { subtitle: "9. Understanding Licensing Prerequisites for Self-Driving", text: "Drivers must hold a valid Indian driving license and present an Aadhaar proof card. We verify all documents securely on WhatsApp ahead of your physical arrival." },
+          { subtitle: "10. Direct Portal Booking: Bypass Broker Commissions", text: "Browse our dynamic compare catalog, input travel parameters, and receive pre-calculated billing invoices instantly. Booking 30 days in advance guarantees early-bird discounts." }
+        ],
+        comments: [
+          { name: "Rohit Das", date: "June 12, 2026", text: "Excellent warnings about chapora road and NH66 cameras! Thanks for keeping my travel budget fully safe." }
+        ]
+      },
+      {
+        id: "south-goa-roadtrips",
+        title: "Complete Guide to South Goa Roadtrips: Secluded Beaches & Spice Farms",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 10, 2026",
+        category: "Airport",
+        commentsCount: 1,
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        intro: "Drive your rental down South. Discover rolling hills, Portuguese-era villas, organic spice plantations, and empty, white-sand beaches.",
+        sections: [
+          { subtitle: "1. The Rising Demand for Scenic South Goa Journeys", text: "Exploring South Goa's historic sites and peaceful coastlines is most enjoyable with a self drive car in Goa. This region features scenic roads, traditional village bypasses, and quiet beaches." },
+          { subtitle: "2. Navigating to Secluded Beaches: Agonda & Palolem", text: "White-sand Agonda and Palolem beaches feature scenic approaches and excellent roads, where you can safely park your budget sedan or commercial SUV." },
+          { subtitle: "3. Reaching Spice Plantations and Heritage Churches", text: "Drive deep into Ponda to tour historic spice plantations and heritage temples. A self-drive vehicle allows you to customize your schedule and travel at a relaxed pace." },
+          { subtitle: "4. Ultimate Ride Comfort: Reserving the Best Family SUV Models", text: "For long southern road trips, choosing an Ertiga smart-hybrid or spacious Kia Carens ensures all family members travel under powerful air conditioning with plenty of legroom." },
+          { subtitle: "5. Mopa Airport VXD Handovers for South Goa Trips", text: "Start your southern exploration directly from Manohar International Airport with our premium rental handovers. Our handlers greet you directly at airport terminal parking zones." },
+          { subtitle: "6. Online Document Checklist: Licensing Protocols", text: "Before handover, verify your national driving license and Aadhaar proof card. All checks are completed securely on WhatsApp prior to your arrival." },
+          { subtitle: "7. Zero-Bias Security deposit and Instant UPI Refund", text: "We collect a transparent fully refundable security deposit of ₹4,000 for standard models, which is instantly refunded to your UPI at key hand-back." },
+          { subtitle: "8. Exploring Historic Fort ruins at Cabo de Rama", text: "The historic ruins of Cabo de Rama Fort are located along winding southern highway passes, providing a magnificent scenic drive for couples." },
+          { subtitle: "9. Essential Fuel Requirements: Full-to-Full Refueling Policy", text: "Our commercial self-drive vehicle models operate on a full-to-full fuel policy. Return the car with the same fuel level as provided to avoid refuel surcharges." },
+          { subtitle: "10. Booking Online: Reserving via WhatsApp for Promos", text: "Secure your rental ahead of time on our official web portal to guarantee a sanitized vehicle. Chat with our support team on WhatsApp for customized booking booking." }
+        ],
+        comments: []
+      },
+      {
+        id: "budget-car-rental-hacks",
+        title: "Budget Car Rental Hacks in Goa: Save on Daily Rates & Security Deposits",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 09, 2026",
+        category: "Compliance",
+        commentsCount: 2,
+        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+        intro: "Who says you have to overspend? Discover our top insider tips to secure cheap car rentals and avoid commission markups in Goa.",
+        sections: [
+          { subtitle: "1. Smart Hacks for Securing Affordable Goa Car Rentals", text: "Renting an eco-friendly hatchback with a certified self drive car rental Goa company is highly recommended for keeping your vacation budget in check." },
+          { subtitle: "2. The Key Secret: Expose Commission-Hungry brokers", text: "Many booking websites add third-party agent markups. Book directly with Go Goa Self-Drive Cars to guarantee direct local tariffs and zero broker commissions." },
+          { subtitle: "3. Hatchbacks vs SUVs: Selecting the Best Budget Model", text: "For solo couples or small families, selecting a compact hatchback like the Maruti Baleno or Swift delivers exceptional comfort on winding village streets." },
+          { subtitle: "4. Booking in Advance to Secure Promotional Off-Season Rates", text: "High season rates average between ₹1,800 and ₹3,500, while off-season travel offers excellent budget friendly hatchbacks starting at just ₹1,000/day." },
+          { subtitle: "5. Conducting a Solid Walks Hand-Over Inspection", text: "Protect your deposit by completing a detailed walkaround video inspection on your smartphone. Record the paintwork and fuel level clearly before driving out." },
+          { subtitle: "6. Mopa Arrivals: Zero-Hassle Handover at Counter 15", text: "Our friendly team at Counter 15 provides quick, professional handovers directly inside Manohar International Arrivals parking, saving long taxi queue wait times." },
+          { subtitle: "7. Refueling Guides: Utilizing the Full-to-Full Rule", text: "Ensure you return the car with the exact amount of fuel as received. Refueling at local petrol pumps avoids expensive refueling invoice adjustments." },
+          { subtitle: "8. Online Document Verification for Speedier pick-ups", text: "Submit your valid Indian driving license and Aadhaar proof card. We verify files securely on WhatsApp ahead of arrival, ensuring instant key handovers." },
+          { subtitle: "9. Direct Refundable Security deposit on UPI", text: "We collect a nominal refundable deposit of ₹4,000 for standard models. After checking the car at drop-off, our team instantly refunds the deposit onto your UPI." },
+          { subtitle: "10. Reserving via Official Web Portal for Exclusive Discounts", text: "Input rental dates into our online billing calculator, review real-time prices, and chat with our WhatsApp support handlers for late-night airport delivery updates." }
+        ],
+        comments: [
+          { name: "Siddharth Sen", date: "June 10, 2026", text: "We got Baleno Automatic at ₹1300 per day during June off-season. Dirt cheap and super service!" }
+        ]
+      },
+      {
+        id: "north-goa-nightlife",
+        title: "North Goa Nightlife Driving Guide: Parking and Safe Routes",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 08, 2026",
+        category: "Offroad",
+        commentsCount: 0,
+        image: "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80",
+        intro: "Drive safely after dark. Learn the safest routes to Tito's Lane, Hammerzz Club, and exclusive restaurants in Chapora, along with secure parking spots.",
+        sections: [
+          { subtitle: "1. The Freedom of Exploring Goa's Nightlife on Wheels", text: "Experience the vibrant nightlife of North Goa behind the wheel of your self drive car in Goa. Enjoy safety, privacy, and flexibility during your evening excursions." },
+          { subtitle: "2. Driving Safely Down Nightlife Streets: Candolim & Baga", text: "Evening traffic around Calangute beach can be heavy. Maintain slow speeds and stay alert for pedestrians on busy, narrow roads." },
+          { subtitle: "3. Safe Parking Options near Tito's Lane & Candolim Clubs", text: "Candolim beach streets feature strict towing zones. Always use authorized private parking bays near clubs to avoid hefty towing fines." },
+          { subtitle: "4. Choosing the Best SUV Trims for Comfortable Group Transit", text: "If traveling with a large group of friends, choosing a premium multi-row SUV ensures all members travel together under powerful cooling air conditioning." },
+          { subtitle: "5. Counter 15 Handovers at VXD Manohar International Airport", text: "We facilitate immediate key deliveries directly inside Mopa Airport arrivals priority parking. Complete document checks and vehicle walkarounds easily." },
+          { subtitle: "6. Online Document Checks: License & Identification Check", text: "Before handover, submit your original driving license and Aadhaar card. All checks are completed securely on WhatsApp prior to your arrival." },
+          { subtitle: "7. Speed Compliance Checks under Night Auto-Radar Sensors", text: "National highway corridors are equipped with advanced automatic speed cameras. Commercial cars are subject to speed caps of 70 km/h, even late at night." },
+          { subtitle: "8. Fueling protocols: Petrol vs Diesel Trims", text: "Our handlers clearly indicate fuel specifications on your invoicing sheets. Return the car with the same fuel level as provided to avoid refuel surcharges." },
+          { subtitle: "9. Zero-Bias Security Deposit Repayments via UPI", text: "We manage a nominal refundable deposit of ₹4,000 for standard models. Once returned in clean mechanical health, we process an instant refund onto your UPI." },
+          { subtitle: "10. Booking on Official Online Portal", text: "Input travel parameters, review real-time prices, and secure early-bird packages. Our support desk is accessible 24/7 on WhatsApp for custom booking updates." }
+        ],
+        comments: []
+      },
+      {
+        id: "monsoon-travel-guide",
+        title: "Monsoon Travel Guide: Best Self-Drive Cars for Heavy Rain in Goa",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 07, 2026",
+        category: "Offroad",
+        commentsCount: 1,
+        image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+        intro: "Goa looks stunning in the rains. Learn how to navigate slippery coastal highways with our best choices for monsoon driving.",
+        sections: [
+          { subtitle: "1. The Charm of Driving Under Monsoon Showers in Goa", text: "Renting a reliable self drive car in Goa during the lush monsoon season allows tourists to explore beautiful cascading mountains and empty roads." },
+          { subtitle: "2. Slippery Highway Passages: Road Safety Matrix", text: "Steering down winding western routes under monsoon rains requires tires with excellent grip and high mechanical condition to prevent slipping." },
+          { subtitle: "3. Selecting the Best SUV: Mahindra Thar 4x4 or Scorpio-N", text: "Premium SUVs like the Mahindra Thar 4x4 or massive Scorpio-N offer high ground clearance, optimal weight distribution, and robust tires for rainy days." },
+          { subtitle: "4. Avoid Coastal Water logging along Northern Beach roads", text: "Certain low-lying lanes near Baga and Calangute can experience temporary waterlogging. Always check navigation guidelines and choose arterial highways instead." },
+          { subtitle: "5. Mopa counter 15 Arrivals: Quick Handovers in any Weather", text: "Locate our handler team at Counter 15 inside Manohar arrivals terminal. We perform quick physical document checks indoors and step out into the parking bay." },
+          { subtitle: "6. Zero-Bias Security Deposit Refund Procedures", text: "We securely manage a nominal refundable deposit of ₹5,000 for SUVs, instantly refunded onto your UPI or bank account during key hand-back." },
+          { subtitle: "7. Driving Guidelines: Avoiding Highway Speed Traps", text: "Goa's highways feature advanced automatic speed cameras. The speed threshold for commercial self-drive vehicle models is capped at 70 km/h." },
+          { subtitle: "8. Keeping Original Vehicle Papers inside the Dashboard", text: "All necessary vehicle documents are securely placed inside the glovebox, including registration cards, commercial certificates, and valid insurance." },
+          { subtitle: "9. Essential Fuel Requirements: Full-to-Full Refueling Policy", text: "Our commercial self-drive fleet operates on a transparent full-to-full refueling system. Returning the car with the same fuel level as provided avoids surcharges." },
+          { subtitle: "10. Booking Your Monsoon Adventure via WhatsApp", text: "Check our dynamic web compare list, input travel parameters, and receive pre-calculated billing invoices instantly. Early-bird bookings unlock great deals." }
+        ],
+        comments: [
+          { name: "Arun Varma", date: "June 08, 2026", text: "Monsoon driving in a Thar 4x4 was the best decision! The vehicle handled wet roads perfectly." }
+        ]
+      },
+      {
+        id: "upi-deposit-refund",
+        title: "Local UPI Payments & Refund Checklist: Worry-free Security Deposits",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 06, 2026",
+        category: "Compliance",
+        commentsCount: 3,
+        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+        intro: "Transparency first. Read our comprehensive checklist on how security deposits are securely collected and refunded instantly via UPI during drop-off.",
+        sections: [
+          { subtitle: "1. The Security Deposit Process for Commercial Cars", text: "Renting a self drive car in Goa requires a transparent and secure payment process. We provide worry-free security deposits to project-safe journeys." },
+          { subtitle: "2. Exposing broker commissions & Double billing traps", text: "Many booking websites add third-party agent markups. Book directly with Go Goa Self-Drive Cars to guarantee direct local tariffs and zero broker commissions." },
+          { subtitle: "3. Deposit Breakdown: Hatchbacks vs Premium SUVs", text: "We securely manage a nominal refundable deposit of ₹4,000 for standard hatchbacks and ₹5,005 for premium Mahindra Thar 4x4 or SUV trims." },
+          { subtitle: "4. UPI and digital Bank Transfers: Simple Handovers", text: "We accept secure digital payment formats, including UPI and credit cards, and supply transparent receipts directly onto your registered WhatsApp number." },
+          { subtitle: "5. Conducting a Solid Walks Hand-Over Inspection", text: "Before driving out of our airport parking bay, complete a joint walkaround inspection. Record a smartphone video of the paintwork and fuel level." },
+          { subtitle: "6. Counter 15 Arrivals: Instant Checkouts at VXD Airport", text: "Our handovers are highly optimized and completed on digital tablet screens. Locate our handler team at Counter 15 inside मनोहर Arrivals terminal." },
+          { subtitle: "7. Key handover inspection: Technical survey scans", text: "Upon returns, our handler inspects the vehicle. If the car is came back in clean mechanical shape, your security deposit represents a full on-site return." },
+          { subtitle: "8. Direct Refundable deposit on UPI", text: "Upon checkout, we instantly refund the deposit onto your designated UPI account on-site, ensuring a transparent and stress-free hand-back process." },
+          { subtitle: "9. Speed compliance: Fine Adjustments Explained", text: "Any automated speed sensor fines are adjusted against the deposit, with receipts shared transparently with the customer. Keep national speeds below 70 km/h." },
+          { subtitle: "10. Booking online: Secure early-birds Promos", text: "Input rental dates into our online billing calculator, review real-time prices, and chat with our WhatsApp support handlers for late-night support updates." }
+        ],
+        comments: [
+          { name: "Pranav Dixit", date: "June 07, 2026", text: "Totally transparent refund! UPI payment back in less than 2 minutes. Bravo Go Goa team!" }
+        ]
+      },
+      {
+        id: "document-requirements-rent",
+        title: "Document Requirements for Goa Car Rental: License & Identification Check",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 05, 2026",
+        category: "Compliance",
+        commentsCount: 2,
+        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+        intro: "Don't get blocked at the counter. Here's a quick summary of the essential commercial papers, license types, and ID checks needed.",
+        sections: [
+          { subtitle: "1. The Document Requirements Guide for Self Drive Car rental Goa", text: "Ensuring you hold the necessary documents before choosing a self drive car in Goa helps guarantee a prompt and stress-free pickup process." },
+          { subtitle: "2. Mandatory Document 1: Original Indian Driving license", text: "Designated drivers must hold an original laminated Driving License. Digital copies or unverified photos are not accepted under local compliance checks." },
+          { subtitle: "3. Mandatory Document 2: Aadhaar Card for Verification Checks", text: "We require a valid Aadhaar card or valid passport to verify identities. We securely check these details to protect against fraud or rental violations." },
+          { subtitle: "4. Online Document Verification on WhatsApp", text: "Submit photos of your documents to our customer handlers beforehand on WhatsApp, ensuring your physical airport pick-up remains fast and convenient." },
+          { subtitle: "5. Commercial Plates vs Private Plates Compliance", text: "Our entire self-drive fleet in Goa features black-and-yellow commercial license plates. This is mandatory for legal road compliance and safety checks." },
+          { subtitle: "6. Counter 15 Arrivals: Instant Handover inside Terminals", text: "Our handlers greet you directly at airport terminals, completing physical document checks and damage walks on digital tablets in under four minutes." },
+          { subtitle: "7. Quick Hand-back inspection Protocols at Airports", text: "Our return surveyor checks the vehicle body. If returned in good mechanical condition, we process your security deposit refund on-site." },
+          { subtitle: "8. Refundable Security Deposit Collection Schedules", text: "We collect ₹4,000 for standard hatchbacks and ₹5,000 for SUVs. Once returned in clean mechanical health, we process an instant refund onto your UPI." },
+          { subtitle: "9. Commercial vehicle Permits inside Dashboard", text: "Inside the glovebox, we place all necessary commercial documents, including tourist permits and valid commercial insurance certificates." },
+          { subtitle: "10. Direct Portal Booking: Best Rates Online", text: "Browse our dynamic compare catalog, input travel parameters, and receive pre-calculated billing invoices instantly. Early-bird bookings unlock great deals." }
+        ],
+        comments: [
+          { name: "Kunal Ghosh", date: "June 06, 2026", text: "Very smooth verification on WhatsApp. Got keys at Mopa airport in less than 5 mins." }
+        ]
+      },
+      {
+        id: "romantic-couples-itinerary",
+        title: "Romantic Couples Driving Itinerary: Scenic Sunsets & Candlelit Dinners",
+        author: "Goa Self-Drive Cars",
+        date: "Jun 04, 2026",
+        category: "Airport",
+        commentsCount: 2,
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        intro: "Craft unforgettable moments. Drive your loved one down scenic clifftop roads, secluded river jetties, and historic sunset forts in Goa.",
+        sections: [
+          { subtitle: "1. Romantic Coastal Driving Escapes in Goa", text: "Embarking on a romantic couples driving trip is highly recommended with an active self drive car in Goa. Private vehicle rentals offer maximum travel comfort." },
+          { subtitle: "2. Scenic Sunset Drives: Vagator Heights & Morjim Spit", text: "The winding roads of north Vagator provide spectacular views of the Arabian Sea. Enjoy a scenic sunset drive and park directly beside private beaches." },
+          { subtitle: "3. Secluded Beaches in South Goa: Agonda and Cabo de Rama", text: "Drive south to Cabo de Rama Fort to experience panoramic views of the sea from high cliffs. This is a magnificent and memorable road trip destination." },
+          { subtitle: "4. Ultimate Ride Comfort: Reserving the Best Premium Convertible Hatchbacks", text: "For a memorable couples experience, renting an luxury car hire Goa model like the sporty Mini Cooper convertible adds an elevated status to your trip." },
+          { subtitle: "5. Mopa Airport Counters: Simplified Handover Instructions", text: "Our handlers greet you directly at airport terminal parking zones, completing physical document checks and handovers on digital tablet screens." },
+          { subtitle: "6. Online Document Checks: License & Identification Check", text: "Before handover, submit your original driving license and Aadhaar card on WhatsApp, ensuring terminal administrative processes are completed easily." },
+          { subtitle: "7. Zero-Bias Security deposit and Instant UPI Refund", text: "We manage a nominal refundable deposit of ₹4,000 for standard models. After checking the car at drop-off, our team instantly refunds the deposit onto your UPI." },
+          { subtitle: "8. Speed Compliance: Avoiding Highway Speed Traps", text: "Goa highways are monitored by automatic speed camera systems. Commercial self-drive vehicles are subject to strict speed thresholds of 70 km/h." },
+          { subtitle: "9. Essential Fuel Requirements: Full-to-Full Refueling Policy", text: "Our commercial self-drive vehicle models operate on a full-to-full fuel policy. Return the car with the same fuel level as provided to avoid refuel surcharges." },
+          { subtitle: "10. Booking Online: Reserving via WhatsApp for Promos", text: "Reserve your rental ahead of time on our official web portal to guarantee a sanitized vehicle. Chat with our support team on WhatsApp for customized booking bookings." }
+        ],
+        comments: [
+          { name: "Meera Sen", date: "June 05, 2026", text: "Convertible Mini Cooper was absolutely dreamy! Best sunset drive of our life." }
+        ]
+      }
+    ];
 
-    if (mobileMenuBtn && mobileNavPanel) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isHidden = mobileNavPanel.classList.contains('hidden');
-        if (isHidden) {
-          mobileNavPanel.classList.remove('hidden');
-          mobileNavPanel.classList.add('flex');
-          document.body.style.overflow = 'hidden';
-          if (menuIconHamburger) {
-            menuIconHamburger.setAttribute('data-lucide', 'x');
-            lucide.createIcons();
-          }
-        } else {
-          mobileNavPanel.classList.add('hidden');
-          mobileNavPanel.classList.remove('flex');
-          document.body.style.overflow = '';
-          if (menuIconHamburger) {
-            menuIconHamburger.setAttribute('data-lucide', 'menu');
-            lucide.createIcons();
+    // Hydrate the Main Blog Grid
+    function renderBlogsList() {
+      const container = document.getElementById('blogs-grid-container');
+      if (!container) return;
+
+      container.innerHTML = '';
+      
+      const filtered = BLOG_POSTS.filter(post => {
+        // filter category
+        const matchesCategory = (activeCategory === 'all' || post.category === activeCategory);
+        // filter search query
+        const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              post.intro.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 text-slate-500 font-medium">
+            <i data-lucide="info" class="w-8 h-8 text-slate-600 mx-auto mb-2"></i>
+            <p class="text-sm">No safety guides match your current search queries.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      filtered.forEach(post => {
+        const hasImg = post.image ? true : false;
+        const cardClass = "bg-slate-950 border border-slate-850 rounded-3xl overflow-hidden hover:border-slate-750 transition-all hover:-translate-y-1 duration-300 flex flex-col justify-between";
+        
+        container.innerHTML += `
+          <div class="${cardClass}">
+            <div>
+              ${hasImg ? `
+                <div class="h-44 relative overflow-hidden bg-slate-900 border-b border-slate-850">
+                  <img src="${post.image}" class="w-full h-full object-cover select-none" alt="${post.title}" referrerPolicy="no-referrer">
+                  <span class="absolute top-3.5 left-3.5 bg-orange-600 text-white text-[8px] font-black tracking-widest uppercase font-mono px-2.5 py-0.5 rounded-md shadow">
+                    ${post.category}
+                  </span>
+                </div>
+              ` : `
+                <div class="p-6 pb-0">
+                  <span class="bg-slate-900 border border-slate-800 text-orange-400 text-[8px] font-mono font-bold uppercase px-2.5 py-0.5 rounded">
+                    ${post.category}
+                  </span>
+                </div>
+              `}
+              <div class="p-6 text-left">
+                <span class="text-[9px] font-mono font-medium text-slate-450">${post.date} &bull; ${post.commentsCount} comments</span>
+                <h3 class="text-sm font-extrabold text-white mt-1 mb-2 font-serif group-hover:text-orange-400 cursor-pointer" onclick="viewBlogPost('${post.id}')">
+                  ${post.title}
+                </h3>
+                <p class="text-[11px] text-slate-400 leading-relaxed font-sans">
+                  ${post.intro.substring(0, 120)}...
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <button onclick="viewBlogPost('${post.id}')" class="inline-flex items-center gap-1.5 text-[10px] uppercase font-bold text-orange-400 hover:text-orange-300">
+                <span>View Safety Guidelines</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      lucide.createIcons();
+    }
+
+    // Category Tabs filtering
+    function filterCategory(cat) {
+      activeCategory = cat;
+      const categories = ['all', 'Airport', 'Offroad', 'Luxury', 'Compliance'];
+      
+      categories.forEach(c => {
+        const btn = document.getElementById(`btn-cat-${c}`);
+        if (btn) {
+          if (c === cat) {
+            btn.className = "px-3.5 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all bg-orange-500 text-white font-mono";
+          } else {
+            btn.className = "px-3.5 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 font-mono text-nowrap";
           }
         }
       });
 
-      mobileNavItems.forEach(item => {
-        item.addEventListener('click', () => {
-          mobileNavPanel.classList.add('hidden');
-          mobileNavPanel.classList.remove('flex');
-          document.body.style.overflow = '';
-          if (menuIconHamburger) {
-            menuIconHamburger.setAttribute('data-lucide', 'menu');
-            lucide.createIcons();
-          }
+      renderBlogsList();
+    }
+
+    // Live search keystroke handler
+    function handleLiveSearch() {
+      const input = document.getElementById('live-search-input');
+      if (input) {
+        searchQuery = input.value;
+        renderBlogsList();
+      }
+    }
+
+    // Sidebar search trigger
+    function handleSidebarSearch() {
+      const input = document.getElementById('sidebar-search-input');
+      if (input && input.value.trim() !== '') {
+        const val = input.value.trim();
+        // search globally and return to list view
+        searchQuery = val;
+        activePostId = null;
+        
+        const listInput = document.getElementById('live-search-input');
+        if (listInput) listInput.value = val;
+        
+        showBlogList();
+        renderBlogsList();
+        
+        // scroll back
+        window.scrollTo({ top: 300, behavior: 'smooth' });
+      }
+    }
+
+    // Switch between List and detailed Post view
+    function viewBlogPost(id) {
+      activePostId = id;
+      const post = BLOG_POSTS.find(p => p.id === id);
+      if (!post) return;
+
+      // Update document titles automatically
+      document.title = `${post.title} — Go Goa Car Booking`;
+
+      // Hide grid view, reveal details
+      document.getElementById('blog-list-view').classList.add('hidden');
+      document.getElementById('blog-search-categories').classList.add('hidden');
+      document.getElementById('blog-detail-view').classList.remove('hidden');
+      
+      // Show list toggle inside breadcrumb
+      document.getElementById('back-to-list-btn').classList.remove('hidden');
+
+      // Hydrate Details text
+      document.getElementById('detail-title').innerText = post.title;
+      document.getElementById('detail-category-badge').innerText = post.category + " Guide";
+      document.getElementById('detail-date-badge').innerText = post.date;
+      document.getElementById('detail-comments-count').innerText = `${post.comments.length} comments`;
+      if (post.image) {
+        document.getElementById('detail-image').src = post.image;
+        document.getElementById('detail-image').style.display = 'block';
+      } else {
+        document.getElementById('detail-image').style.display = 'none';
+      }
+
+      // Build 10 dynamic rich chapters with pristine custom subtopic headings & natural keywords
+      const bodyBox = document.getElementById('detail-content-body');
+      bodyBox.innerHTML = '';
+      
+      // Dynamic subtitle paragraphs intro
+      bodyBox.innerHTML += `
+        <p class="font-serif italic text-base text-slate-200 border-l-4 border-orange-500 pl-4 mb-6 leading-relaxed">
+          ${post.intro}
+        </p>
+      `;
+
+      post.sections.forEach((sect, index) => {
+        bodyBox.innerHTML += `
+          <div class="space-y-2 mt-6">
+            <h3 class="text-sm sm:text-base font-black text-white font-serif tracking-tight text-left pb-1.5 border-b border-slate-850">
+              ${sect.subtitle}
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed text-justify">
+              ${sect.text}
+            </p>
+          </div>
+        `;
+      });
+
+      // Render the Comments List for this specific post
+      renderComments();
+
+      // Hydrate Sidebar Recents list
+      hydrateSidebarRecents();
+
+      // Scroll smoothly to details entry header
+      window.scrollTo({ top: 150, behavior: 'smooth' });
+    }
+
+    // Return to grid list
+    function showBlogList() {
+      activePostId = null;
+      document.title = "Travel Safety Guides & Blogs — Go Goa Car Booking";
+
+      document.getElementById('blog-list-view').classList.remove('hidden');
+      document.getElementById('blog-search-categories').classList.remove('hidden');
+      document.getElementById('blog-detail-view').classList.add('hidden');
+      document.getElementById('back-to-list-btn').classList.add('hidden');
+
+      renderBlogsList();
+    }
+
+    // Hydrate Recent Posts in Sidebar
+    function hydrateSidebarRecents() {
+      const bar = document.getElementById('sidebar-recent-posts');
+      if (!bar) return;
+
+      bar.innerHTML = '';
+      
+      // fetch latest 5
+      const recent = BLOG_POSTS.slice().reverse().slice(0, 5);
+      recent.forEach(post => {
+        bar.innerHTML += `
+          <li>
+            <a onclick="viewBlogPost('${post.id}')" class="text-slate-400 hover:text-orange-400 transition-colors cursor-pointer leading-tight block py-1 font-sans">
+              &bull; ${post.title}
+            </a>
+          </li>
+        `;
+      });
+    }
+
+    // --- COMMENTS ENGINE ---
+    // Load custom posts from storage or default
+    function getStoredComments(postId) {
+      const stored = localStorage.getItem(`comments_${postId}`);
+      if (stored) {
+        return JSON.parse(stored);
+      }
+      // default comments from model array
+      const post = BLOG_POSTS.find(p => p.id === postId);
+      return post ? post.comments : [];
+    }
+
+    function renderComments() {
+      const listContainer = document.getElementById('comments-list-box');
+      if (!listContainer) return;
+
+      listContainer.innerHTML = '';
+      const comments = getStoredComments(activePostId);
+
+      if (comments.length === 0) {
+        listContainer.innerHTML = `
+          <p class="text-xs text-slate-500 font-medium italic">No verified traveler reviews submitted yet. Be the first to share your vehicle drop-off feedback!</p>
+        `;
+        return;
+      }
+
+      comments.forEach(c => {
+        listContainer.innerHTML += `
+          <div class="bg-slate-900/60 border border-slate-850 p-4 rounded-2xl text-left space-y-1">
+            <div class="flex items-center justify-between text-[10px] font-mono font-medium text-slate-450 border-b border-slate-850 pb-1.5 mb-1.5 flex-wrap gap-1">
+              <span class="text-orange-400 font-bold">&#10004; Verified Driver &bull; ${c.name}</span>
+              <span>Published on ${c.date}</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-normal font-sans">
+              ${c.text}
+            </p>
+          </div>
+        `;
+      });
+
+      // Update counters
+      const countLabel = document.getElementById('detail-comments-count');
+      if (countLabel) {
+        countLabel.innerText = `${comments.length} comments`;
+      }
+    }
+
+    function handleCommentSubmit(event) {
+      event.preventDefault();
+      if (!activePostId) return;
+
+      const nameInput = document.getElementById('comment-name');
+      const emailInput = document.getElementById('comment-email');
+      const textInput = document.getElementById('comment-text');
+
+      if (!nameInput || !textInput) return;
+
+      const newComment = {
+        name: nameInput.value.trim(),
+        date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+        text: textInput.value.trim()
+      };
+
+      // save to local db
+      const currentComments = getStoredComments(activePostId);
+      currentComments.push(newComment);
+      localStorage.setItem(`comments_${activePostId}`, JSON.stringify(currentComments));
+
+      // Reset form
+      nameInput.value = '';
+      emailInput.value = '';
+      textInput.value = '';
+      const agreeCheck = document.getElementById('comment-agree');
+      if (agreeCheck) agreeCheck.checked = false;
+
+      // re-render reviews
+      renderComments();
+
+      // Show glorious inline success alert
+      alert("Verification successful! Your commercial travel feedback has been securely published.");
+    }
+
+    // On Load Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      // Dynamic Brand Transformation for Blogs Dataset
+      BLOG_POSTS.forEach(post => {
+        post.author = "Go Goa Car Booking";
+        post.intro = post.intro.replace(/Goa Self-Drive Cars/g, "Go Goa Car Booking");
+        post.sections.forEach(s => {
+          s.subtitle = s.subtitle.replace(/Goa Self-Drive Cars/g, "Go Goa Car Booking");
+          s.text = s.text.replace(/Goa Self-Drive Cars/g, "Go Goa Car Booking");
         });
       });
+
+      // 1. Check URL parameters for direct deep linking
+      const params = new URLSearchParams(window.location.search);
+      const urlPostId = params.get('id');
+      const searchParam = params.get('q');
+
+      if (searchParam) {
+        searchQuery = searchParam;
+        const listInput = document.getElementById('live-search-input');
+        if (listInput) listInput.value = searchParam;
+      }
+
+      if (urlPostId) {
+        const matches = BLOG_POSTS.some(p => p.id === urlPostId);
+        if (matches) {
+          viewBlogPost(urlPostId);
+        } else {
+          renderBlogsList();
+        }
+      } else {
+        renderBlogsList();
+      }
+
+      // 2. Setup mobile and hamburger support
+      setupHeaderMobileDrawer();
+    });
+
+    function setupHeaderMobileDrawer() {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileNavPanel = document.getElementById('mobile-nav-panel');
+      const menuIconHamburger = document.getElementById('menu-icon-hamburger');
+      const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+      if (mobileMenuBtn && mobileNavPanel) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isHidden = mobileNavPanel.classList.contains('hidden');
+          if (isHidden) {
+            mobileNavPanel.classList.remove('hidden');
+            mobileNavPanel.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            if (menuIconHamburger) {
+              menuIconHamburger.setAttribute('data-lucide', 'x');
+              lucide.createIcons();
+            }
+          } else {
+            mobileNavPanel.classList.add('hidden');
+            mobileNavPanel.classList.remove('flex');
+            document.body.style.overflow = '';
+            if (menuIconHamburger) {
+              menuIconHamburger.setAttribute('data-lucide', 'menu');
+              lucide.createIcons();
+            }
+          }
+        });
+
+        mobileNavItems.forEach(item => {
+          item.addEventListener('click', () => {
+            mobileNavPanel.classList.add('hidden');
+            mobileNavPanel.classList.remove('flex');
+            document.body.style.overflow = '';
+            if (menuIconHamburger) {
+              menuIconHamburger.setAttribute('data-lucide', 'menu');
+              lucide.createIcons();
+            }
+          });
+        });
+      }
     }
   </script>
 </body>

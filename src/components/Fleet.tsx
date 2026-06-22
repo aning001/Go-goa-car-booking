@@ -83,27 +83,33 @@ export default function Fleet({
           </div>
 
           {/* Category selectors */}
-          <div className="md:col-span-7 flex flex-wrap gap-2 items-center">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-550 inline-flex items-center gap-1 font-mono">
-              <Filter className="w-3.5 h-3.5 text-orange-500" /> CATEGORY:
-            </span>
-            {['All', 'Hatchback', 'SUV', 'Thar', 'Luxury'].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                  selectedCategory === cat 
-                    ? 'bg-orange-500 text-white shadow-md shadow-orange-500/15' 
-                    : 'bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800'
-                }`}
-              >
-                {cat === 'All' ? 'All Classes' : cat + 's'}
-              </button>
-            ))}
+          <div className="md:col-span-7 flex flex-col sm:flex-row sm:items-center gap-2.5 w-full">
+            <div className="flex items-center gap-1 shrink-0">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 inline-flex items-center gap-1 font-mono">
+                <Filter className="w-3.5 h-3.5 text-orange-500" /> CATEGORY:
+              </span>
+            </div>
+            
+            {/* Horizontal scrollable categories for mobile */}
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-none pb-1 sm:pb-0 scroll-smooth -mx-4 px-4 sm:mx-0 sm:px-0 w-full sm:w-auto">
+              {['All', 'Hatchback', 'SUV', 'Thar', 'Luxury'].map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                    selectedCategory === cat 
+                      ? 'bg-orange-500 text-white shadow-md shadow-orange-500/15' 
+                      : 'bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800'
+                  }`}
+                >
+                  {cat === 'All' ? 'All Classes' : cat + 's'}
+                </button>
+              ))}
+            </div>
             
             <button 
               onClick={() => { setSelectedCategory('All'); setSelectedTransmission('All'); setSearchCarQuery(''); setSortBy('featured'); }}
-              className="text-xs font-bold text-slate-400 hover:text-white underline cursor-pointer ml-auto font-mono"
+              className="text-xs font-bold text-slate-400 hover:text-white underline cursor-pointer sm:ml-auto font-mono whitespace-nowrap shrink-0 mt-1 sm:mt-0"
             >
               Reset Filters
             </button>
@@ -111,30 +117,32 @@ export default function Fleet({
         </div>
 
         {/* Dynamic Transmission & Sorting controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800/60 bg-slate-900/30 p-3.5 rounded-2xl">
-          <div className="flex flex-wrap gap-2 items-center text-xs">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono">Transmission:</span>
-            {['All', 'Manual', 'Automatic'].map((trans) => (
-              <button
-                key={trans}
-                onClick={() => setSelectedTransmission(trans)}
-                className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
-                  selectedTransmission === trans
-                    ? 'bg-orange-500/10 text-orange-400 border border-orange-500/30'
-                    : 'bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800'
-                }`}
-              >
-                {trans === 'All' ? 'Any Transmission' : trans}
-              </button>
-            ))}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800/60 bg-slate-900/30 p-3.5 rounded-2xl">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full sm:w-auto">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono shrink-0">Transmission:</span>
+            <div className="flex gap-2 items-center overflow-x-auto scrollbar-none pb-1 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+              {['All', 'Manual', 'Automatic'].map((trans) => (
+                <button
+                  key={trans}
+                  onClick={() => setSelectedTransmission(trans)}
+                  className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                    selectedTransmission === trans
+                      ? 'bg-orange-500/10 text-orange-400 border border-orange-500/30'
+                      : 'bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800'
+                  }`}
+                >
+                  {trans === 'All' ? 'Any Transmission' : trans}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs">
+          <div className="flex items-center gap-2 text-xs shrink-0">
             <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono">Sort By:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 outline-none focus:border-orange-500 cursor-pointer"
+              className="bg-slate-950 border border-slate-800 rounded-lg px-2 py-1.5 text-xs text-slate-200 outline-none focus:border-orange-500 cursor-pointer"
             >
               <option value="featured">Featured Picks</option>
               <option value="rate-asc">Price: Low to High</option>

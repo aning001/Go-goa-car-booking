@@ -317,6 +317,79 @@
       color: white;
     }
 
+    .mobile-drawer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .mobile-support-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 12px;
+      text-align: left;
+      margin-bottom: 12px;
+    }
+    .mobile-support-title {
+      font-size: 9px;
+      font-family: var(--font-mono);
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mobile-support-buttons {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-mobile-support {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-color: #030305;
+      border: 1px solid var(--border-color);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 8px;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+    .btn-mobile-support.whatsapp {
+      color: #34d399;
+      background-color: rgba(52, 211, 153, 0.05);
+      border-color: rgba(52, 211, 153, 0.15);
+    }
+    .mobile-hotspots-card {
+      background-color: rgba(17, 17, 24, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 12px;
+      text-align: left;
+      margin-bottom: 12px;
+    }
+    .mobile-hotspots-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .mobile-tag {
+      font-size: 9px;
+      background-color: #030305;
+      color: var(--text-muted);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
     /* Hero Branding Banner */
     .hero-banner {
       position: relative;
@@ -795,45 +868,85 @@
 
   <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
   <div id="mobile-nav-panel" class="mobile-drawer">
-    <a href="index.html" class="mobile-nav-item">
-      <span>Home</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="about.html" class="mobile-nav-item">
-      <span>About Us</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="fleet.html" class="mobile-nav-item">
-      <span>Car Fleet</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="thar-rental.html" class="mobile-nav-item">
-      <span>🚙 Thar Rental</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="luxury-rental.html" class="mobile-nav-item">
-      <span>👑 Luxury Rental</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="family-rental.html" class="mobile-nav-item">
-      <span>👨‍👩‍👦 Family &amp; SUV</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="services.html" class="mobile-nav-item">
-      <span>Services</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="blogs.html" class="mobile-nav-item">
-      <span>Blogs</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="terms-and-privacy.html" class="mobile-nav-item" style="color: var(--accent-light);">
-      <span>Privacy Policy &amp; Terms</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
-    </a>
-    <a href="contact.html" class="mobile-nav-item">
-      <span>Contact Us</span>
-      <i data-lucide="chevron-right" style="width:16px; height:16px; color:var(--accent-primary);"></i>
+    <!-- Grid of Pages -->
+    <div class="mobile-drawer-grid">
+      <a href="index.html" class="mobile-nav-item">
+        <span>Home</span>
+        <i data-lucide="home" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="fleet.html" class="mobile-nav-item">
+        <span>Fleet</span>
+        <i data-lucide="car" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="thar-rental.html" class="mobile-nav-item">
+        <span>🚙 Thar</span>
+        <i data-lucide="route" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="luxury-rental.html" class="mobile-nav-item">
+        <span>👑 Luxury</span>
+        <i data-lucide="crown" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="family-rental.html" class="mobile-nav-item">
+        <span>👨‍👩‍👦 SUVS</span>
+        <i data-lucide="users" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="services.html" class="mobile-nav-item">
+        <span>Services</span>
+        <i data-lucide="settings" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="blogs.html" class="mobile-nav-item">
+        <span>Blogs</span>
+        <i data-lucide="book-open" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="rental-faq.html" class="mobile-nav-item">
+        <span>FAQs</span>
+        <i data-lucide="help-circle" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="about.html" class="mobile-nav-item">
+        <span>About</span>
+        <i data-lucide="info" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+      <a href="terms-and-privacy.html" class="mobile-nav-item" style="border-color: var(--accent-primary); color: white;">
+        <span>Privacy</span>
+        <i data-lucide="file-text" style="width:14px; height:14px; color:var(--accent-primary);"></i>
+      </a>
+    </div>
+
+    <!-- Contact support container -->
+    <div class="mobile-support-card">
+      <div class="mobile-support-title">
+        <i data-lucide="phone-call" style="width:14px; height:14px;"></i>
+        <span>Direct Contact Support</span>
+      </div>
+      <div class="mobile-support-buttons">
+        <a href="tel:+916287168644" class="btn-mobile-support">
+          <span>+91 62871 68644</span>
+        </a>
+        <a href="https://wa.me/916287168644" target="_blank" class="btn-mobile-support whatsapp">
+          <span>WhatsApp Chat</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Delivery Hotspots in Goa -->
+    <div class="mobile-hotspots-card">
+      <div class="mobile-support-title" style="color: var(--text-muted);">
+        <i data-lucide="map-pin" style="width:14px; height:14px; color:#ef4444;"></i>
+        <span>Our Premium Delivery Hotspots</span>
+      </div>
+      <div class="mobile-hotspots-tags">
+        <span class="mobile-tag">🌴 Mopa Airport</span>
+        <span class="mobile-tag">🌴 Dabolim Airport</span>
+        <span class="mobile-tag">🌴 Madgaon Terminal</span>
+        <span class="mobile-tag">🌴 Calangute Beach</span>
+        <span class="mobile-tag">🌴 Candolim Hub</span>
+        <span class="mobile-tag">🌴 Baga Delivery Spot</span>
+        <span class="mobile-tag">🌴 Panaji Counter</span>
+      </div>
+    </div>
+
+    <a href="contact.html" class="mobile-nav-item" style="background-color: var(--accent-primary); border-color: var(--accent-secondary); color: #030305; font-weight: 850; text-align: center; justify-content: center; padding: 0.85rem;">
+      <span>Contact Us / Book Offline</span>
     </a>
   </div>
 
@@ -1153,6 +1266,32 @@
 
     </div>
   </main>
+
+  <!-- ================= GOOGLE MAPS AREA ================= -->
+  <section style="background-color:#030305; border-top:1px solid #111118; padding:2.5rem 0;">
+    <div class="container">
+      <div style="background-color:#0a0a0e; border:1px solid #1e293b; border-radius:1.5rem; overflow:hidden; padding:1.25rem;">
+        <div style="display:flex; flex-direction:column; gap:0.5rem; justify-content:space-between; margin-bottom:1rem; text-align:left;">
+          <div>
+            <span style="font-size:9px; font-weight:700; color:var(--accent-light); text-transform:uppercase; letter-spacing:0.1em; font-family:var(--font-mono); display:block;">📍 DIRECT GOA HANDOVER LOCATION MAP</span>
+            <h3 style="font-size:16px; font-weight:900; color:#ffffff; text-transform:uppercase; font-family:var(--font-display); margin-top:0.25rem; margin-bottom:0;">Where to find us in Goa</h3>
+          </div>
+          <span style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); display:block;">You can swap this iframe below with your custom Google Maps embed code anytime</span>
+        </div>
+        <div style="position:relative; width:100%; height:300px; border-radius:1rem; overflow:hidden; background-color:#030305; border:1px solid #111118;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1s0x3bbfebfbfd53bf57%3A0x95995cf58f8ab0a4!2sCalangute%20Beach!5e0!3m2!1sen!2sin!4v1718971000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= FOOTER SECTION (Pure HTML & CSS Layout) ================= -->
   <footer>

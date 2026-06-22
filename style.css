@@ -42,11 +42,8 @@ body {
 
 /* Direct tag resets for button components to ensure zero browser background/border overrides */
 button {
-  background-color: transparent !important;
+  background-color: transparent;
   color: inherit;
-  border-width: 0;
-  border-style: none;
-  border-color: transparent;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -54,7 +51,7 @@ button {
   cursor: pointer;
 }
 button:focus {
-  outline: none !important;
+  outline: none;
 }
 
 /* Global Link Resets & Styles - Strongly overrides standard browser default blue styles and underline modes */
@@ -155,6 +152,7 @@ img {
   .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .md\:top-1\/2 { top: 50%; }
   .md\:-translate-y-1\/2 { transform: translateY(-50%); }
+  .md\:bottom-auto { bottom: auto !important; }
   .md\:p-3\.5 { padding: 0.875rem; }
   .md\:p-5 { padding: 1.25rem; }
   .md\:p-6 { padding: 1.5rem; }
@@ -499,6 +497,11 @@ img {
 .bottom-4 { bottom: 1rem; }
 .bottom-6 { bottom: 1.5rem; }
 .bottom-10 { bottom: 2.5rem; }
+.bottom-12 { bottom: 3rem; }
+.bottom-16 { bottom: 4rem; }
+.bottom-20 { bottom: 5rem; }
+.bottom-24 { bottom: 6rem; }
+.bottom-28 { bottom: 7rem; }
 .z-0 { z-index: 0; }
 .z-10 { z-index: 10; }
 .z-20 { z-index: 20; }

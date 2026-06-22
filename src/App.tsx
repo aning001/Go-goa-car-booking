@@ -119,6 +119,23 @@ export default function App() {
     }
   }, []);
 
+  // Lock background scroll when overlays/modals are active
+  useEffect(() => {
+    if (isBookingModalOpen || bookingResult) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isBookingModalOpen, bookingResult]);
+
+  // Scroll to top automatically when active tab or active car changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as any });
+  }, [activeTab, activeCarId]);
+
   // Hash Routing Logic for true Multi-Page Dynamic Experience
   useEffect(() => {
     const handleHashRouter = () => {

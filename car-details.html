@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Self-Drive Rental Goa — Go Goa Car Booking</title>
+  
+  <meta name="description" content="View specifications, rent price, and rules of our self-drive cars in Goa. Premium delivery across Mopa Airport, Dabolim, and North Goa beach corridors.">
+  
+  <!-- Elegant Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;850;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Link Manual Handcrafted Brand CSS and Script Systems -->
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+
+  <style type="text/css">
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Simple Animation */
+    .fade-in-up {
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen selection:bg-orange-500 selection:text-white overflow-x-hidden">
+
+  <!-- ================= HEADER SECTION ================= -->
+  <header class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="bg-gradient-to-tr from-orange-600 to-orange-400 p-2 rounded-xl shadow-lg shadow-orange-500/10">
+          <i data-lucide="car" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <span class="text-sm font-black tracking-tight text-white uppercase font-display block">Go Goa</span>
+          <span class="text-[9px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1">Car Rental</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden xl:flex items-center gap-1.5 xl:gap-4 text-[10px] xl:text-[11px] font-bold text-slate-300 shrink">
+        <a href="index.html" class="hover:text-orange-400 transition-colors">Home</a>
+        <a href="about.html" class="hover:text-orange-400 transition-colors">About Us</a>
+        <a href="fleet.html" class="text-orange-400 font-extrabold transition-colors">Car Fleet</a>
+        <a href="thar-rental.html" class="hover:text-orange-400 transition-colors">Thar Rental</a>
+        <a href="luxury-rental.html" class="hover:text-orange-400 transition-colors">Luxury Car</a>
+        <a href="family-rental.html" class="hover:text-orange-400 transition-colors">Family &amp; SUV</a>
+        <a href="services.html" class="hover:text-orange-400 transition-colors">Services</a>
+        <a href="blogs.html" class="hover:text-orange-400 transition-colors">Blogs</a>
+        <a href="terms-and-privacy.html" class="hover:text-orange-400 transition-colors text-nowrap">Privacy &amp; Terms</a>
+        <a href="contact.html" class="hover:text-orange-400 transition-colors">Contact Us</a>
+      </nav>
+
+      <!-- Desktop Header CTAs & Hamburger on Mobile -->
+      <div class="flex items-center gap-2">
+        <a href="tel:+918208818451" class="hidden sm:flex items-center gap-1.5 bg-slate-900 border border-slate-800 hover:bg-slate-850 px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-200 transition-all btn-bounce">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-orange-500"></i>
+          <span>Call Support</span>
+        </a>
+        <a href="fleet.html" class="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-md shadow-orange-500/15 btn-bounce">
+          View Fleet
+        </a>
+        
+        <!-- Mobile Menu Hamburger Button Trigger -->
+        <button id="mobile-menu-btn" class="xl:hidden flex items-center justify-center p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" id="menu-icon-hamburger" class="w-5 h-5 text-orange-500"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= MOBILE NAVIGATION DRAWER ================= -->
+  <div id="mobile-nav-panel" class="hidden fixed inset-x-0 top-16 bg-slate-950/98 backdrop-blur-lg border-b border-slate-800 z-40 p-4 flex flex-col gap-2 font-semibold text-xs tracking-wider uppercase transition-all shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+    <a href="index.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Home</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="about.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>About Us</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="fleet.html" class="mobile-nav-item py-3 px-4 rounded-xl text-white bg-slate-900 border border-slate-800 flex items-center justify-between transition-all">
+      <span>Car Fleet</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="thar-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>🚙 Thar Rental</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="luxury-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>👑 Luxury Rental</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="family-rental.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>👨‍👩‍👦 Family & SUV</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="services.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Services</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="blogs.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Blogs</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="terms-and-privacy.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Privacy Policy &amp; Terms</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+    <a href="contact.html" class="mobile-nav-item py-3 px-4 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-850 flex items-center justify-between transition-all">
+      <span>Contact Us</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-orange-500"></i>
+    </a>
+  </div>
+
+  <!-- ================= MAIN SITE WRAPPER ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- Back to Fleet Link Trigger -->
+    <div class="mb-6 fade-in-up">
+      <a href="fleet.html" class="inline-flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-orange-400 transition-colors bg-slate-950 px-4 py-2 rounded-xl border border-slate-850">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to Fleet Catalog</span>
+      </a>
+    </div>
+
+    <!-- MAIN CAR LAYOUT GRID -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start fade-in-up">
+      
+      <!-- LEFT COLUMN: Image Frame, Specifications, Highlights (8 columns) -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Showcase Image and badges -->
+        <div class="max-w-sm sm:max-w-md md:max-w-lg mx-auto relative h-44 sm:h-56 md:h-64 w-full bg-slate-950 rounded-2xl overflow-hidden border border-slate-850 shadow-2xl">
+          <img id="car-image" src="" alt="Car Image" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/10 to-transparent"></div>
+          
+          <span id="car-category-badge" class="absolute top-4 left-4 bg-orange-600 text-white font-black text-[10px] uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-lg">
+            HATCHBACK
+          </span>
+          <span id="car-popular-badge" class="absolute top-4 right-4 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-lg hidden">
+            🔥 HIGHLY RECOMMENDED
+          </span>
+        </div>
+
+        <!-- Title, Subtitle, Transmission badge -->
+        <div class="bg-slate-900 border border-slate-850 rounded-2xl p-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800/80">
+            <div>
+              <h1 id="car-name-heading" class="text-3xl md:text-4xl font-black text-white font-display tracking-tight">Maruti Suzuki Swift</h1>
+              <p id="car-subtitle" class="text-[11px] text-slate-500 mt-1 italic uppercase tracking-wider font-mono">Category: Self-Drive Petrol Hatchback rental in Goa</p>
+            </div>
+            <span id="car-transmission-badge" class="text-xs font-black px-4 py-1.5 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20 uppercase tracking-widest font-mono">
+              AUTOMATIC
+            </span>
+          </div>
+
+          <!-- Basic specifications tags -->
+          <div class="grid grid-cols-3 gap-3 text-center text-[11px] mt-6">
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-850">
+              <span class="text-[9px] uppercase tracking-widest text-slate-500 block font-black font-mono mb-1">Capacity</span>
+              <strong id="car-seats-tag" class="text-xs text-white">5 Seater</strong>
+            </div>
+            
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-850">
+              <span class="text-[9px] uppercase tracking-widest text-slate-500 block font-black font-mono mb-1">Fuel Type</span>
+              <strong id="car-fuel-tag" class="text-xs text-white">Petrol</strong>
+            </div>
+
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-850">
+              <span class="text-[9px] uppercase tracking-widest text-slate-500 block font-black font-mono mb-1">Baggage Fit</span>
+              <strong id="car-bags-tag" class="text-xs text-white">2 Handbags</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extended Multi-Paragraph Article Deep Dive -->
+        <div class="bg-slate-900 border border-slate-850 rounded-2xl p-6 space-y-4">
+          <h3 class="text-sm font-black text-orange-400 uppercase tracking-widest font-mono flex items-center gap-2">
+            <i data-lucide="newspaper" class="w-4 h-4"></i>
+            <span>Premium Vehicle Deep-Dive & Journey Highlights</span>
+          </h3>
+          <div id="car-extended-desc" class="text-xs text-slate-400 leading-relaxed font-sans space-y-4">
+            <!-- Dynamically populated paragraphs -->
+          </div>
+        </div>
+
+        <!-- Technical Specification Grid -->
+        <div class="bg-slate-900 border border-slate-850 rounded-2xl p-6">
+          <h3 class="text-sm font-black text-white uppercase tracking-widest font-mono flex items-center gap-2 mb-4">
+            <i data-lucide="sliders" class="w-4 h-4 text-orange-500"></i>
+            <span>Technical Road Specifications</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono text-slate-300">
+            <div class="space-y-3">
+              <div class="border-b border-slate-800 pb-2.5">
+                <span class="text-slate-500 text-[10px] uppercase font-black block">Engine Displacement</span>
+                <strong id="spec-engine" class="text-slate-200 mt-0.5 block">1.2L DualJet Dual VVT</strong>
+              </div>
+              <div class="border-b border-slate-800 pb-2.5">
+                <span class="text-slate-500 text-[10px] uppercase font-black block">Power Capacity</span>
+                <strong id="spec-power" class="text-slate-200 mt-0.5 block">88.5 BHP @ 6000 RPM</strong>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="border-b border-slate-800 pb-2.5">
+                <span class="text-slate-500 text-[10px] uppercase font-black block">Ground Clearance</span>
+                <strong id="spec-clearance" class="text-slate-200 mt-0.5 block">163 mm</strong>
+              </div>
+              <div class="border-b border-slate-800 pb-2.5">
+                <span class="text-slate-500 text-[10px] uppercase font-black block">Water Articulation</span>
+                <strong id="spec-wading" class="text-slate-200 mt-0.5 block">150 mm</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium Accessories & Amenities -->
+        <div class="bg-slate-900 border border-slate-850 rounded-2xl p-6 space-y-4">
+          <h3 class="text-sm font-black text-white uppercase tracking-widest font-mono flex items-center gap-2">
+            <i data-lucide="award" class="w-4 h-4 text-orange-500"></i>
+            <span>Included Amenities & Accessories Pack</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs" id="features-grid">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Price cards, Trip Suitability, Booking Form (5 columns) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Dual Price Card Display -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-slate-900 border border-slate-850 p-4 rounded-2xl">
+            <span class="text-slate-500 text-[9px] uppercase font-black tracking-wider block font-mono">Daily Rent Rate</span>
+            <div class="text-2xl font-black text-white font-sans mt-0.5" id="price-rent">₹1,500/day</div>
+            <span class="text-[9.5px] text-slate-500 block font-mono">No hidden surcharges</span>
+          </div>
+          
+          <div class="bg-slate-900 border border-slate-850 p-4 rounded-2xl">
+            <span class="text-slate-500 text-[9px] uppercase font-black tracking-wider block font-mono">Refundable Deposit</span>
+            <div class="text-2xl font-bold text-orange-400 font-sans mt-0.5" id="price-deposit">₹3,000</div>
+            <span class="text-[9.5px] text-slate-500 block">100% Refunded at checkout</span>
+          </div>
+        </div>
+
+        <!-- Suitability & Rules warnings -->
+        <div class="bg-slate-900 border border-slate-850 rounded-2xl p-5 space-y-4">
+          <div>
+            <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider block font-mono mb-1">Goa Trip Suitability Guidance:</span>
+            <p id="suitability-desc" class="text-xs text-slate-400 leading-relaxed font-sans">
+              Excellent for cruising beach corridors, fitting into narrow parking spots, and compact families.
+            </p>
+          </div>
+
+          <div class="bg-slate-950/55 border border-slate-850 rounded-xl p-4">
+            <h4 class="text-xs font-black text-red-400 uppercase tracking-wider mb-2.5 flex items-center gap-1.5 font-mono">
+              <i data-lucide="alert-octagon" class="w-3.5 h-3.5"></i>
+              <span>Strict Rental Rules</span>
+            </h4>
+            <p id="rules-desc" class="text-[11px] text-slate-400 leading-relaxed font-sans">
+              Keep speeds strictly under 70 km/h to prevent high traffic camera penalties. Sandy beach driving as well as open drinking is prohibited by local cyber law patrols.
+            </p>
+          </div>
+        </div>
+
+        <!-- DETAILED BOOKING ACQUISITION FORM -->
+        <div class="bg-slate-900 border-2 border-orange-500/30 rounded-3xl p-6 shadow-2xl relative overflow-hidden" id="booking-section">
+          <!-- Ambient decor glow -->
+          <div class="absolute -right-16 -top-16 w-32 h-32 bg-orange-600/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <span class="bg-orange-500 text-slate-950 text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full absolute top-6 right-6">
+            Instant Check
+          </span>
+
+          <h2 class="text-lg font-black text-white font-display uppercase tracking-tight mb-1">Rent This Car Now</h2>
+          <p class="text-[11px] text-slate-400 mb-5">Fill details below. Our booking team checks and locks it instantly.</p>
+
+          <form id="details-booking-form" class="space-y-4 text-xs">
+            
+            <!-- Hidden Car ID Field -->
+            <input type="hidden" id="form-car-id" name="carId" value="">
+
+            <div>
+              <label class="block text-slate-400 font-bold mb-1.5 uppercase tracking-wider text-[10px] font-mono">Full Name *</label>
+              <div class="relative">
+                <span class="absolute left-3.5 top-3 text-slate-500"><i data-lucide="user" class="w-4 h-4"></i></span>
+                <input type="text" id="form-user-name" required placeholder="Enter Your Full Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-white focus:outline-none focus:border-orange-500 transition-colors">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-slate-400 font-bold mb-1.5 uppercase tracking-wider text-[10px] font-mono">Phone Number *</label>
+                <div class="relative">
+                  <span class="absolute left-3.5 top-3 text-slate-500"><i data-lucide="phone" class="w-4 h-4"></i></span>
+                  <input type="tel" id="form-user-phone" required placeholder="E.g. +91" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-white focus:outline-none focus:border-orange-500 transition-colors">
+                </div>
+              </div>
+              <div>
+                <label class="block text-slate-400 font-bold mb-1.5 uppercase tracking-wider text-[10px] font-mono">Email Address</label>
+                <div class="relative">
+                  <span class="absolute left-3.5 top-3 text-slate-500"><i data-lucide="mail" class="w-4 h-4"></i></span>
+                  <input type="email" id="form-user-email" placeholder="Optional" class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-white focus:outline-none focus:border-orange-500 transition-colors">
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-slate-400 font-bold mb-1.5 uppercase tracking-wider text-[10px] font-mono">Pickup Airfield / Hotel *</label>
+                <select id="form-pickup-loc" required class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-3.5 text-white focus:outline-none focus:border-orange-500 transition-colors cursor-pointer">
+                  <option value="">-- Choose Terminal --</option>
+                  <option value="Mopa Airport (GOX)">Mopa Airport Terminal (North Goa)</option>
+                  <option value="Dabolim Airport (GOI)">Dabolim Airport Terminal (South Goa)</option>
+                  <option value="Calangute / Baga Hub">Calangute / Baga beachfront office</option>
+                  <option value="Madgaon Railway Station">Madgaon Railway junction</option>
+                  <option value="Candolim / Nerul Hub">Candolim resort loop delivery</option>
+                  <option value="Panjim Office Hub">Panaji (Fontainhas) main gate</option>
+                  <option value="Other Goa Resort">Other Resort (Enter in notes below)</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-slate-400 font-bold mb-1.5 uppercase tracking-wider text-[10px] font-mono">Drop-off Airfield / Hotel *</label>
+                <select id="form-drop-loc" required class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-3.5 text-white focus:outline-none focus:border-orange-500 transition-colors cursor-pointer">
+                  <option value="">-- Choose Terminal --</option>
+                  <option value="Mopa Airport (GOX)">Mopa Airport Terminal (North Goa)</option>
+                  <option value="Dabolim Airport (GOI)">Dabolim Airport Terminal (South Goa)</option>
+                  <option value="Calangute / Baga Hub">Calangute / Baga beachfront office</option>
+                  <option value="Madgaon Railway Station">Madgaon Railway junction</option>
+                  <option value="Candolim / Nerul Hub">Candolim resort loop delivery</option>
+                  <option value="Panjim Office Hub">Panaji (Fontainhas) main gate</option>
+                  <option value="Other Goa Resort">Other Resort (Enter in notes below)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-slate-400 font-bold mb-1.5 uppercase tracking-wider text-[10px] font-mono">Pickup Date *</label>
+                <input type="date" id="form-pickup-date" required class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-3.5 text-white focus:outline-none focus:border-orange-500 transition-colors cursor-pointer">
+              </div>
+              <div>
+                <label class="block text-slate-400 font-bold mb-1.5 uppercase tracking-wider text-[10px] font-mono">Drop-off Date *</label>
+                <input type="date" id="form-drop-date" required class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-3.5 text-white focus:outline-none focus:border-orange-500 transition-colors cursor-pointer">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-slate-400 font-bold mb-1.5 uppercase tracking-wider text-[10px] font-mono">Special Requests / Flight Number / Hotel Details</label>
+              <textarea id="form-notes" rows="2" placeholder="Tell us if you need baby seats, automatic delivery times, or standard airport terminal flight numbers..." class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2.5 px-3.5 text-white focus:outline-none focus:border-orange-500 transition-colors resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-black py-3 rounded-xl uppercase tracking-wider text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer text-center flex items-center justify-center gap-2 btn-bounce">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Book This Car Now</span>
+            </button>
+            
+          </form>
+
+          <!-- Enquiry Success Block -->
+          <div id="booking-success-box" class="hidden absolute inset-0 bg-slate-950/95 backdrop-blur-sm p-6 text-center flex flex-col justify-center items-center space-y-4">
+            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center border border-emerald-500/20 mb-1">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-black text-white font-display uppercase">Enquiry Recorded!</h3>
+              <p class="text-[11px] text-slate-400 mt-1 max-w-sm">We've saved your enquiry on our server and locked the price shield. Tap below for instant confirmation over Whatsapp.</p>
+            </div>
+            
+            <a id="success-wa-link" href="" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 rounded-xl uppercase tracking-wider text-xs transition-all shadow-md shadow-emerald-500/10 text-center flex items-center justify-center gap-2 btn-bounce">
+              <i data-lucide="message-square" class="w-4 h-4 shrink-0"></i>
+              <span>Confirm on WhatsApp</span>
+            </a>
+
+            <button onclick="resetBookingForm()" class="text-[10px] font-bold text-slate-400 hover:text-white underline transition-colors">
+              Submit Another Request
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RELATED VEHICLES RECOMMENDATION CARDS -->
+    <div class="mt-16 border-t border-slate-800 pt-12">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-[9px] font-black text-orange-500 uppercase tracking-widest font-mono block">Alternative Recommendations</span>
+          <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight font-display mt-1">Recommended for Your Journey</h2>
+        </div>
+        <a href="fleet.html" class="text-xs font-bold text-slate-400 hover:text-orange-400 transition-colors uppercase tracking-wider font-mono flex items-center gap-1.5">
+          <span>Show all cars</span>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="recommended-grid">
+        <!-- Recommends 3 alternative cars from the database dynamically -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= FOOTER SECTION ================= -->
+  <footer class="bg-slate-950 border-t border-slate-850/70 pt-16 pb-8 text-xs text-slate-400 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pb-12 border-b border-slate-900">
+      
+      <!-- Box 1: Brand details -->
+      <div class="md:col-span-4 space-y-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="bg-orange-500 p-2 rounded-xl shadow-lg shadow-orange-500/10">
+            <i data-lucide="car" class="w-4 h-4 text-white"></i>
+          </div>
+          <div>
+            <span class="text-xs font-black tracking-tight text-white uppercase font-display block">Go Goa</span>
+            <span class="text-[8px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1">Car Rental</span>
+          </div>
+        </a>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          Premium, durably verified self-drive car provider operating directly beside Goa airports with instant airport checkout gates. Low security deposits, friendly support, and transparent packages.
+        </p>
+        <div class="flex items-center gap-2 text-slate-500 text-lg">
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <!-- Box 2: Quick links -->
+      <div class="md:col-span-2 space-y-3">
+        <h4 class="text-[10px] font-black text-white uppercase tracking-widest font-mono">Quick Pages</h4>
+        <div class="flex flex-col gap-2 font-medium">
+          <a href="index.html" class="hover:text-orange-400 transition-colors">Home Page</a>
+          <a href="about.html" class="hover:text-orange-400 transition-colors">Our History</a>
+          <a href="fleet.html" class="hover:text-orange-400 transition-colors">Browse Fleet</a>
+          <a href="services.html" class="hover:text-orange-400 transition-colors">Special Services</a>
+          <a href="blogs.html" class="hover:text-orange-400 transition-colors">Local Blog tips</a>
+        </div>
+      </div>
+
+      <!-- Box 3: Categories -->
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="text-[10px] font-black text-white uppercase tracking-widest font-mono">Car Categories</h4>
+        <div class="flex flex-col gap-2 font-medium">
+          <a href="thar-rental.html" class="hover:text-orange-400 transition-colors flex items-center gap-1.5">
+            <span>🚙 Mahindra Thar 4x4</span>
+          </a>
+          <a href="luxury-rental.html" class="hover:text-orange-400 transition-colors flex items-center gap-1.5">
+            <span>👑 Luxury Cruiser Sedan</span>
+          </a>
+          <a href="family-rental.html" class="hover:text-orange-400 transition-colors flex items-center gap-1.5">
+            <span>👨‍👩‍👦 7 Seater & heavy SUV</span>
+          </a>
+          <a href="fleet.html" class="hover:text-orange-400 transition-colors">Budget family hatchback</a>
+        </div>
+      </div>
+
+      <!-- Box 4: Contact -->
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="text-[10px] font-black text-white uppercase tracking-widest font-mono">Hotline Contacts</h4>
+        <div class="space-y-2 font-medium">
+          <p class="flex items-start gap-2 leading-relaxed">
+            <i data-lucide="map-pin" class="w-4 h-4 text-orange-500 shrink-0 mt-0.5"></i>
+            <span>Beside Mopa Airport Main Gate, Pernem, North Goa, 403512</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-orange-500 shrink-0"></i>
+            <a href="tel:+918208818451" class="hover:text-white transition-colors">+91 82088 18451</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-orange-500 shrink-0"></i>
+            <a href="mailto:booking@gogoacarbooking.in" class="hover:text-white transition-colors">booking@gogoacarbooking.in</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Outer footer label rules -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] text-slate-500 font-mono">
+      <span>© 2026 Go Goa Car Booking. All Rights Reserved.</span>
+      <div class="flex gap-4">
+        <a href="terms-and-privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span>•</span>
+        <a href="terms-and-privacy.html" class="hover:text-white transition-colors">Terms of Rental Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= INLINE SCRIPT ENGINE ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Initialize Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // 2. Load the specific car details dynamically!
+      const params = new URLSearchParams(window.location.search);
+      const carId = params.get('id') || 'wagon-r'; // Fallback car
+      
+      const getCar = () => {
+        if (window.CARS && window.CARS.length) {
+          return window.CARS.find(c => c.id === carId) || window.CARS[0];
+        }
+        return null;
+      };
+
+      const populatePageData = () => {
+        const car = getCar();
+        if (!car) {
+          // If script.js hasn't finished parsing window.CARS yet, retry shortly
+          setTimeout(populatePageData, 50);
+          return;
+        }
+
+        // Set Head Title
+        document.getElementById('page-title').textContent = `${car.name} (${car.transmission}) Self-Drive Rental Goa | Go Goa Car Booking`;
+        
+        // Populate DOM elements
+        document.getElementById('car-image').src = car.imageUrl || car.image;
+        document.getElementById('car-image').alt = car.name;
+        document.getElementById('car-category-badge').textContent = car.category;
+        
+        const popBadge = document.getElementById('car-popular-badge');
+        if (car.isPopular) {
+          popBadge.classList.remove('hidden');
+        } else {
+          popBadge.classList.add('hidden');
+        }
+
+        document.getElementById('car-name-heading').textContent = car.name;
+        document.getElementById('car-subtitle').textContent = `Category: self-drive ${car.category.toLowerCase()} rental in Goa • ${car.transmission}`;
+        document.getElementById('car-transmission-badge').textContent = car.transmission;
+        
+        document.getElementById('price-rent').textContent = `₹${car.pricePerDay || car.rent}/day`;
+        document.getElementById('price-deposit').textContent = `₹${car.securityDeposit || car.deposit}`;
+        
+        document.getElementById('car-seats-tag').textContent = `${car.seats} Seats`;
+        document.getElementById('car-fuel-tag').textContent = car.fuelType || car.fuel;
+        document.getElementById('car-bags-tag').textContent = typeof car.luggage === 'number' ? `${car.luggage} Bags` : (car.luggage || "3 Bags");
+
+        // Specific specs
+        document.getElementById('spec-engine').textContent = car.engine || "1.2L K-Series DualJet";
+        document.getElementById('spec-power').textContent = car.power || "88.5 BHP";
+        document.getElementById('spec-clearance').textContent = car.clearance || "165 mm";
+        document.getElementById('spec-wading').textContent = car.waterWading || car.wading || "150 mm";
+        
+        document.getElementById('suitability-desc').textContent = car.suitability;
+        document.getElementById('rules-desc').textContent = car.rules;
+
+        // Hidden input in form
+        document.getElementById('form-car-id').value = car.id;
+
+        // Populate article paragraphs
+        const extendedContainer = document.getElementById('car-extended-desc');
+        extendedContainer.innerHTML = '';
+        if (car.extendedParagraphs && car.extendedParagraphs.length) {
+          car.extendedParagraphs.forEach(text => {
+            const p = document.createElement('p');
+            p.className = 'text-xs text-slate-400 font-sans leading-relaxed';
+            p.textContent = text;
+            extendedContainer.appendChild(p);
+          });
+        } else {
+          const p = document.createElement('p');
+          p.className = 'text-xs text-slate-400 font-sans leading-relaxed';
+          p.textContent = `Rent the awesome ${car.name} self-drive in Goa to experience maximum leisure and utility. Our cars come thoroughly serviced with original comprehensive license permits.`;
+          extendedContainer.appendChild(p);
+        }
+
+        // Features list checkmarks
+        const featuresGrid = document.getElementById('features-grid');
+        featuresGrid.innerHTML = '';
+        const featuresList = car.features || ['Power Steering', 'Air Conditioner', 'Aux Charging', 'Fast Charging USB Hub'];
+        featuresList.forEach(feat => {
+          const div = document.createElement('div');
+          div.className = 'flex items-center gap-2.5';
+          div.innerHTML = `
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+            <span class="text-slate-300">${feat}</span>
+          `;
+          featuresGrid.appendChild(div);
+        });
+
+        // Trigger Lucide updates for newly added nodes
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+
+        // Render alternative recommended cars
+        renderRecommendations(car);
+      };
+
+      const renderRecommendations = (currentCar) => {
+        const grid = document.getElementById('recommended-grid');
+        grid.innerHTML = '';
+        
+        // Get 3 cars that are different from the current car
+        const alternatives = window.CARS.filter(c => c.id !== currentCar.id)
+          .sort(() => 0.5 - Math.random()) // Shuffle
+          .slice(0, 3);
+
+        alternatives.forEach(car => {
+          const card = document.createElement('div');
+          card.className = "bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl hover:border-slate-700 transition-all text-left flex flex-col justify-between group cursor-pointer";
+          card.onclick = () => {
+            window.location.href = `./car-details.html?id=${car.id}`;
+          };
+          
+          card.innerHTML = `
+            <div class="relative aspect-[16/10] w-full bg-slate-950 overflow-hidden">
+              <img src="${car.imageUrl || car.image}" alt="${car.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+              <div class="absolute top-4 right-4 z-20 bg-amber-400 text-slate-950 font-black font-display text-xs px-3 py-1.5 rounded-xl border-2 border-slate-950 shadow-[3.5px_3.5px_0px_0px_rgba(0,0,0,1)]">
+                ₹${car.pricePerDay || car.rent}/day
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="bg-slate-950 text-slate-400 font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-slate-850">${car.category}</span>
+                  <span class="bg-orange-500/10 text-orange-400 font-mono text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border border-orange-500/10">${car.transmission}</span>
+                </div>
+                <h3 class="text-base font-black text-white font-display tracking-tight group-hover:text-orange-400 transition-colors uppercase">${car.name}</h3>
+                <p class="text-[10px] text-slate-500 mt-1 line-clamp-2">${car.suitability || "Explore Goa with absolute freedom and premium comfort."}</p>
+              </div>
+              
+              <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <span class="flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5 text-slate-500"></i> ${car.seats} Seats</span>
+                <span class="flex items-center gap-1"><i data-lucide="fuel" class="w-3.5 h-3.5 text-slate-500"></i> ${car.fuelType || car.fuel}</span>
+                <span class="text-orange-400 font-bold hover:underline">View Details →</span>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      };
+
+      populatePageData();
+
+      // 3. Handle Form Submission
+      const form = document.getElementById('details-booking-form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const car = getCar();
+        if (!car) return;
+
+        const userName = document.getElementById('form-user-name').value;
+        const userPhone = document.getElementById('form-user-phone').value;
+        const userEmail = document.getElementById('form-user-email').value;
+        const pickupLoc = document.getElementById('form-pickup-loc').value;
+        const dropLoc = document.getElementById('form-drop-loc').value;
+        const pickupDate = document.getElementById('form-pickup-date').value;
+        const dropDate = document.getElementById('form-drop-date').value;
+        const notes = document.getElementById('form-notes').value;
+
+        // Calculate estimated total
+        let days = 1;
+        if (pickupDate && dropDate) {
+          const pick = new Date(pickupDate);
+          const drop = new Date(dropDate);
+          const diff = Math.ceil((drop - pick) / (1000 * 60 * 60 * 24));
+          if (diff > 0) days = diff;
+        }
+        const totalRent = (car.pricePerDay || car.rent) * days;
+
+        const payload = {
+          pickupLocation: pickupLoc,
+          dropLocation: dropLoc,
+          pickupDate: pickupDate,
+          pickupTime: "10:00",
+          dropDate: dropDate,
+          dropTime: "10:00",
+          carId: car.id,
+          userName: userName,
+          userPhone: userPhone,
+          userEmail: userEmail,
+          specialRequests: notes,
+          estimatedTotal: totalRent
+        };
+
+        try {
+          const btn = form.querySelector('button[type="submit"]');
+          btn.disabled = true;
+          btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i><span>Recording Booking...</span>`;
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+
+          const response = await fetch('/api/bookings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (response.ok) {
+            const result = await response.json();
+            
+            // Generate WhatsApp confirmation query
+            const waText = `Hi Go Goa Car Booking! I have submitted a booking enquiry for *${car.name}* (${car.transmission}) via the website details page.\n\n👤 *Name:* ${userName}\n📞 *Phone:* ${userPhone}\n📍 *Pickup:* ${pickupLoc}\n📍 *Drop:* ${dropLoc}\n📅 *Dates:* ${pickupDate} to ${dropDate}\n💰 *Rate:* ₹${car.pricePerDay || car.rent}/day\n💼 *Total Days:* ${days} Days (~Total Rent: ₹${totalRent})\n📝 *My Notes:* ${notes || 'None'}\n\nPlease confirm availability and lock the slot!`;
+            
+            const waUrl = `https://wa.me/918208818451?text=${encodeURIComponent(waText)}`;
+            
+            document.getElementById('success-wa-link').href = waUrl;
+            document.getElementById('booking-success-box').classList.remove('hidden');
+          } else {
+            alert("Something went wrong while recording your enquiry. Please contact us on +91 82088 18451 directly!");
+          }
+        } catch (err) {
+          console.error(err);
+          alert("Network error. Please contact us on +91 82088 18451 over WhatsApp for secure booking!");
+        }
+      });
+    });
+
+    function resetBookingForm() {
+      document.getElementById('details-booking-form').reset();
+      document.getElementById('booking-success-box').classList.add('hidden');
+      const submitBtn = document.querySelector('#details-booking-form button[type="submit"]');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<i data-lucide="check-circle" class="w-4 h-4"></i><span>Book This Car Now</span>`;
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
