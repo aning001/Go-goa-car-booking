@@ -28,6 +28,7 @@ export default defineConfig(() => {
           contact: path.resolve(__dirname, 'contact.html'),
           faq: path.resolve(__dirname, 'rental-faq.html'),
           terms: path.resolve(__dirname, 'terms-and-privacy.html'),
+          carDetails: path.resolve(__dirname, 'car-details.html'),
         },
       },
     },
