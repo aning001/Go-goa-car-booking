@@ -545,7 +545,7 @@ function runInteractionsEngine() {
           </div>
           <div class="flex justify-between items-center text-sm text-slate-400">
             <span>Minimum security deposit:</span>
-            <span class="font-bold text-emerald-400">★ Zero Deposit</span>
+            <span class="font-bold text-emerald-400">★ Low Security Deposit</span>
           </div>
         </div>
 

@@ -187,7 +187,7 @@
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-1 lg:gap-2.5 text-[9.5px] lg:text-[10.5px] font-bold text-slate-300 shrink">
+      <nav class="hidden xl:flex items-center gap-2 xl:gap-3 text-xs xl:text-xs font-bold text-slate-300 shrink">
         <a href="index.html" class="text-orange-400 font-extrabold transition-colors">Home</a>
         <a href="about.html" class="hover:text-orange-400 transition-colors">About Us</a>
         <a href="fleet.html" class="hover:text-orange-400 transition-colors">Car Fleet</a>
@@ -211,7 +211,7 @@
         </a>
         
         <!-- Mobile Menu Hamburger Button Trigger -->
-        <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Toggle Navigation Menu">
+        <button id="mobile-menu-btn" class="xl:hidden flex items-center justify-center p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Toggle Navigation Menu">
           <i data-lucide="menu" id="menu-icon-hamburger" class="w-5 h-5 text-orange-500"></i>
         </button>
       </div>
@@ -387,94 +387,80 @@
       <!-- Background Abstract Decor Grid -->
       <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293708_1px,transparent_1px),linear-gradient(to_bottom,#1f293708_1px,transparent_1px)] bg-[size:32px_32px]"></div>
       
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="flex flex-col items-center justify-center text-center max-w-4xl mx-auto space-y-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-4 md:pt-8">
+        
+        <!-- Centered minimal layout, scaled down and elegant -->
+        <div class="flex flex-col items-center justify-center text-center max-w-3xl mx-auto space-y-5">
           
-          <!-- Centered Compelling Sales Pitch & Hero Dynamic CTAs -->
-          <div class="w-full space-y-6 flex flex-col items-center">
-            
-            <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-3.5 py-1.5 rounded-full text-xs font-extrabold text-orange-400 uppercase tracking-widest font-mono">
-              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-              No Hidden Union Fees • Airport Handover
+          <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full text-[10px] font-extrabold text-orange-400 uppercase tracking-widest font-mono">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            No Hidden Union Fees • Airport Handover
+          </div>
+
+          <!-- Header: Balanced, compact sizing -->
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight font-display">
+            Rent Premium Self-Drive <br>
+            Cars in Goa With <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Zero Hassles</span>
+          </h1>
+
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-xl">
+            Explore the radiant sandy beaches, energetic night clubs, historic chapels, and local hidden cascades of Goa on your own terms. Direct counterless delivery to Mopa Airport Arrivals, Dabolim terminal, or your resort!
+          </p>
+
+          <!-- PRIMARY REQUEST CTAS: Beautiful, compact micro-buttons -->
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-1 w-full max-w-lg">
+            <a href="#booking-quote" class="bg-orange-500 hover:bg-orange-600 text-white text-[10px] sm:text-xs font-bold py-2 px-3 rounded-lg transition-all shadow-lg shadow-orange-500/15 flex items-center justify-center gap-1.5 border border-orange-400/15 active:scale-[0.98]">
+              <i data-lucide="calendar" class="w-3.5 h-3.5 text-white"></i>
+              <span class="font-display">Book Now</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 opacity-80"></i>
+            </a>
+
+            <a href="tel:+916287168644" class="bg-slate-850 hover:bg-slate-800 text-white text-[10px] sm:text-xs font-bold py-2 px-3 rounded-lg transition-all border border-slate-800 flex items-center justify-center gap-1.5 active:scale-[0.98] shadow-md">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-orange-400 shrink-0"></i>
+              <span>Call Now Direct</span>
+            </a>
+
+            <a href="https://wa.me/916287168644?text=Hi,%20I%20want%20to%20rent%20a%20self-drive%20car%20for%20my%20Goa%20trip.%20Please%20share%20quick%20rates." 
+               target="_blank" rel="noreferrer" 
+               class="bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] sm:text-xs font-bold py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-1.5 active:scale-[0.98] shadow-lg shadow-emerald-500/10">
+              <i data-lucide="message-square" class="w-3.5 h-3.5 text-white shrink-0"></i>
+              <span>WhatsApp Now</span>
+            </a>
+          </div>
+
+          <!-- Fast Trust Badges: Extremely compact and micro-sized -->
+          <div class="grid grid-cols-3 gap-1.5 pt-1.5 w-full max-w-md">
+            <div class="flex items-center gap-1 bg-slate-900/30 backdrop-blur px-2 py-1 rounded-md border border-slate-850/60 justify-center">
+              <i data-lucide="check-circle-2" class="w-2.5 h-2.5 text-orange-500 shrink-0"></i>
+              <span class="text-[8px] sm:text-[9.5px] font-extrabold text-slate-200 uppercase tracking-wider font-display">Unlimited KMs</span>
             </div>
-
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight font-display">
-              Rent Premium Self-Drive <br>
-              Cars in Goa With <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Zero Hassles</span>
-            </h1>
-
-            <p class="text-sm md:text-base text-slate-400 leading-relaxed max-w-2xl mx-auto">
-              Explore the radiant sandy beaches, energetic night clubs, historic chapels, and local hidden cascades of Goa on your own terms. Direct counterless delivery to Mopa Airport Arrivals, Dabolim terminal, or your resort!
-            </p>
-
-            <!-- PRIMARY REQUEST CTAS DIRECTLY ON FIRST SCREEN -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-4 w-full max-w-2xl mx-auto">
-              <a href="#booking-quote" class="bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-3.5 px-4 rounded-xl transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2 border border-orange-400/15 active:scale-[0.98]">
-                <i data-lucide="calendar" class="w-4 h-4 text-white"></i>
-                <span class="font-display">Book Now</span>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-80"></i>
-              </a>
-
-              <a href="tel:+916287168644" class="bg-slate-800 hover:bg-slate-705 text-white text-xs font-bold py-3.5 px-4 rounded-xl transition-all border border-slate-700 flex items-center justify-center gap-2 active:scale-[0.98] shadow-md">
-                <i data-lucide="phone" class="w-4 h-4 text-orange-400 shrink-0"></i>
-                <span>Call Now Direct</span>
-              </a>
-
-              <a href="https://wa.me/916287168644?text=Hi,%20I%20want%20to%20rent%20a%20self-drive%20car%20for%20my%20Goa%20trip.%20Please%20share%20quick%20rates." 
-                 target="_blank" rel="noreferrer" 
-                 class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-3.5 px-4 rounded-xl transition-all flex items-center justify-center gap-2 active:scale-[0.98] shadow-lg shadow-emerald-500/10">
-                <i data-lucide="message-square" class="w-4 h-4 text-white shrink-0"></i>
-                <span>WhatsApp Now</span>
-              </a>
+            <div class="flex items-center gap-1 bg-slate-900/30 backdrop-blur px-2 py-1 rounded-md border border-slate-850/60 justify-center">
+              <i data-lucide="check-circle-2" class="w-2.5 h-2.5 text-orange-500 shrink-0"></i>
+              <span class="text-[8px] sm:text-[9.5px] font-extrabold text-slate-200 uppercase tracking-wider font-display">No Hidden</span>
             </div>
-
-            <!-- Fast Trust Badges Under Hero Header -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left w-full max-w-2xl mx-auto">
-              <div class="flex items-start gap-2 bg-slate-800/40 p-3 rounded-xl border border-slate-800">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-orange-400 mt-0.5 shrink-0"></i>
-                <div>
-                  <h4 class="text-[11px] font-black text-slate-100 uppercase tracking-wider font-display">Unlimited KMs</h4>
-                  <p class="text-[9px] text-slate-400">Enjoy absolute road freedom</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-2 bg-slate-800/40 p-3 rounded-xl border border-slate-800">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-orange-400 mt-0.5 shrink-0"></i>
-                <div>
-                  <h4 class="text-[11px] font-black text-slate-100 uppercase tracking-wider font-display">No Hidden Charges</h4>
-                  <p class="text-[9px] text-slate-400">Honest rates with GST</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-2 bg-slate-800/40 p-3 rounded-xl border border-slate-800">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-orange-400 mt-0.5 shrink-0"></i>
-                <div>
-                  <h4 class="text-[11px] font-black text-slate-100 uppercase tracking-wider font-display">24/7 Support</h4>
-                  <p class="text-[9px] text-slate-400">Breakdown & support desk</p>
-                </div>
-              </div>
+            <div class="flex items-center gap-1 bg-slate-900/30 backdrop-blur px-2 py-1 rounded-md border border-slate-850/60 justify-center">
+              <i data-lucide="check-circle-2" class="w-2.5 h-2.5 text-orange-500 shrink-0"></i>
+              <span class="text-[8px] sm:text-[9.5px] font-extrabold text-slate-200 uppercase tracking-wider font-display">24/7 Desk</span>
             </div>
+          </div>
 
-            <!-- ================= QUICK HOP LINK SHORTCUTS ================= -->
-            <div class="pt-6 flex flex-wrap items-center gap-2.5 text-xs text-slate-300 justify-center">
-              <span class="font-extrabold uppercase font-mono tracking-wider text-[10px] text-orange-400 mr-1 flex items-center gap-1 text-left">
-                <i data-lucide="zap" class="w-3.5 h-3.5 animate-pulse shrink-0"></i> Quick links:
-              </span>
-              <a href="thar-rental.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-                <span>🚙 Thar Offroad</span>
-              </a>
-              <a href="luxury-rental.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-                <span>👑 Luxury Fleet</span>
-              </a>
-              <a href="family-rental.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-                <span>👨‍👩‍👦 Family Cars</span>
-              </a>
-              <a href="fleet.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-                <span>🚘 All Budget Cars</span>
-              </a>
-              <a href="services.html" class="px-3 py-1.5 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-lg border border-slate-800 transition-all font-medium text-[11px] flex items-center gap-1 shadow-sm">
-                <span>🛎️ VIP Services</span>
-              </a>
-            </div>
-
+          <!-- ================= QUICK HOP LINK SHORTCUTS ================= -->
+          <div class="pt-2 flex flex-wrap items-center gap-1.5 text-[10px] text-slate-400 justify-center">
+            <span class="font-extrabold uppercase font-mono tracking-wider text-[8px] text-orange-400 mr-1 flex items-center gap-1">
+              <i data-lucide="zap" class="w-3 h-3 animate-pulse shrink-0"></i> Quick links:
+            </span>
+            <a href="thar-rental.html" class="px-2.5 py-1 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-md border border-slate-800 transition-all font-medium text-[9px] flex items-center gap-1 shadow-sm">
+              <span>🚙 Thar</span>
+            </a>
+            <a href="luxury-rental.html" class="px-2.5 py-1 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-md border border-slate-800 transition-all font-medium text-[9px] flex items-center gap-1 shadow-sm">
+              <span>👑 Luxury</span>
+            </a>
+            <a href="family-rental.html" class="px-2.5 py-1 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-md border border-slate-800 transition-all font-medium text-[9px] flex items-center gap-1 shadow-sm">
+              <span>👨‍👩‍👦 Family</span>
+            </a>
+            <a href="fleet.html" class="px-2.5 py-1 bg-slate-850 hover:bg-slate-800 hover:text-orange-400 rounded-md border border-slate-800 transition-all font-medium text-[9px] flex items-center gap-1 shadow-sm">
+              <span>🚘 All Cars</span>
+            </a>
           </div>
 
         </div>
