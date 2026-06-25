@@ -2846,6 +2846,7 @@
       if (chatBox.classList.contains('hidden')) {
         chatBox.classList.remove('hidden');
         chatBox.classList.add('flex');
+        document.body.classList.add('ai-chat-open');
         if (window.innerWidth < 768 && stickyActions) {
           stickyActions.classList.add('hidden');
         }
@@ -2858,6 +2859,7 @@
       } else {
         chatBox.classList.add('hidden');
         chatBox.classList.remove('flex');
+        document.body.classList.remove('ai-chat-open');
         if (stickyActions) {
           stickyActions.classList.remove('hidden');
         }

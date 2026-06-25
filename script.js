@@ -747,6 +747,15 @@ function runInteractionsEngine() {
     #quick-actions-dock-wrapper {
       bottom: calc(1.8rem + env(safe-area-inset-bottom)) !important;
     }
+    
+    body.ai-chat-open {
+      overflow: hidden !important;
+    }
+    
+    #ai-chat-history {
+      overscroll-behavior: contain !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
 
     @media (max-width: 768px) {
       #floating-sticky-sidebar {
@@ -797,6 +806,13 @@ function runInteractionsEngine() {
         justify-content: center !important;
         align-items: center !important;
         pointer-events: none !important;
+      }
+      
+      /* Allow pointer events inside containers when chat is active */
+      body.ai-chat-open .fixed.right-6.bottom-6.z-50,
+      body.ai-chat-open .fixed.right-6.bottom-6.z-\[9999\],
+      body.ai-chat-open #ai-chat-widget-container {
+        pointer-events: auto !important;
       }
       
       #ai-chat-box {
@@ -860,6 +876,7 @@ function runInteractionsEngine() {
       if (chatBox.classList.contains('hidden')) {
         chatBox.classList.remove('hidden');
         chatBox.classList.add('flex');
+        document.body.classList.add('ai-chat-open');
         const historyEl = document.getElementById('ai-chat-history');
         if (historyEl) {
           historyEl.scrollTop = historyEl.scrollHeight;
@@ -867,6 +884,7 @@ function runInteractionsEngine() {
       } else {
         chatBox.classList.add('hidden');
         chatBox.classList.remove('flex');
+        document.body.classList.remove('ai-chat-open');
       }
     };
 
