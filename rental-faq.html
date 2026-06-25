@@ -1267,12 +1267,14 @@
   </div>
 
   <!-- Lucide Icons & Accordion Mechanics -->
-  <script type="text/javascript">
+  <script type="module">
+    import './script.js';
+
     // Initialize Lucide Vector Icons
     lucide.createIcons();
 
     // Toggle FAQ Accordion State
-    function toggleFaq(itemElement) {
+    window.toggleFaq = function(itemElement) {
       const isActive = itemElement.classList.contains('active');
       
       // Close all items

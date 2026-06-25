@@ -492,7 +492,7 @@ window.CARS.forEach(car => {
  * ==========================================================================
  */
 
-document.addEventListener("DOMContentLoaded", () => {
+function runInteractionsEngine() {
   // Initialize Lucide icons on any page
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
@@ -708,6 +708,105 @@ document.addEventListener("DOMContentLoaded", () => {
     .car-card {
       cursor: pointer !important;
     }
+    
+    @keyframes luxury-bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+    
+    .btn-bounce-call {
+      animation: luxury-bounce 2.2s infinite ease-in-out !important;
+    }
+    
+    .btn-bounce-whatsapp {
+      animation: luxury-bounce 2.2s infinite ease-in-out !important;
+      animation-delay: 0.4s !important;
+    }
+    
+    .btn-bounce-ai {
+      animation: luxury-bounce 2.2s infinite ease-in-out !important;
+      animation-delay: 0.8s !important;
+    }
+    
+    .quick-dock-btn {
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    }
+    
+    .quick-dock-btn:hover {
+      transform: scale(1.08) !important;
+    }
+    
+    .quick-dock-btn:active {
+      transform: scale(0.95) !important;
+    }
+    
+    #quick-actions-dock-wrapper {
+      bottom: calc(1.8rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    @media (max-width: 768px) {
+      #floating-sticky-sidebar {
+        display: flex !important;
+        position: fixed !important;
+        left: 14px !important;
+        bottom: auto !important;
+        top: 30% !important; /* Shuffled significantly higher up towards navigation/header */
+        transform: translateY(-50%) !important;
+        z-index: 100000 !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+      }
+      #floating-sticky-sidebar a,
+      #floating-sticky-sidebar button {
+        width: 46px !important;
+        height: 46px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 9999px !important;
+        background-color: rgb(15, 16, 21, 0.95) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.7) !important;
+      }
+      #floating-sticky-sidebar a.bg-emerald-600\/95,
+      #floating-sticky-sidebar a[href*="wa.me"] {
+        background-color: #059669 !important; /* Premium Emerald */
+        border-color: rgba(16, 185, 129, 0.2) !important;
+      }
+      #floating-sticky-sidebar span {
+        display: none !important;
+      }
+      #quick-actions-dock-wrapper {
+        display: none !important; /* Clear the screen to avoid dual buttons clashing */
+      }
+
+      /* Force chatbot layout and container clearance on mobile viewports without blocking touches when closed */
+      .fixed.right-6.bottom-6.z-50, 
+      .fixed.right-6.bottom-6.z-\[9999\],
+      #ai-chat-widget-container {
+        right: 16px !important;
+        left: 16px !important;
+        bottom: 100px !important; /* Keeps it clear above safe zones */
+        width: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        pointer-events: none !important;
+      }
+      
+      #ai-chat-box {
+        width: 100% !important;
+        max-width: 380px !important; /* Centered layout for comfortable typing */
+        margin-bottom: 0 !important;
+        height: 400px !important;
+        pointer-events: auto !important;
+      }
+    }
   `;
   document.head.appendChild(style);
 
@@ -727,7 +826,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const trigger = card.querySelector("[onclick*='openCarDetailDialog']");
       if (trigger) {
         const onclickAttr = trigger.getAttribute("onclick");
-        const match = onclickAttr.match(/openCarDetailDialog\(['"]([^'"]+)['"]\)/);
+        const match = onclickAttr ? onclickAttr.match(/openCarDetailDialog\(['"]([^'"]+)['"]\)/) : null;
         if (match && match[1]) {
           carId = match[1];
         }
@@ -739,4 +838,291 @@ document.addEventListener("DOMContentLoaded", () => {
       window.openCarDetailDialog(carId);
     }
   });
-});
+
+  // ==========================================================================
+  // UNIFIED QUICK ACTIONS DOCK & SITE-WIDE GEMINI AI ASSISTANT INJECTOR
+  // ==========================================================================
+
+  // 1. Setup the global AI Chat state and methods if not already defined
+  if (typeof window.toggleAIChat !== 'function' || !window.hasUnifiedAIChatInit) {
+    window.hasUnifiedAIChatInit = true;
+    
+    let aiChatHistory = [
+      {
+        role: "model",
+        text: "👋 Susegado! I'm your Go Goa AI Assistant! Planning a Goa trip? Ask me details about standard itineraries, the best beaches, speed limits, or which of our self-drive cars fits your group size. I can also help calculate quotes!"
+      }
+    ];
+
+    window.toggleAIChat = function() {
+      const chatBox = document.getElementById('ai-chat-box');
+      if (!chatBox) return;
+      if (chatBox.classList.contains('hidden')) {
+        chatBox.classList.remove('hidden');
+        chatBox.classList.add('flex');
+        const historyEl = document.getElementById('ai-chat-history');
+        if (historyEl) {
+          historyEl.scrollTop = historyEl.scrollHeight;
+        }
+      } else {
+        chatBox.classList.add('hidden');
+        chatBox.classList.remove('flex');
+      }
+    };
+
+    window.appendAIChatMessage = function(role, text) {
+      const historyEl = document.getElementById('ai-chat-history');
+      if (!historyEl) return;
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `flex flex-col ${role === 'user' ? 'items-end' : 'items-start'}`;
+
+      const nameToken = role === 'user' ? 'You' : 'Go Goa Host';
+      const bubbleClass = role === 'user'
+        ? 'bg-orange-600 text-white rounded-tr-none shadow-md shadow-orange-600/10 border border-orange-500/10'
+        : 'bg-slate-900 text-slate-200 rounded-tl-none border border-slate-800/60';
+
+      const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const cleanText = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+      msgDiv.innerHTML = `
+        <span class="text-[8px] text-slate-500 font-bold uppercase mb-0.5 tracking-wider px-1 font-mono">${nameToken}</span>
+        <div class="p-3 rounded-2xl max-w-[85%] leading-relaxed ${bubbleClass}">
+          <p class="whitespace-pre-line leading-relaxed">${cleanText}</p>
+        </div>
+        <span class="text-[8px] text-slate-500 font-mono mt-0.5 px-1 font-medium">${timeString}</span>
+      `;
+      historyEl.appendChild(msgDiv);
+    };
+
+    window.handleAIChatSubmit = async function(event) {
+      if (event) event.preventDefault();
+      const inputEl = document.getElementById('ai-chat-input');
+      if (!inputEl) return;
+      const text = inputEl.value.trim();
+      if (!text) return;
+
+      inputEl.value = '';
+      window.appendAIChatMessage('user', text);
+      aiChatHistory.push({ role: 'user', text });
+
+      const loadingEl = document.getElementById('ai-chat-loading');
+      if (loadingEl) loadingEl.classList.remove('hidden');
+
+      const historyEl = document.getElementById('ai-chat-history');
+      if (historyEl) {
+        historyEl.scrollTop = historyEl.scrollHeight;
+      }
+
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: aiChatHistory })
+        });
+        const data = await response.json();
+        if (loadingEl) loadingEl.classList.add('hidden');
+
+        if (data && data.text) {
+          window.appendAIChatMessage('model', data.text);
+          aiChatHistory.push({ role: 'model', text: data.text });
+        } else {
+          const errMsg = "I met a small glitch mapping your roads! Please try again or WhatsApp us at +91 82088 18451.";
+          window.appendAIChatMessage('model', errMsg);
+          aiChatHistory.push({ role: 'model', text: errMsg });
+        }
+      } catch (err) {
+        console.error('Error fetching chat response:', err);
+        if (loadingEl) loadingEl.classList.add('hidden');
+        const errMsg = "Deepest apologies! Network waves are bumpy right now. Call us at +91 82088 18451 for assistance.";
+        window.appendAIChatMessage('model', errMsg);
+        aiChatHistory.push({ role: 'model', text: errMsg });
+      }
+
+      if (historyEl) {
+        historyEl.scrollTop = historyEl.scrollHeight;
+      }
+    };
+  }
+
+  // 2. Keep the floating sticky sidebar active and visible across all viewport sizes as requested by the user
+  const legacySidebar = document.getElementById('floating-sticky-sidebar');
+  if (legacySidebar) {
+    // Ensure it is styled with flex display to be visible
+    legacySidebar.style.setProperty('display', 'flex', 'important');
+
+    // Add the AI Planner button as the third button inside the sidebar if not already present
+    if (!document.getElementById('floating-sidebar-ai-btn')) {
+      const aiBtn = document.createElement('button');
+      aiBtn.id = 'floating-sidebar-ai-btn';
+      // On mobile, the dimensions/styles will be overridden by the mobile stylesheet we injected above
+      aiBtn.className = 'group flex items-center justify-center bg-slate-950 border border-slate-800 hover:border-orange-500/40 text-white p-3 md:p-3.5 rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95 animate-bounce-ai cursor-pointer';
+      aiBtn.title = 'Open AI Planner';
+      aiBtn.setAttribute('aria-label', 'Open AI Planner');
+      aiBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-400 animate-pulse shrink-0"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5Z"/><path d="M19 17l1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
+      `;
+      aiBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.toggleAIChat();
+      });
+      legacySidebar.appendChild(aiBtn);
+    }
+  }
+
+  // Hide older redundant triggers precisely (like the sparkles button and other elements)
+  const oldSparklesBtns = document.querySelectorAll('button[onclick="toggleAIChat()"]');
+  oldSparklesBtns.forEach(btn => {
+    btn.style.setProperty('display', 'none', 'important');
+  });
+
+  // Upgrade the static chat box container z-index if it exists
+  const staticChatContainer = document.querySelector('.fixed.right-6.bottom-6.z-50');
+  if (staticChatContainer) {
+    staticChatContainer.classList.remove('z-50');
+    staticChatContainer.classList.add('z-[9999]');
+  }
+
+  // 3. Inject the modern AI Chatbox interface if it's not present (on non-home subpages)
+  if (!document.getElementById('ai-chat-box')) {
+    const chatContainer = document.createElement('div');
+    chatContainer.id = 'ai-chat-widget-container';
+    chatContainer.className = 'fixed right-4 bottom-24 sm:right-6 sm:bottom-24 z-[9999] flex flex-col items-end selection:bg-orange-500 selection:text-white font-sans text-slate-350';
+    chatContainer.innerHTML = `
+      <div id="ai-chat-box" class="hidden flex-col bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl w-[310px] sm:w-[360px] h-[430px] overflow-hidden mb-3 relative text-slate-300">
+        <!-- Header -->
+        <div class="bg-slate-950 p-3.5 text-white flex justify-between items-center select-none border-b border-slate-850">
+          <div class="flex items-center gap-2">
+            <div class="bg-orange-500/10 border border-orange-500/20 text-orange-400 p-2 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-400 animate-pulse"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5Z"/><path d="M19 17l1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
+            </div>
+            <div class="text-left font-display">
+              <div class="text-xs font-black tracking-tight">Goa AI Local Planner</div>
+              <div class="text-[9px] text-orange-400 font-extrabold uppercase tracking-wider font-mono">Gemini AI Host</div>
+            </div>
+          </div>
+          <button 
+            type="button"
+            id="ai-chat-close-btn"
+            class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-900 cursor-pointer transition-colors"
+            aria-label="Close Chat"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Chat History -->
+        <div id="ai-chat-history" class="flex-1 p-3.5 overflow-y-auto space-y-3 bg-slate-950/40 select-text text-[11px] scroll-smooth">
+          <!-- Welcome Message -->
+          <div class="flex flex-col items-start">
+            <span class="text-[8px] text-slate-500 font-bold uppercase mb-0.5 tracking-wider px-1 font-mono">Go Goa Host</span>
+            <div class="p-3 rounded-2xl max-w-[85%] leading-relaxed bg-slate-900 text-slate-200 rounded-tl-none border border-slate-800/60">
+              <p class="whitespace-pre-line leading-relaxed">👋 Susegado! I'm your Go Goa AI Assistant! Planning a Goa trip? Ask me details about standard itineraries, the best beaches, speed limits, or which of our self-drive cars fits your group size. I can also help calculate quotes!</p>
+            </div>
+            <span class="text-[8px] text-slate-500 font-mono mt-0.5 px-1 font-medium">Just now</span>
+          </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="ai-chat-loading" class="hidden px-4 py-2 border-t border-slate-850 bg-slate-950/30">
+          <div class="flex items-start gap-1">
+            <div class="bg-orange-500/10 border border-orange-500/15 text-orange-400 px-3 py-1.5 rounded-xl text-[10px] font-semibold flex items-center gap-2 animate-pulse font-mono">
+              <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-ping"></span>
+              <span>AI Host planning your roads...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <form id="ai-chat-form" class="p-2.5 bg-slate-950 border-t border-slate-850 flex gap-1.5 items-center">
+          <input 
+            id="ai-chat-input"
+            type="text" 
+            placeholder="Ask driving limits, routes, vehicle tips..."
+            class="flex-1 text-[11px] px-3 py-2 bg-slate-900 border border-slate-800 rounded-xl outline-none text-white placeholder-slate-500 focus:border-orange-500"
+            required
+          />
+          <button 
+            type="submit" 
+            class="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-xl block transition-all cursor-pointer"
+            aria-label="Send Message"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+        </form>
+      </div>
+    `;
+    document.body.appendChild(chatContainer);
+
+    // Setup events
+    const closeBtn = document.getElementById('ai-chat-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        window.toggleAIChat();
+      });
+    }
+
+    const formEl = document.getElementById('ai-chat-form');
+    if (formEl) {
+      formEl.addEventListener('submit', (e) => {
+        window.handleAIChatSubmit(e);
+      });
+    }
+  }
+
+  // 4. Inject the unified Quick Actions Bottom Dock on ALL pages with highest z-index
+  if (!document.getElementById('quick-actions-dock-wrapper')) {
+    const wrapper = document.createElement('div');
+    wrapper.id = 'quick-actions-dock-wrapper';
+    wrapper.className = 'fixed bottom-5 inset-x-0 z-[10000] flex justify-center px-4 pointer-events-none transition-all duration-300';
+    wrapper.innerHTML = `
+      <div id="quick-actions-dock" class="pointer-events-auto flex items-center gap-2 bg-slate-950/90 backdrop-blur-xl px-4 py-2 rounded-full border border-slate-800/80 shadow-[0_15px_35px_rgba(0,0,0,0.6)] whitespace-nowrap select-none max-w-[95vw] transition-all hover:-translate-y-0.5 duration-300">
+        <!-- Call Support Now -->
+        <a href="tel:+916287168644" class="quick-dock-btn btn-bounce-call flex items-center gap-1.5 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-4 py-2 rounded-full font-sans font-extrabold text-[10px] uppercase tracking-wider transition-all hover:scale-105 active:scale-95 shadow-md shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="quick-dock-text font-extrabold">Call Now</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="quick-dock-divider h-5 w-px bg-slate-800 shrink-0"></div>
+
+        <!-- WhatsApp Desk Now -->
+        <a href="https://wa.me/916287168644?text=Hi,%20I%20want%20to%20rent%20a%20self-drive%20car%20for%20my%20Goa%20trip." target="_blank" rel="noreferrer" class="quick-dock-btn btn-bounce-whatsapp flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-full font-sans font-extrabold text-[10px] uppercase tracking-wider transition-all hover:scale-105 active:scale-95 shadow-md shrink-0">
+          <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-current shrink-0 text-white" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          <span class="quick-dock-text font-extrabold">WhatsApp</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="quick-dock-divider h-5 w-px bg-slate-800 shrink-0"></div>
+
+        <!-- AI Assistant Tool Toggle -->
+        <button id="quick-dock-ai-btn" class="quick-dock-btn btn-bounce-ai flex items-center gap-1.5 bg-slate-900 border border-slate-800 hover:border-orange-500/40 text-white px-4 py-2 rounded-full font-sans font-extrabold text-[10px] uppercase tracking-wider transition-all hover:scale-105 active:scale-95 shadow-md hover:bg-slate-850 shrink-0 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-500 animate-pulse shrink-0"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5Z"/><path d="M19 17l1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
+          <span class="quick-dock-text font-extrabold">AI Planner</span>
+        </button>
+      </div>
+    `;
+    document.body.appendChild(wrapper);
+
+    // Setup action listener
+    const dockAiBtn = document.getElementById('quick-dock-ai-btn');
+    if (dockAiBtn) {
+      dockAiBtn.addEventListener('click', () => {
+        window.toggleAIChat();
+      });
+    }
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", runInteractionsEngine);
+} else {
+  runInteractionsEngine();
+}
+

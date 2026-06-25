@@ -14,7 +14,6 @@
   
   <!-- Link Manual Handcrafted Brand CSS and Script Systems -->
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js"></script>
 
   <style type="text/css">
     .no-scrollbar::-webkit-scrollbar {
@@ -520,6 +519,7 @@
 
   <!-- ================= INLINE SCRIPT ENGINE ================= -->
   <script type="module">
+    import './script.js';
     document.addEventListener('DOMContentLoaded', () => {
       // 1. Initialize Lucide icons
       if (typeof lucide !== 'undefined') {

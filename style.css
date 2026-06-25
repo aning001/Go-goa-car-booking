@@ -570,7 +570,7 @@ img {
 }
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: .5; }
+  50% { opacity: 0.5; }
 }
 
 /* Page interaction keyframes */
@@ -582,11 +582,18 @@ img {
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-4px) scale(1.04); }
 }
+@keyframes bounce-ai {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.04); }
+}
 .animate-bounce-call {
   animation: bounce-call 2.8s infinite ease-in-out;
 }
 .animate-bounce-whatsapp {
   animation: bounce-whatsapp 3.1s infinite ease-in-out;
+}
+.animate-bounce-ai {
+  animation: bounce-ai 3.4s infinite ease-in-out;
 }
 
 /* 8. MARQUEE SCROLLS WITH PROPER SPACING */
