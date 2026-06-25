@@ -149,7 +149,7 @@ app.post('/api/chat', async (req, res) => {
     const client = getGeminiClient();
     if (!client) {
       return res.json({
-        text: "I am ready to help! However, the Gemini API Key is currently unconfigured. You can chat with me, but I'll reply with local tips: Keep in mind when driving in Goa that the speed limit is 70 km/h on highways, and we deliver cars to both Mopa & Dabolim airports. Call us on +91 82088 18451 to proceed directly!"
+        text: "I am ready to help! However, the Gemini API Key is currently unconfigured. You can chat with me, but I'll reply with local tips: Keep in mind when driving in Goa that the speed limit is 70 km/h on highways, and we deliver cars to both Mopa & Dabolim airports. Call us on +91 6287168644 to proceed directly!"
       });
     }
 
@@ -168,7 +168,7 @@ app.post('/api/chat', async (req, res) => {
       "   - Adventure/Beach/Styling: Mahindra Thar 4x4 (Convertible/Hard Top) @ ₹2800 - ₹3200/day \n" +
       "3. Remind users about Goa safety rules: general speed limit is strict (70 km/h on highways, 40 km/h on bridges/cities), lidded helmets/seatbelts are mandatory, and original driving license is absolutely required. \n" +
       "4. Be very concise, professional, and clear. Help them choose. If they decide, advise them to fill out the quick booking form on page or contact via WhatsApp. \n" +
-      "Our main contact details: Phone/WhatsApp +91 82088 18451 & +91 91582 72132. Main Address is beside Mopa Airport Gate, Goa.";
+      "Our main contact details: Phone/WhatsApp +91 6287168644. Main Address is beside Mopa Airport Gate, Goa.";
 
     // Retrieve last message and feed into a simple chat session or models.generateContent
     // Since simple generateContent is less prone to race conditions, let's assemble contents

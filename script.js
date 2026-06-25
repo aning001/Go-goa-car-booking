@@ -493,6 +493,43 @@ window.CARS.forEach(car => {
  */
 
 function runInteractionsEngine() {
+  // Prevent background scroll leaking when AI Chat is open on mobile
+  let startY = 0;
+  document.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches[0]) {
+      startY = e.touches[0].pageY;
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    if (document.body.classList.contains('ai-chat-open')) {
+      const historyEl = document.getElementById('ai-chat-history');
+      if (historyEl && historyEl.contains(e.target)) {
+        const currentY = e.touches[0].pageY;
+        const scrollTop = historyEl.scrollTop;
+        const scrollHeight = historyEl.scrollHeight;
+        const clientHeight = historyEl.clientHeight;
+
+        // If scrolling UP (dragging down) at top
+        if (scrollTop === 0 && currentY > startY) {
+          e.preventDefault();
+        }
+        // If scrolling DOWN (dragging up) at bottom
+        if (scrollTop + clientHeight >= scrollHeight - 1 && currentY < startY) {
+          e.preventDefault();
+        }
+        return;
+      }
+      // If touching input or button inside the form, allow standard actions but prevent page scroll
+      const chatInput = document.getElementById('ai-chat-input');
+      const chatForm = document.getElementById('ai-chat-form');
+      if (chatInput && (chatInput.contains(e.target) || (chatForm && chatForm.contains(e.target)))) {
+        return;
+      }
+      e.preventDefault();
+    }
+  }, { passive: false });
+
   // Initialize Lucide icons on any page
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
@@ -750,11 +787,14 @@ function runInteractionsEngine() {
     
     body.ai-chat-open {
       overflow: hidden !important;
+      touch-action: none !important;
+      -webkit-overflow-scrolling: none !important;
     }
     
     #ai-chat-history {
       overscroll-behavior: contain !important;
       -webkit-overflow-scrolling: touch !important;
+      touch-action: pan-y !important;
     }
 
     @media (max-width: 768px) {
@@ -949,14 +989,14 @@ function runInteractionsEngine() {
           window.appendAIChatMessage('model', data.text);
           aiChatHistory.push({ role: 'model', text: data.text });
         } else {
-          const errMsg = "I met a small glitch mapping your roads! Please try again or WhatsApp us at +91 82088 18451.";
+          const errMsg = "I met a small glitch mapping your roads! Please try again or WhatsApp us at +91 6287168644.";
           window.appendAIChatMessage('model', errMsg);
           aiChatHistory.push({ role: 'model', text: errMsg });
         }
       } catch (err) {
         console.error('Error fetching chat response:', err);
         if (loadingEl) loadingEl.classList.add('hidden');
-        const errMsg = "Deepest apologies! Network waves are bumpy right now. Call us at +91 82088 18451 for assistance.";
+        const errMsg = "Deepest apologies! Network waves are bumpy right now. Call us at +91 6287168644 for assistance.";
         window.appendAIChatMessage('model', errMsg);
         aiChatHistory.push({ role: 'model', text: errMsg });
       }

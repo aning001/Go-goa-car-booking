@@ -75,7 +75,7 @@
 
       <!-- Desktop Header CTAs & Hamburger on Mobile -->
       <div class="flex items-center gap-2">
-        <a href="tel:+918208818451" class="hidden sm:flex items-center gap-1.5 bg-slate-900 border border-slate-800 hover:bg-slate-850 px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-200 transition-all btn-bounce">
+        <a href="tel:+916287168644" class="hidden sm:flex items-center gap-1.5 bg-slate-900 border border-slate-800 hover:bg-slate-850 px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-200 transition-all btn-bounce">
           <i data-lucide="phone-call" class="w-3.5 h-3.5 text-orange-500"></i>
           <span>Call Support</span>
         </a>
@@ -495,7 +495,7 @@
           </p>
           <p class="flex items-center gap-2">
             <i data-lucide="phone" class="w-4 h-4 text-orange-500 shrink-0"></i>
-            <a href="tel:+918208818451" class="hover:text-white transition-colors">+91 82088 18451</a>
+            <a href="tel:+916287168644" class="hover:text-white transition-colors">+91 62871 68644</a>
           </p>
           <p class="flex items-center gap-2">
             <i data-lucide="mail" class="w-4 h-4 text-orange-500 shrink-0"></i>
@@ -734,16 +734,16 @@
             // Generate WhatsApp confirmation query
             const waText = `Hi Go Goa Car Booking! I have submitted a booking enquiry for *${car.name}* (${car.transmission}) via the website details page.\n\n👤 *Name:* ${userName}\n📞 *Phone:* ${userPhone}\n📍 *Pickup:* ${pickupLoc}\n📍 *Drop:* ${dropLoc}\n📅 *Dates:* ${pickupDate} to ${dropDate}\n💰 *Rate:* ₹${car.pricePerDay || car.rent}/day\n💼 *Total Days:* ${days} Days (~Total Rent: ₹${totalRent})\n📝 *My Notes:* ${notes || 'None'}\n\nPlease confirm availability and lock the slot!`;
             
-            const waUrl = `https://wa.me/918208818451?text=${encodeURIComponent(waText)}`;
+            const waUrl = `https://wa.me/916287168644?text=${encodeURIComponent(waText)}`;
             
             document.getElementById('success-wa-link').href = waUrl;
             document.getElementById('booking-success-box').classList.remove('hidden');
           } else {
-            alert("Something went wrong while recording your enquiry. Please contact us on +91 82088 18451 directly!");
+            alert("Something went wrong while recording your enquiry. Please contact us on +91 62871 68644 directly!");
           }
         } catch (err) {
           console.error(err);
-          alert("Network error. Please contact us on +91 82088 18451 over WhatsApp for secure booking!");
+          alert("Network error. Please contact us on +91 62871 68644 over WhatsApp for secure booking!");
         }
       });
     });

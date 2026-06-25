@@ -2907,14 +2907,14 @@
           appendAIChatMessage('model', data.text);
           aiChatHistory.push({ role: 'model', text: data.text });
         } else {
-          const errMsg = "I met a small glitch mapping your roads! Please try again or WhatsApp us at +91 82088 18451.";
+          const errMsg = "I met a small glitch mapping your roads! Please try again or WhatsApp us at +91 6287168644.";
           appendAIChatMessage('model', errMsg);
           aiChatHistory.push({ role: 'model', text: errMsg });
         }
       } catch (err) {
         console.error('Error fetching chat response:', err);
         loadingEl.classList.add('hidden');
-        const errMsg = "Deepest apologies! Network waves are bumpy right now. Call us at +91 82088 18451 for answers.";
+        const errMsg = "Deepest apologies! Network waves are bumpy right now. Call us at +91 6287168644 for answers.";
         appendAIChatMessage('model', errMsg);
         aiChatHistory.push({ role: 'model', text: errMsg });
       }
