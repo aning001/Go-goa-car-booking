@@ -556,7 +556,7 @@ export default function App() {
       </main>
 
       {/* 3. CORNER FLOATING HOTLINE BUTTONS */}
-      <div className="fixed left-4 bottom-auto top-[30%] md:top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2.5">
+      <div id="floating-sticky-sidebar" className="fixed left-4 bottom-auto top-[30%] md:top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2.5">
         <a
           href={`tel:${OFFICE_CONTACT.phone1.replace(/\s+/g, '')}`}
           className="group flex items-center justify-center bg-slate-950 border border-slate-800 hover:bg-slate-900 text-white w-11 h-11 md:w-12 md:h-12 rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95 animate-bounce-call"

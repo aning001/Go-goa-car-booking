@@ -1779,7 +1779,7 @@
   </main>
 
   <!-- ================= STICKY SIDEBAR FLOATING ACTIONS (VISIBLE ON ALL PAGES) ================= -->
-  <div id="floating-sticky-sidebar" class="hidden md:flex fixed left-4 bottom-28 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-40 flex-col gap-2.5">
+  <div id="floating-sticky-sidebar" class="flex fixed left-4 bottom-28 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-40 flex-col gap-2.5">
     
     <!-- Floating Direct Phone Support -->
     <a href="tel:+916287168644" 
@@ -1807,7 +1807,7 @@
   </div>
 
   <!-- ================= FLOATING AI ASSISTANT WIDGET ================= -->
-  <div class="fixed right-6 bottom-6 z-50 flex flex-col items-end selection:bg-orange-500 selection:text-white font-sans text-slate-350">
+  <div id="ai-chat-widget-container" class="fixed right-6 bottom-6 top-auto z-50 flex flex-col items-end selection:bg-orange-500 selection:text-white font-sans text-slate-350">
     
     <!-- AI Chatbot Container (Hidden by default) -->
     <div id="ai-chat-box" class="hidden flex-col bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl w-[320px] sm:w-[360px] h-[450px] overflow-hidden mb-3 relative text-slate-300">
@@ -2846,22 +2846,27 @@
       if (chatBox.classList.contains('hidden')) {
         chatBox.classList.remove('hidden');
         chatBox.classList.add('flex');
+        document.documentElement.classList.add('ai-chat-open');
         document.body.classList.add('ai-chat-open');
         if (window.innerWidth < 768 && stickyActions) {
-          stickyActions.classList.add('hidden');
+          stickyActions.style.setProperty('display', 'none', 'important');
         }
         
         // Scroll to bottom on open to ensure message is viewed
         const historyEl = document.getElementById('ai-chat-history');
         if (historyEl) {
           historyEl.scrollTop = historyEl.scrollHeight;
+          setTimeout(() => {
+            historyEl.scrollTop = historyEl.scrollHeight;
+          }, 80);
         }
       } else {
         chatBox.classList.add('hidden');
         chatBox.classList.remove('flex');
+        document.documentElement.classList.remove('ai-chat-open');
         document.body.classList.remove('ai-chat-open');
         if (stickyActions) {
-          stickyActions.classList.remove('hidden');
+          stickyActions.style.removeProperty('display');
         }
       }
     }
@@ -2958,6 +2963,9 @@
       `;
 
       historyEl.appendChild(msgDiv);
+      setTimeout(() => {
+        historyEl.scrollTop = historyEl.scrollHeight;
+      }, 50);
     }
 
     // Expose all inline interaction functions to window namespace protecting them from Vite's local bundling scoping

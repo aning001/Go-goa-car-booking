@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, X, Send, Phone } from 'lucide-react';
 import { OFFICE_CONTACT } from '../data';
@@ -23,15 +23,24 @@ export default function AIChat({
   isChatGenerating,
   handleChatSubmit
 }: AIChatProps) {
+  const historyRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to the bottom of the chat history when messages or generating states change
+  useEffect(() => {
+    if (historyRef.current) {
+      historyRef.current.scrollTop = historyRef.current.scrollHeight;
+    }
+  }, [chatMessages, isChatGenerating, isChatOpen]);
+
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end selection:bg-orange-500 selection:text-white">
+    <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 top-auto z-50 flex flex-col items-end selection:bg-orange-500 selection:text-white">
       <AnimatePresence>
         {isChatOpen && (
           <motion.div 
             initial={{ opacity: 0, scale: 0.95, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
-            className="bg-slate-900 rounded-3xl shadow-2xl w-[320px] sm:w-[360px] h-[450px] border border-slate-800 overflow-hidden mb-3 flex flex-col text-slate-300"
+            className="bg-slate-900 rounded-3xl shadow-2xl w-[310px] sm:w-[360px] h-[360px] md:h-[450px] max-h-[calc(100vh-140px)] border border-slate-800 overflow-hidden mb-3 flex flex-col text-slate-300"
           >
             {/* Header */}
             <div className="bg-slate-950 p-4 text-white flex justify-between items-center select-none border-b border-slate-850">
@@ -54,7 +63,10 @@ export default function AIChat({
             </div>
 
             {/* Chat History */}
-            <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-slate-950/40 select-text text-xs">
+            <div 
+              ref={historyRef}
+              className="flex-1 p-4 overflow-y-auto space-y-3 bg-slate-950/40 select-text text-xs scroll-smooth"
+            >
               {chatMessages.map((msg) => (
                 <div 
                   key={msg.id} 

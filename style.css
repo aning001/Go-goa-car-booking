@@ -31,9 +31,6 @@ html {
   color: var(--text-white);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
 }
 
 body {
@@ -41,8 +38,6 @@ body {
   color: var(--text-white);
   min-height: 100vh;
   overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
 }
 
 /* Direct tag resets for button components to ensure zero browser background/border overrides */
@@ -668,3 +663,118 @@ select {
 ul, ol {
   list-style: none;
 }
+
+/* ==========================================================================
+   10. MOBILE & DESKTOP FIXED BUTTONS & SIDEBAR OVERRIDES
+   ========================================================================== */
+
+#floating-sticky-sidebar {
+  display: flex !important;
+  position: fixed !important;
+  left: 16px !important;
+  top: 50% !important;
+  bottom: auto !important; /* Avoid stretching conflict with top: 50% on desktop */
+  transform: translateY(-50%) !important;
+  z-index: 99998 !important;
+}
+
+/* Base styles for anchors inside sidebar */
+#floating-sticky-sidebar a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 768px) {
+  /* Hide the legacy scattered floating buttons completely */
+  #floating-sticky-sidebar {
+    display: none !important;
+  }
+  
+  /* Hide the old single-sparkle floating trigger button on mobile */
+  #ai-chat-widget-container > button {
+    display: none !important;
+  }
+  
+  /* Move the chat container box right above our beautiful bottom actions dock */
+  #ai-chat-widget-container {
+    right: 12px !important;
+    left: 12px !important;
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px)) !important; /* Positions chat right above the bottom dock */
+    top: auto !important;
+    width: auto !important;
+    position: fixed !important;
+    z-index: 140000 !important;
+    flex-direction: column !important;
+  }
+  
+  #ai-chat-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 380px !important; /* Exact fixed height to allow perfect scrolling of chat history */
+    max-height: calc(100vh - 160px) !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    border-radius: 20px !important;
+  }
+
+  /* Mobile bottom actions dock styles */
+  #mobile-bottom-dock {
+    display: flex !important;
+    position: fixed !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+    background-color: rgba(10, 11, 16, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    z-index: 130000 !important;
+    padding: 8px 10px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6) !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
+  }
+
+  /* Smooth hide animation when modals are active */
+  body:has(#booking-modal:not(.hidden)) #mobile-bottom-dock,
+  body:has(#details-modal:not(.hidden)) #mobile-bottom-dock {
+    transform: translateY(120%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Make sure mobile navigation drawer overlays all floating elements and is fully scrollable */
+  #mobile-nav-panel {
+    z-index: 120000 !important;
+  }
+
+  /* Prevent modal contents and CTAs from being hidden or cut off under mobile browsers bottom address/toolbar */
+  #booking-modal,
+  #details-modal {
+    padding: 16px 16px calc(120px + env(safe-area-inset-bottom, 0px)) 16px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  #booking-modal > div,
+  #details-modal > div {
+    margin-top: 16px !important;
+    margin-bottom: 0 !important; /* Spacing handled cleanly by the outer padding-bottom */
+  }
+}
+
+/* Ensure modals are on top of all headers and floating panels */
+#booking-modal, #details-modal {
+  z-index: 150000 !important;
+}
+
+/* Hide floating widgets when either modal is actively open */
+body:has(#booking-modal:not(.hidden)) #floating-sticky-sidebar,
+body:has(#booking-modal:not(.hidden)) #ai-chat-widget-container,
+body:has(#details-modal:not(.hidden)) #floating-sticky-sidebar,
+body:has(#details-modal:not(.hidden)) #ai-chat-widget-container {
+  display: none !important;
+}
+
+
