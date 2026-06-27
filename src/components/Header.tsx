@@ -46,13 +46,7 @@ export default function Header({ activeTab, setActiveTab, isMobileMenuOpen, setI
           className="flex items-center gap-2 cursor-pointer focus:outline-none"
           id="hdr-logo-btn"
         >
-          <div className="bg-gradient-to-tr from-orange-600 to-orange-400 p-2 rounded-xl shadow-lg shadow-orange-500/10">
-            <CarIcon className="w-5 h-5 text-white" />
-          </div>
-          <div className="text-left">
-            <span className="text-sm font-black tracking-tight text-white uppercase font-display block">Go Goa</span>
-            <span className="text-[9px] font-bold text-orange-500 tracking-widest uppercase font-mono block -mt-1">Car Rental</span>
-          </div>
+          <img src="/src/assets/images/logo_1782553550222.jpg" alt="Go Goa Logo" className="h-8 sm:h-10 md:h-11 lg:h-12 w-auto object-contain rounded-lg transition-all duration-300" referrerPolicy="no-referrer" />
         </button>
 
         {/* Desktop Navigation Menu (Flat direct list of requested pages) */}

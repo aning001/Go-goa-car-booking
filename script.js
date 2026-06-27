@@ -498,6 +498,89 @@ function runInteractionsEngine() {
     lucide.createIcons();
   }
 
+  // Fix the navigation header and inject the exclusive deals ticker below it on all pages
+  const header = document.querySelector('header');
+  if (header) {
+    // 1. Force header positioning so it scrolls/sticks perfectly
+    header.style.setProperty('position', 'sticky', 'important');
+    header.style.setProperty('top', '0', 'important');
+    header.style.setProperty('z-index', '100000', 'important');
+
+    // 2. Add or find the EXCLUSIVE DEALS ticker inside header
+    let ticker = document.getElementById('header-exclusive-ticker');
+    if (!ticker) {
+      ticker = document.createElement('div');
+      ticker.id = 'header-exclusive-ticker';
+      ticker.className = 'w-full bg-[#0a0002] border-t border-b border-slate-800/60 relative z-20 flex items-center h-10 select-none overflow-hidden text-[10px] md:text-xs shrink-0';
+      ticker.innerHTML = `
+        <!-- Standing TV Tag -->
+        <div class="bg-red-600 text-white font-black px-3 py-2.5 flex items-center justify-center gap-1 shrink-0 h-full relative z-30 shadow-md transform skew-x-[-10deg] -ml-2">
+          <span class="transform skew-x-[10deg] tracking-wider text-[9px] md:text-xs uppercase flex items-center gap-1.5 font-sans">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping shrink-0"></span>
+            EXCLUSIVE DEALS
+          </span>
+        </div>
+        <!-- Subtag/Ticker category -->
+        <div class="bg-amber-500 text-slate-950 font-extrabold px-3 py-2.5 hidden sm:flex items-center justify-center h-full shrink-0 relative z-20 transform skew-x-[-10deg] -ml-1">
+          <span class="transform skew-x-[10deg] uppercase tracking-wider text-[8px] md:text-[9px] font-sans">GOA DIRECT</span>
+        </div>
+        
+        <!-- Continuous scrolling headlines -->
+        <div class="flex-1 overflow-hidden h-full flex items-center">
+          <div class="animate-marquee-text flex whitespace-nowrap">
+            <div class="flex gap-12 items-center text-red-100 font-semibold font-sans shrink-0 pr-16 md:pr-32">
+              <span>🔥 <span class="text-amber-400 font-extrabold">POPULAR OPTION:</span> Choose our trusted <a href="fleet.html" class="underline text-white hover:text-orange-400 font-semibold">Self Drive Car Rental Goa</a> service starting at ₹1000/day!</span>
+              <span>•</span>
+              <span>⚡ <span class="text-orange-400 font-extrabold">ADVENTURE JEEP:</span> Secure an iconic <a href="thar-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Mahindra Thar Rental Goa</a> 4x4 soft-top!</span>
+              <span>•</span>
+              <span>✨ <span class="text-amber-300 font-extrabold">GOLD STANDARD:</span> Experience elite VIP status when renting with premier <a href="luxury-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Luxury Car Hire Goa</a>!</span>
+              <span>•</span>
+              <span>👨+👩+👧+👦 <span class="text-emerald-400 font-extrabold">SPACIOUS RUN:</span> Ride in supreme comfort with the 7-Seater <a href="family-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Goa Family Car Rental</a>!</span>
+              <span>•</span>
+              <span>📞 <span class="text-white font-extrabold">AIRPORT SPECIAL:</span> Direct <a href="services.html" class="underline text-white hover:text-orange-400 font-semibold">Mopa Airport Car Handover</a> with zero waiting!</span>
+            </div>
+            <div class="flex gap-12 items-center text-red-100 font-semibold font-sans shrink-0 pr-16 md:pr-32">
+              <span>🔥 <span class="text-amber-400 font-extrabold">POPULAR OPTION:</span> Choose our trusted <a href="fleet.html" class="underline text-white hover:text-orange-400 font-semibold">Self Drive Car Rental Goa</a> service starting at ₹1000/day!</span>
+              <span>•</span>
+              <span>⚡ <span class="text-orange-400 font-extrabold">ADVENTURE JEEP:</span> Secure an iconic <a href="thar-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Mahindra Thar Rental Goa</a> 4x4 soft-top!</span>
+              <span>•</span>
+              <span>✨ <span class="text-amber-300 font-extrabold">GOLD STANDARD:</span> Experience elite VIP status when renting with premier <a href="luxury-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Luxury Car Hire Goa</a>!</span>
+              <span>•</span>
+              <span>👨+👩+👧+👦 <span class="text-emerald-400 font-extrabold">SPACIOUS RUN:</span> Ride in supreme comfort with the 7-Seater <a href="family-rental.html" class="underline text-white hover:text-orange-400 font-semibold">Goa Family Car Rental</a>!</span>
+              <span>•</span>
+              <span>📞 <span class="text-white font-extrabold">AIRPORT SPECIAL:</span> Direct <a href="services.html" class="underline text-white hover:text-orange-400 font-semibold">Mopa Airport Car Handover</a> with zero waiting!</span>
+            </div>
+          </div>
+        </div>
+      `;
+      header.appendChild(ticker);
+    }
+
+    // 3. Update the mobile-nav-panel top position dynamically to match!
+    const mobileNavPanel = document.getElementById('mobile-nav-panel');
+    if (mobileNavPanel) {
+      mobileNavPanel.style.setProperty('position', 'fixed', 'important');
+      mobileNavPanel.style.setProperty('top', '104px', 'important');
+      mobileNavPanel.style.setProperty('max-height', 'calc(100vh - 104px)', 'important');
+      mobileNavPanel.style.setProperty('padding-bottom', '120px', 'important');
+      mobileNavPanel.style.setProperty('z-index', '120000', 'important');
+    }
+
+    // Also update any standalone mobile-drawers (.mobile-drawer) on rental-faq.html & terms-and-privacy.html
+    document.querySelectorAll('.mobile-drawer').forEach(drawer => {
+      drawer.style.setProperty('top', '104px', 'important');
+      drawer.style.setProperty('max-height', 'calc(100vh - 104px)', 'important');
+      drawer.style.setProperty('padding-bottom', '120px', 'important');
+      drawer.style.setProperty('z-index', '120000', 'important');
+    });
+
+    // 4. If we are on index.html, remove the old static hero ticker to avoid duplicates
+    const oldHeroTicker = document.querySelector('#hero .animate-marquee-text')?.closest('.w-full');
+    if (oldHeroTicker) {
+      oldHeroTicker.remove();
+    }
+  }
+
   // Mobile Menu Toggling Mechanisms
   const menuBtn = document.getElementById("mobile-menu-btn");
   const menuContainer = document.getElementById("mobile-nav-panel") || document.getElementById("mobile-menu");
@@ -834,65 +917,40 @@ function runInteractionsEngine() {
         display: none !important;
       }
       
-      /* Hide the old single-sparkle floating trigger button on mobile */
+      /* Keep the floating trigger button visible on mobile */
       #ai-chat-widget-container > button {
-        display: none !important;
+        display: flex !important;
       }
       
-      /* Move the chat container box right above our beautiful bottom actions dock */
+      /* Move the chat container box right to the bottom-right corner of mobile screen */
       #ai-chat-widget-container {
-        right: 12px !important;
-        left: 12px !important;
-        bottom: calc(84px + env(safe-area-inset-bottom, 0px)) !important; /* Positions chat right above the bottom dock */
+        display: flex !important;
+        right: 16px !important;
+        left: auto !important;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important; /* Positions chat perfectly in bottom right corner */
         top: auto !important;
         width: auto !important;
+        max-width: calc(100vw - 32px) !important;
         position: fixed !important;
         z-index: 140000 !important;
         flex-direction: column !important;
+        align-items: flex-end !important;
       }
       
       #ai-chat-box {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: calc(100vw - 32px) !important;
+        max-width: 360px !important;
         height: 380px !important; /* Exact fixed height to allow perfect scrolling of chat history */
-        max-height: calc(100vh - 160px) !important;
-        margin-bottom: 0 !important;
+        max-height: calc(100vh - 120px) !important;
+        margin-bottom: 12px !important;
         margin-top: 0 !important;
         border-radius: 20px !important;
-      }
-
-      /* Mobile bottom actions dock styles */
-      #mobile-bottom-dock {
-        display: flex !important;
-        position: fixed !important;
-        left: 12px !important;
-        right: 12px !important;
-        bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
-        background-color: rgba(10, 11, 16, 0.95) !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-radius: 20px !important;
-        z-index: 130000 !important;
-        padding: 8px 10px !important;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6) !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
-      }
-
-      /* Smooth hide animation when modals are active */
-      body:has(#booking-modal:not(.hidden)) #mobile-bottom-dock,
-      body:has(#details-modal:not(.hidden)) #mobile-bottom-dock {
-        transform: translateY(120%) !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
       }
 
       /* Prevent modal contents and CTAs from being hidden or cut off under mobile browsers bottom address/toolbar */
       #booking-modal,
       #details-modal {
-        padding: 16px 16px calc(120px + env(safe-area-inset-bottom, 0px)) 16px !important;
+        padding: 16px 16px calc(80px + env(safe-area-inset-bottom, 0px)) 16px !important;
         -webkit-overflow-scrolling: touch !important;
       }
       #booking-modal > div,
@@ -1183,34 +1241,7 @@ function runInteractionsEngine() {
     }
   }
 
-  // 4. Inject the Mobile-Optimized Bottom Actions Dock
-  if (!document.getElementById('mobile-bottom-dock')) {
-    const dockContainer = document.createElement('div');
-    dockContainer.id = 'mobile-bottom-dock';
-    dockContainer.className = 'fixed bottom-4 left-1/2 -translate-x-1/2 bg-slate-950/95 backdrop-blur-lg border border-slate-800/80 rounded-full z-[130000] p-1.5 flex items-center justify-center gap-3 shadow-2xl md:hidden';
-    dockContainer.innerHTML = `
-      <!-- Call Support -->
-      <a href="tel:+916287168644" class="w-11 h-11 flex items-center justify-center rounded-full bg-slate-900 border border-slate-800/60 text-orange-500 active:scale-90 active:bg-orange-500/10 transition-all shadow-md" title="Call Support">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      </a>
 
-      <!-- WhatsApp Help -->
-      <a href="https://wa.me/916287168644?text=Hi,%20I%20want%20to%20rent%20a%20self-drive%20car%20for%20my%20Goa%20trip." target="_blank" rel="noreferrer" class="w-11 h-11 flex items-center justify-center rounded-full bg-slate-900 border border-slate-800/60 text-emerald-500 active:scale-90 active:bg-emerald-500/10 transition-all shadow-md" title="WhatsApp Help">
-        <svg viewBox="0 0 24 24" class="w-[20px] h-[20px] fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </a>
-
-      <!-- Ask AI Host -->
-      <button onclick="window.toggleAIChat()" class="w-11 h-11 flex items-center justify-center rounded-full bg-slate-900 border border-slate-800/60 text-orange-500 active:scale-90 active:bg-orange-500/10 transition-all shadow-md cursor-pointer" title="Ask AI">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-pulse"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5Z"/><path d="M19 17l1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
-      </button>
-
-      <!-- Instant Booking -->
-      <button onclick="if(typeof window.openBookingModal === 'function') { window.openBookingModal('General Goa Rental', 1500); } else { window.location.href='index.html#booking-quote'; }" class="w-11 h-11 flex items-center justify-center rounded-full bg-orange-500 text-white active:scale-90 transition-all shadow-md shadow-orange-500/20 cursor-pointer" title="Book Car Now">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
-      </button>
-    `;
-    document.body.appendChild(dockContainer);
-  }
 }
 
 if (document.readyState === "loading") {

@@ -18,12 +18,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
         {/* Col 1: Brand details info */}
         <div className="col-span-1 md:col-span-5 space-y-4">
           <div className="flex items-center gap-2">
-            <div className="bg-gradient-to-tr from-orange-600 to-orange-400 p-2 rounded-xl">
-              <CarIcon className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-white text-base font-extrabold font-display uppercase tracking-tight leading-none">
-              Go Goa Car Booking
-            </span>
+            <img src="/src/assets/images/logo_1782553550222.jpg" alt="Go Goa Logo" className="h-9 sm:h-11 md:h-12 w-auto object-contain rounded-lg transition-all duration-300" referrerPolicy="no-referrer" />
           </div>
           
           <p className="text-slate-400 leading-relaxed text-xs max-w-sm">
