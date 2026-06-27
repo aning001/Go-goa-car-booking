@@ -722,26 +722,29 @@ ul, ol {
   #mobile-bottom-dock {
     display: flex !important;
     position: fixed !important;
-    left: 12px !important;
-    right: 12px !important;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
-    background-color: rgba(10, 11, 16, 0.95) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+    background-color: rgba(10, 11, 16, 0.96) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 9999px !important;
     z-index: 130000 !important;
-    padding: 8px 10px !important;
+    padding: 6px 12px !important;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6) !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
+    gap: 12px !important;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
   }
 
-  /* Smooth hide animation when modals are active */
+  /* Smooth hide animation when modals or mobile nav are active */
   body:has(#booking-modal:not(.hidden)) #mobile-bottom-dock,
-  body:has(#details-modal:not(.hidden)) #mobile-bottom-dock {
-    transform: translateY(120%) !important;
+  body:has(#details-modal:not(.hidden)) #mobile-bottom-dock,
+  body:has(#mobile-nav-panel:not(.hidden)) #mobile-bottom-dock,
+  body:has(#mobile-nav-panel.active) #mobile-bottom-dock {
+    transform: translate(-50%, 120%) !important;
     opacity: 0 !important;
     pointer-events: none !important;
   }
