@@ -44,6 +44,46 @@ header {
   position: sticky !important;
   top: 0 !important;
   z-index: 100000 !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important; /* border-slate-200 */
+}
+
+/* Nav links: default text-slate-300 turns to dark slate-700 on white background */
+header nav {
+  color: #1e293b !important; /* text-slate-800 */
+}
+header nav a {
+  color: #334155 !important; /* text-slate-700 */
+  font-weight: 700 !important;
+}
+header nav a:hover {
+  color: #ea580c !important; /* text-orange-600 */
+}
+header nav a.text-orange-400 {
+  color: #ea580c !important; /* active text-orange-600 */
+}
+
+/* Call Support button on white header */
+header a[href^="tel:"] {
+  background-color: #f8fafc !important; /* bg-slate-50 */
+  border: 1px solid #e2e8f0 !important; /* border-slate-200 */
+  color: #334155 !important; /* text-slate-700 */
+}
+header a[href^="tel:"]:hover {
+  background-color: #f1f5f9 !important; /* bg-slate-100 */
+  color: #0f172a !important; /* text-slate-900 */
+}
+
+/* Hamburger mobile menu button on white header */
+header button#mobile-menu-btn {
+  background-color: #f8fafc !important; /* bg-slate-50 */
+  border: 1px solid #e2e8f0 !important; /* border-slate-200 */
+  color: #334155 !important; /* text-slate-700 */
+}
+header button#mobile-menu-btn:hover {
+  background-color: #f1f5f9 !important; /* bg-slate-100 */
+  color: #0f172a !important; /* text-slate-900 */
 }
 
 /* Direct tag resets for button components to ensure zero browser background/border overrides */
@@ -699,37 +739,51 @@ ul, ol {
   z-index: 125000 !important;
 }
 
+/* Pulsing glowing ring animation for the AI chatbot trigger */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6), 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(249, 115, 22, 0), 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+  }
+}
+
 @media (max-width: 768px) {
   /* Hide the legacy scattered floating buttons completely */
   #floating-sticky-sidebar {
     display: none !important;
   }
   
-  /* Keep the floating trigger button visible on mobile */
+  /* Keep the floating trigger button visible on mobile with pulsing glow and perfect borders */
   #ai-chat-widget-container > button {
     display: flex !important;
+    animation: pulseGlow 2.2s infinite ease-in-out !important;
+    border-color: rgba(249, 115, 22, 0.7) !important;
   }
   
   /* Move the chat container box right to the bottom-right corner, floating on the side */
   #ai-chat-widget-container {
     display: flex !important;
-    right: 16px !important;
+    right: 20px !important;
     left: auto !important;
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important; /* Positions chat perfectly in the bottom-right corner */
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important; /* Elevated on mobile so native browser controls never overlap */
     top: auto !important;
     width: auto !important;
-    max-width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 40px) !important;
     position: fixed !important;
-    z-index: 140000 !important;
+    z-index: 200000 !important; /* Elevated to be above any navigation drawers */
     flex-direction: column !important;
     align-items: flex-end !important;
   }
   
   #ai-chat-box {
-    width: calc(100vw - 32px) !important;
+    width: calc(100vw - 40px) !important;
     max-width: 360px !important;
-    height: 380px !important; /* Exact fixed height to allow perfect scrolling of chat history */
-    max-height: calc(100vh - 120px) !important;
+    height: 390px !important; /* Elevated fixed height for beautiful display */
+    max-height: calc(100vh - 140px) !important;
     margin-bottom: 12px !important;
     margin-top: 0 !important;
     border-radius: 20px !important;

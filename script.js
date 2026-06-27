@@ -911,37 +911,51 @@ function runInteractionsEngine() {
       z-index: 99998 !important;
     }
 
+    /* Pulsing glowing ring animation for the AI chatbot trigger */
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6), 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 0 12px rgba(249, 115, 22, 0), 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+        transform: scale(1.05);
+      }
+    }
+
     @media (max-width: 768px) {
       /* Hide the legacy scattered floating buttons completely */
       #floating-sticky-sidebar {
         display: none !important;
       }
       
-      /* Keep the floating trigger button visible on mobile */
+      /* Keep the floating trigger button visible on mobile with pulsing glow and perfect borders */
       #ai-chat-widget-container > button {
         display: flex !important;
+        animation: pulseGlow 2.2s infinite ease-in-out !important;
+        border-color: rgba(249, 115, 22, 0.7) !important;
       }
       
       /* Move the chat container box right to the bottom-right corner of mobile screen */
       #ai-chat-widget-container {
         display: flex !important;
-        right: 16px !important;
+        right: 20px !important;
         left: auto !important;
-        bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important; /* Positions chat perfectly in bottom right corner */
+        bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important; /* Elevated on mobile so native browser controls never overlap */
         top: auto !important;
         width: auto !important;
-        max-width: calc(100vw - 32px) !important;
+        max-width: calc(100vw - 40px) !important;
         position: fixed !important;
-        z-index: 140000 !important;
+        z-index: 200000 !important; /* Elevated to be above any navigation drawers */
         flex-direction: column !important;
         align-items: flex-end !important;
       }
       
       #ai-chat-box {
-        width: calc(100vw - 32px) !important;
+        width: calc(100vw - 40px) !important;
         max-width: 360px !important;
-        height: 380px !important; /* Exact fixed height to allow perfect scrolling of chat history */
-        max-height: calc(100vh - 120px) !important;
+        height: 390px !important; /* Elevated fixed height for beautiful display */
+        max-height: calc(100vh - 140px) !important;
         margin-bottom: 12px !important;
         margin-top: 0 !important;
         border-radius: 20px !important;
@@ -1217,9 +1231,10 @@ function runInteractionsEngine() {
       <!-- Floating Trigger Button for subpages -->
       <button
         onclick="toggleAIChat()"
-        class="bg-slate-950 border border-slate-800 hover:bg-slate-900 text-white p-3.5 md:px-5 md:py-3.5 rounded-full shadow-2xl flex items-center justify-center gap-2 cursor-pointer transition-all hover:-translate-y-0.5 select-none font-mono font-bold uppercase text-xs"
+        class="bg-slate-950 border border-slate-800 hover:bg-slate-900 text-white px-3.5 py-2.5 md:px-5 md:py-3.5 rounded-full shadow-2xl flex items-center justify-center gap-1.5 md:gap-2 cursor-pointer transition-all hover:-translate-y-0.5 select-none font-mono font-bold uppercase text-xs"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-500 animate-pulse shrink-0"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5Z"/><path d="M19 17l1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg>
+        <span class="inline md:hidden text-[10px] font-bold">AI Chat</span>
         <span class="hidden md:inline">Consult AI Planner</span>
       </button>
     `;

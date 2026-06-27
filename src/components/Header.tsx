@@ -37,7 +37,7 @@ export default function Header({ activeTab, setActiveTab, isMobileMenuOpen, setI
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
         {/* Brand Logo */}
@@ -50,7 +50,7 @@ export default function Header({ activeTab, setActiveTab, isMobileMenuOpen, setI
         </button>
 
         {/* Desktop Navigation Menu (Flat direct list of requested pages) */}
-        <nav className="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-slate-300">
+        <nav className="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-slate-700">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -58,7 +58,7 @@ export default function Header({ activeTab, setActiveTab, isMobileMenuOpen, setI
               className={`px-3 py-2 rounded-xl text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap ${
                 activeTab === item.id 
                   ? 'bg-orange-600 text-white shadow-md' 
-                  : 'hover:text-white hover:bg-slate-900 text-slate-300'
+                  : 'hover:text-orange-600 hover:bg-slate-100 text-slate-700'
               }`}
             >
               {item.label}
@@ -67,7 +67,7 @@ export default function Header({ activeTab, setActiveTab, isMobileMenuOpen, setI
           <button
             onClick={() => handlePageSelect('reservations')}
             className={`px-3 py-2 rounded-xl text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap ${
-              activeTab === 'reservations' ? 'bg-orange-600 text-white shadow-md' : 'text-slate-300 hover:text-white hover:bg-slate-900'
+              activeTab === 'reservations' ? 'bg-orange-600 text-white shadow-md' : 'text-slate-700 hover:text-orange-600 hover:bg-slate-100'
             }`}
           >
             My Bookings
@@ -78,14 +78,14 @@ export default function Header({ activeTab, setActiveTab, isMobileMenuOpen, setI
         <div className="flex items-center gap-2">
           <a 
             href="tel:+916287168644" 
-            className="hidden sm:flex items-center gap-1.5 bg-slate-900 border border-slate-800 hover:bg-slate-850 px-3 py-1.5 rounded-xl text-[11px] font-bold text-slate-200 transition-all btn-bounce"
+            className="hidden sm:flex items-center gap-1.5 bg-slate-100 border border-slate-200 hover:bg-slate-200 px-3 py-1.5 rounded-xl text-[11px] font-bold text-slate-800 transition-all btn-bounce"
           >
             <Phone className="w-3 h-3 text-orange-500" />
             <span>Call Support</span>
           </a>
           <button 
             onClick={() => handlePageSelect('booking')}
-            className="bg-orange-500 hover:bg-orange-600 text-slate-950 font-black px-3.5 py-1.5 rounded-xl text-[11px] uppercase tracking-wider transition-all shadow-md shadow-orange-500/15 cursor-pointer btn-bounce"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-black px-3.5 py-1.5 rounded-xl text-[11px] uppercase tracking-wider transition-all shadow-md shadow-orange-500/15 cursor-pointer btn-bounce"
           >
             Book Car
           </button>
@@ -93,7 +93,7 @@ export default function Header({ activeTab, setActiveTab, isMobileMenuOpen, setI
           {/* Mobile Menu Toggler */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden flex items-center justify-center p-2 rounded-xl bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer active:scale-95" 
+            className="lg:hidden flex items-center justify-center p-2 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-700 hover:text-slate-900 transition-all cursor-pointer active:scale-95" 
             aria-label="Toggle Navigation Menu"
             id="mobile-nav-toggle-btn"
           >
