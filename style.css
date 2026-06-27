@@ -38,6 +38,15 @@ body {
   color: var(--text-white);
   min-height: 100vh;
   overflow-x: hidden;
+  padding-top: 64px !important;
+}
+
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 100000 !important;
 }
 
 /* Direct tag resets for button components to ensure zero browser background/border overrides */
@@ -685,15 +694,23 @@ ul, ol {
   justify-content: center !important;
 }
 
+#ai-chat-widget-container {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  top: auto !important;
+  z-index: 125000 !important;
+}
+
 @media (max-width: 768px) {
   /* Hide the legacy scattered floating buttons completely */
   #floating-sticky-sidebar {
     display: none !important;
   }
   
-  /* Hide the old single-sparkle floating trigger button on mobile */
+  /* Keep the floating trigger button visible on mobile */
   #ai-chat-widget-container > button {
-    display: none !important;
+    display: flex !important;
   }
   
   /* Move the chat container box right above our beautiful bottom actions dock */
@@ -752,6 +769,13 @@ ul, ol {
   /* Make sure mobile navigation drawer overlays all floating elements and is fully scrollable */
   #mobile-nav-panel {
     z-index: 120000 !important;
+    position: fixed !important;
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-height: calc(100vh - 64px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   /* Prevent modal contents and CTAs from being hidden or cut off under mobile browsers bottom address/toolbar */

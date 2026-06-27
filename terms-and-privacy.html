@@ -50,6 +50,7 @@
       font-size: 14px;
       line-height: 1.7;
       overflow-x: hidden;
+      padding-top: 4rem;
     }
 
     /* Common Helper Classes */
@@ -88,9 +89,11 @@
 
     /* Header & Navigation Styles */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      left: 0;
+      right: 0;
+      z-index: 100000;
       background-color: var(--bg-header);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);

@@ -500,25 +500,65 @@ function runInteractionsEngine() {
 
   // Mobile Menu Toggling Mechanisms
   const menuBtn = document.getElementById("mobile-menu-btn");
-  const menuContainer = document.getElementById("mobile-menu");
+  const menuContainer = document.getElementById("mobile-nav-panel") || document.getElementById("mobile-menu");
+  const menuIconHamburger = document.getElementById("menu-icon-hamburger") || document.getElementById("mobile-menu-btn")?.querySelector("i");
   
   if (menuBtn && menuContainer) {
+    // Add our click listener
     menuBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      menuContainer.classList.toggle("hidden");
+      const isHidden = menuContainer.classList.contains("hidden");
+      if (isHidden) {
+        menuContainer.classList.remove("hidden");
+        menuContainer.classList.add("flex");
+        document.body.style.overflow = "hidden";
+        if (menuIconHamburger) {
+          menuIconHamburger.setAttribute("data-lucide", "x");
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+      } else {
+        menuContainer.classList.add("hidden");
+        menuContainer.classList.remove("flex");
+        document.body.style.overflow = "";
+        if (menuIconHamburger) {
+          menuIconHamburger.setAttribute("data-lucide", "menu");
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+      }
     });
 
+    // Override addEventListener on the button to ignore any duplicate inline/sub-page 'click' listeners
+    const originalAdd = menuBtn.addEventListener;
+    menuBtn.addEventListener = function(type, listener, options) {
+      if (type === "click") {
+        return; // Ignore sub-page click listeners to prevent double-toggling conflicts
+      }
+      return originalAdd.call(this, type, listener, options);
+    };
+
     // Close mobile menu on clicking any link inside it
-    menuContainer.querySelectorAll("a").forEach(link => {
+    menuContainer.querySelectorAll("a, .mobile-nav-item").forEach(link => {
       link.addEventListener("click", () => {
         menuContainer.classList.add("hidden");
+        menuContainer.classList.remove("flex");
+        document.body.style.overflow = "";
+        if (menuIconHamburger) {
+          menuIconHamburger.setAttribute("data-lucide", "menu");
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
       });
     });
 
     // Close menu when clicking outside
     document.addEventListener("click", (e) => {
-      if (!menuContainer.contains(e.target) && e.target !== menuBtn) {
+      if (!menuContainer.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
         menuContainer.classList.add("hidden");
+        menuContainer.classList.remove("flex");
+        document.body.style.overflow = "";
+        if (menuIconHamburger) {
+          menuIconHamburger.setAttribute("data-lucide", "menu");
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
       }
     });
   }

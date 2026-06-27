@@ -384,20 +384,23 @@
       </div>
 
       <!-- category selector tabs -->
-      <div class="flex flex-wrap justify-center gap-2 mb-12 font-mono text-xs">
-        <button onclick="filterFleet('all')" id="tab-all" class="px-5 py-2.5 rounded-full border border-orange-500 bg-orange-600 text-white font-extrabold cursor-pointer transition-all">
+      <div class="flex overflow-x-auto no-scrollbar gap-2 mb-12 font-mono text-xs max-w-full pb-2 md:pb-0 whitespace-nowrap flex-nowrap md:flex-wrap md:justify-center w-full min-w-0" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <button onclick="filterFleet('all')" id="tab-all" class="shrink-0 px-5 py-2.5 rounded-full border border-orange-500 bg-orange-600 text-white font-extrabold cursor-pointer transition-all">
           Show All Cars
         </button>
-        <button onclick="filterFleet('Hatchback')" id="tab-Hatchback" class="px-5 py-2.5 rounded-full border border-slate-800 bg-slate-950 text-slate-400 font-bold hover:text-white cursor-pointer transition-all">
+        <button onclick="filterFleet('Hatchback')" id="tab-Hatchback" class="shrink-0 px-5 py-2.5 rounded-full border border-slate-800 bg-slate-950 text-slate-400 font-bold hover:text-white cursor-pointer transition-all">
           🚗 Hatchbacks
         </button>
-        <button onclick="filterFleet('Thar')" id="tab-Thar" class="px-5 py-2.5 rounded-full border border-slate-800 bg-slate-950 text-slate-400 font-bold hover:text-white cursor-pointer transition-all">
+        <button onclick="filterFleet('Thar')" id="tab-Thar" class="shrink-0 px-5 py-2.5 rounded-full border border-slate-800 bg-slate-950 text-slate-400 font-bold hover:text-white cursor-pointer transition-all">
           🚙 Mahindra Thar 4x4
         </button>
-        <button onclick="filterFleet('SUV')" id="tab-SUV" class="px-5 py-2.5 rounded-full border border-slate-800 bg-slate-950 text-slate-400 font-bold hover:text-white cursor-pointer transition-all">
+        <button onclick="filterFleet('SUV')" id="tab-SUV" class="shrink-0 px-5 py-2.5 rounded-full border border-slate-800 bg-slate-950 text-slate-400 font-bold hover:text-white cursor-pointer transition-all">
           ⛰️ Medium &amp; Large SUVs
         </button>
-        <button onclick="filterFleet('Luxury')" id="tab-Luxury" class="px-5 py-2.5 rounded-full border border-slate-800 bg-slate-950 text-slate-400 font-bold hover:text-white cursor-pointer transition-all">
+        <button onclick="filterFleet('Luxury')" id="tab-Luxury" class="shrink-0 px-5 py-2.5 rounded-full border border-slate-800 bg-slate-950 text-slate-400 font-bold hover:text-white cursor-pointer transition-all">
+          👑 Luxury Packs
+        </button>
+      </div>
            <!-- Fleet Grid container -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="fleet-grid">
         
